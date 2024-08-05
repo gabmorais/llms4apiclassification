@@ -1,0 +1,347 @@
+codeqwen1_5-7b-chat
+classification: payment
+"the api is for dynamic client registration. it manages client applications for use with la banque postale's oauth 2.0 and openid connect endpoints. the category of this api is ""client""."
+the main functionality and purpose of the api is to provide a simple banking app that allows users to create, manage, and track their bank accounts. the endpoints provided include basic crud operations for accounts and transactions, such as getting an account by id, creating a new account, updating an account, making withdrawals and deposits, transferring funds between accounts, and retrieving account statements. the api is classified as banking.
+"based on the api summary provided, it seems to have the functionality of refunding savings accounts balances for a direct wines customer. additionally, there are two post endpoints for refunding the savings account balances:
+
+- the first endpoint, ""/user/savingsaccounts/refund/{accountid}"", appears to directly refund a specific savings account balance for a given customer.
+- the second endpoint, ""/user/savingsaccounts/autorefund/{accountid}"", appears to automatically initiate and manage a refund process for a savings account balance for a customer, possibly based on certain conditions or triggers.
+
+given this information, the api can be classified as a ""savings"" api with categories such as [banking, client, savings, trading, user-password]."
+"the main functionality and purpose of the api is to provide crud (create, read, update, delete) operations for the client domain. this means that the api allows users to create, read, update, and delete information related to clients, such as customer profiles, account information, and transaction history. the api also provides endpoints to retrieve a list of clients and specific details about individual clients. overall, the api is useful for managing client data and facilitating communication and coordination between different parts of an organization or business. the api is classified as a ""client"" category, as it focuses on managing client-related data."
+"the main functionality and purpose of the api is to enable transactions in various payment methods and payment systems. the api offers endpoints for making payments, completing pre-authorizations, returning transactions, voiding transactions, managing profiles, cards, and reports. the api also includes tokenization functionality.
+
+classification of the api:
+[banking, client, payment, savings, trading, transfer, user-password]"
+classification: currency
+the api is focused on managing payment methods. it provides functionality to retrieve, create, update, and delete payment methods. it also allows the registration and unregistration of listeners for various events related to payment methods. the main purpose of this api is to enable seamless payments and the ability for customers to manage their payment methods easily.
+the main functionality and purpose of the api is related to personal investment plans and related investments. it provides endpoints for various aspects of investment planning and execution. the api is classified as 'user-password' since it includes endpoints related to managing user accounts and passwords.
+"the main functionality of the bank feeds api is to enable users to set up bank feeds from their applications to supported accounting platforms. the api offers endpoints to list and create bank feed bank accounts, update bank feed bank accounts, and retrieve bank transactions for a specific bank account. additionally, the api provides options for users to push bank transactions from their application to the supported accounting packages. it is a banking api and can be classified under the ""banking"" category."
+the main functionality of this api is to enable payment transactions. it also includes functionality for redemptions and authorizations. the api is classified as 'payment'.
+"api summary received. 
+the main functionality and purpose of the gpay fund transfer api is to allow users to transfer funds between their wallets and bank accounts. 
+the api is classified into the category of ""blockchain"" as it uses blockchain-based technology to ensure transactions are secure and tamper-proof."
+"based on the given api summary, the main functionality and purpose of the api is to provide access to mastercard's atm and merchant location database. the api allows developers to retrieve detailed information about atms and merchants, including their locations, services, and contact details. it can be used to display atms on a map, provide driving directions, or show special atm features.
+
+the api is classified as a ""client"" or ""user-password"" api, as it requires authentication to access certain resources. the api endpoint for retrieving countries with valid atm locations is also included. the other endpoints pertain to merchant categories and subdivisions, as well as merchant location information, which can be used to display merchant information on a map or provide other business-related services."
+"based on the information provided, the api is related to payment and transfer operations. it appears to be a version 2 of the transfers api, and it has endpoints for getting all transactions, getting a specific transaction by id, and transferring funds. the api is classified as a ""transfer"" category."
+"based on the provided api summary, the main functionality and purpose of the api is to retrieve the authenticated user's account profile information, which can be used to let users log into your app or site using ebay. the api is classified under the ""user-password"" category."
+the main functionality of the api is to provide personalized investment and savings options for households with different financial goals and retirement needs. the api provides a step-wise logic to distribute the target saving amount into various investment options like 401k, emergency savings accounts, debt repayment etc. it is also capable of generating household-based advice catering to partner's retirement accounts, investments, etc. the api can provide for a customized investment logic through configuration details.
+"based on the provided api summary, the main functionality and purpose of the api is to facilitate various operations related to multibanking services. it allows users to interact with external bank connections, manage certificates, and retrieve information about available external banks. therefore, the api can be classified under the ""banking"" category."
+"the main functionality and purpose of the api is to fetch start-of-day/end-of-day trading positions. the api is classified into the ""trading"" category."
+"based on the provided api summary, it seems to be related to user authentication and authorization. the endpoints listed include both a local login endpoint and a token validation endpoint. given that the authentication and authorization functionalities are essential for any api, it can be classified as the ""user-password"" category."
+the main functionality and purpose of this api is to provide access to information about products, merchants, outlets, and customers.
+the main functionality and purpose of the arespass api is to analyze a password and calculate its entropy. the api offers two endpoints: get /about and get /ec. the get /about endpoint provides metadata about the api, while the get /ec endpoint analyzes a password and calculates its entropy. the api is classified into the user-password category.
+the main functionality and purpose of the api is to retrieve information about a member's investments. it provides endpoints for retrieving a summary of the member's investments and the history of each transaction for a specific investment. the api is classified as client.
+"the category name for this api is ""payment""."
+based on the provided api summary, it is classifiable as 'blockchain' category.
+"the main functionality and purpose of the api is to manage and retrieve customer information. it focuses on member loyalty type specifically. the api also allows get requests to fetch customer data by phone number.
+
+the api falls into the category of 'client'."
+"the main functionality and purpose of the simplivpnapi is to manage user accounts, login, and server information. this api seems to be related to a virtual private network (vpn) service.
+
+classification: client"
+category: currency
+"based on the provided api summary, it appears that the main functionality and purpose of the api is to manage users, roles, and app keys in a vtex license manager. the api is designed to work with different environments and provides endpoints for performing operations like getting lists of users and roles, creating new users, managing user roles, and obtaining information about accounts, stores, and app keys. therefore, the api category would be ""client."""
+"the main functionality of this api is to provide monetary transaction details for sellers of ebay. the api retrieves seller payouts, transaction history, and summary information related to seller funds. the api endpoints are categorized under the ""finance"" category."
+"the main functionality of this api is to handle transfers between accounts within an application and to store linked accounts for external banking services. the api purpose is to enable seamless transactions and maintain accurate financial records.
+
+the api is classified as 'transfer'."
+"the main functionality and purpose of the api is to provide information about stocks, commodities, and their prices. the api can be classified under the category of ""stock market""."
+category : bank
+"based on the api summary, it appears to be focused on gdpr (general data protection regulation) compliance. as such, i would classify it as ""client""."
+category: banking
+blockchain.info exchange rates api
+"the main functionality and purpose of the api is to provide financial trading services using algorithmic trading. the api can be classified as a ""trading"" category."
+"the main functionality and purpose of this api is to manage customer data.
+
+the api is classified as 'client'."
+"based on the provided api summary, the main functionality and purpose of the api are to provide savings-related information. the api is classified as a ""savings"" api."
+the main functionality and purpose of the api is to retrieve payment options. it is classified as a payment processing api.
+"the api summary describes a ""stocks service"" that performs crud (create, read, update, delete) operations on a ""stock"" resource. the main functionality is creating, reading, updating, and deleting stock information. the service uses the http get and post methods to fetch and modify stock data, respectively. the api endpoints are categorized under the ""trading"" category as it handles financial transactions related to stocks."
+"the main functionality of this api is payment processing. the purpose of the api is to facilitate online transactions for users who want to make payments online, such as online shopping or paying bills. it provides endpoints for creating new payments, retrieving payment details, cancelling payments, capturing payments, retrieving payment events, getting all refunds for a payment, submitting a refund for a payment, finding payment refund by id, and searching refunds. the api can be categorized under the ""payment"" category."
+the main functionality of this api is to create, validate, and execute transfer processes. the api is classified under the category of 'transfer'.
+"based on the api summary, the main functionality and purpose of the api is to provide information and management of investment details, third-party relationships, and investment managers. the api can be classified into the ""user-password"" category."
+"the api seems to be related to client management and related operations. based on the provided endpoints, it seems to be a crud (create, read, update, delete) api for managing client details. therefore, the classification of the api would be ""client""."
+"the api is categorized as ""finance"". it provides functionalities to validate and check the balance of an iban account."
+"based on the provided api summary, the main functionality and purpose of the api is to provide real-time exchange rates between currencies and digital currencies, as well as historical exchange rates for specific currencies.
+
+the api can be classified as a [trading] category."
+"based on the given api summary, the main functionality and purpose of the api is to manage and remove stored payment details. the api is classified under the ""banking"" category."
+"the main functionality and purpose of this api is to facilitate oauth 2.0 and openid connect authentication for clients. it allows developers to securely authenticate users and retrieve user profiles through restful api calls. additionally, it provides methods for managing clients and obtaining tokens. the api classification would be ""authentication""."
+the main functionality and purpose of this api is to provide real-time exchange rates between different currencies and to enable users to convert an amount from one currency to another. the api also includes endpoints for listing available currencies, external sources, and cross rates.
+"based on the api summary, the main functionality and purpose of the api is to provide information about merchant identifiers. it appears to be related to a payment processing system or a financial institution's database.
+
+classification: [client]"
+"the main functionality and purpose of the fundtransfer api is to facilitate the transfer of funds between accounts within the same financial institution or between an account within the financial institution and an account in another institution. the api is classified as a ""transfer"" category."
+category: user-password
+the main functionality and purpose of the api is to provide various endpoints for user authentication, including password reset, registration, token-based authentication, and mail token validation. the api is classified as a 'client' category because it deals with user-related operations such as logging in, registering, and updating passwords.
+"based on the api summary provided, the main functionality and purpose of the api is to retrieve user data. it enables you to get account users data by account id and user id. additionally, it requires subscribing to the provisioning api suite to use the api. 
+
+the api can be classified as a client api."
+"the main functionality and purpose of the api is to provide access to bitcoin wallet services on different networks (main btc and btctest). it includes endpoints for retrieving transaction lists and sending transactions. the api also supports the following categories:
+- banking
+- blockchain
+- payment
+- savings
+- trading
+- transfer
+- user-password
+- loan-mortgage
+based on the given endpoints and their purpose, the classification would be ""blockchain""."
+"the main functionality and purpose of the api is to manage and remove stored payment details. this includes disabling stored payment details, getting stored payment details, asking the issuer to notify the shopper, and scheduling the account updater.
+
+the api is classified as 'payment' category."
+"the main functionality and purpose of this api is to provide monitoring and management of multiple blockchains through their respective rpc endpoints. the api can perform various tasks such as retrieving information about all blockchains, adding or updating specific blockchains, retrieving details of a specific blockchain by its name, deleting a specific blockchain by its name, and retrieving status information for all blockchains. the api classification would be ""blockchain""."
+classification: currency
+"based on the api summary, this api is classified as ""banking""."
+api category: savings
+classification : banking
+"based on the api summary provided, the main functionality and purpose of the api is to allow customers to transfer money from their citizens account to their registered external (non-citizens) account. the api is classified as a ""transfer"" category."
+api category: blockchain
+"based on the provided api summary, the main functionality and purpose of the api is to manage account profiles. this includes user registration, profile completion, and password reset.
+
+the api can be classified as follows:
+
+category: user-password
+
+this category is chosen because it includes the functionalities related to user management, specifically account profile creation and password management."
+api classification: user-password
+the main functionality of the api is to locate atms across different countries and towns. it can retrieve data about all atms and limit the results to those in a specific country or town. the api can also provide data about atms within a certain distance from a latitude and longitude or a postcode. it is classified as an api for banking services with some functionality related to the banking industry.
+the category of this api is [client].
+"based on the provided api summary, the main functionality and purpose of the api is to offer klarna's payment methods as part of your checkout. the api is classified into the ""banking"" category."
+"based on the provided summary, the main functionality and purpose of the api is to allow citizens to submit payment transactions on civic platform records. the api provides endpoints for initializing a payment, committing the payment, voiding a payment, retrieving transaction fees, managing invoices, trust accounts, shopping carts, and creating, retrieving, updating, and deleting shopping carts. 
+
+classification: payments"
+api category: client
+the main functionality and purpose of the api is to facilitate incoming transfers between avanz bank and bac florida bank, while providing updates to the bp status. the api is classified as a client service, as it communicates with the avanz bank and bac florida bank to perform transactions and provide real-time updates.
+"based on the provided api summary, it appears to be a payment processing platform for cryptocurrencies. the main functionality is processing payments, including getting estimated prices, minimum payment amounts, verifying payouts, and managing subscriptions. the api may also include endpoints for managing sub-partners and their balances, as well as handling client user-password operations and loan-mortgage functionalities. therefore, the category assigned to this api would be ""payment."""
+"the main functionality and purpose of the api is to provide personal data validation, credit rating, and loan request services in argentina. the api is classified under the ""banking"" category."
+classification: etorox http trading api
+the api is related to investment changes and processing in defined contribution plans. it includes endpoints for retrieving eligible business processes, getting details of a specific business process, validating an investment change process, committing the process, and canceling a pending one.
+payment
+banking
+based on the api summary, the main functionality and purpose of the api is to provide information about countries, timezones, and currencies. the api can be classified as a currency api.
+the main functionality and purpose of the neofinance psd2 api is to provide secure and interoperable payment initiation services for european banking customers. it aligns with the goals of the euro retail payments board by enabling banking customers to benefit from innovative products and services ('banking as a service'). the api offers the possibility of two different approaches: direct redirect sca and embedded sca. the api endpoints include various functionalities such as getting authorisation codes, obtaining access tokens, initializing payment requests, checking payment statuses, and managing account and transaction information.
+the main functionality of the credit api is enabling international money transfers using arf credit. it offers various endpoints, including listing payouts, creating payouts, creating quotations, listing accounts, creating sender and beneficiary accounts, retrieving payouts, and retrieving accounts. the api appears to classify as a banking category.
+based on the information provided, the api falls into the category of [client].
+the api is classified as 'market-data'.
+"the main functionality of the api is providing banking and finance services. the purpose of the api is to enable customers to manage their accounts, view loan records, and perform transactions such as disbursements and repaysments of loans. additionally, the api provides information about the different types of loans available and the fee for transferring funds. therefore, it can be classified as the ""banking"" category."
+the main functionality and purpose of the api is to facilitate clearing and trading investments on fintechclearing.com. the api consists of two endpoints: one for adding a new investment for an offering and another for updating an existing investment with new data.
+the main functionality and purpose of the api is to provide credit card services such as retrieving account information, balance, billing, interests, transactions, and executing transactions.
+"the api summary identifies itself as an integration hub, which interacts with different blockchain technologies such as bitcoin, ethereum, and thorshammer. the endpoints provided are for various operations like getting token, block details, blockchain information, utxo details, balance, transaction information, raw transaction creation, etc. the classification of the api is ""blockchain""."
+"the main functionality and purpose of the api is to provide information and functionality for interacting with an nft (non-fungible token) wallet on the upbond platform. the api allows users to create new wallet addresses, mint new nfts, purchase existing nfts, view wallet details, and more. the api is classified as ""blockchain"" because it interacts with the underlying blockchain infrastructure."
+based on the provided api summary, the main functionality and purpose of the api is to retrieve standardised data from bank accounts through third-party providers. the api provides endpoints to retrieve account balances, accounts, account details, transaction categories, transaction details, and all banking transactions. it can also provide endpoints to list all transaction categories and get a specific transaction category. the api is classified as a banking api.
+"based on the provided api summary, the main functionality and purpose of the api is to manage interbank transfer orders within the business banking domain. the api allows users to perform operations such as fetching, creating, updating, and testing (updating complete) interbank transfer orders and their respective items. it can be classified as ""banking"" or ""transfer."""
+api category : client
+api category: client
+category : client
+based on the api summary, it appears to be a financial planning domain service.
+the api summary indicates that basiccreditservice is a service for performing basic credit calculations. it has two endpoints: basiccreditinitializerequest and basiccreditcalculateposrequest. classification: client.
+"based on the provided api summary, the main functionality and purpose of the api is to support the management of crypto wallets for users on a brokerage platform. the api seems to have endpoints for retrieving account information, user currencies, and subscription to balance updates. it appears to be designed to proxy requests between the web api and deltix, based on user permissions for the specified account. therefore, i would classify the api as ""client""."
+category: client
+the main functionality and purpose of this api is to prequalify and provide eligible offers to merchants for loans. the api supports various endpoints including do, submitapplication, uploaddocuments, and get. it seems to be related to the banking sector and the loan pre-approval process.
+api category: trading
+"based on the provided api summary, the main functionality and purpose of the api are as follows:
+1. lender integration for loan decisioning
+2. enable lenders to submit loan applications, fetch loan applications, and update loan application details.
+3. support optional post/patch endpoints for stages of loan application submission.
+classification category: [lending]"
+"the main functionality and purpose of the api is to calculate the maximum mortgage amount available based on input parameters. the api also retrieves the current available mortgages to use real interest rates instead of a key interest value. the endpoints provided are a post request to calculate the max mortgage amount. the api can be classified as ""loan-mortgage""."
+based on the api summary provided, the main functionality and purpose of the api are to access the transaction middleware. the api is classified as a client category.
+category: banking
+the main functionality and purpose of the api is to assist the user in saving up money for specific goals. it includes functionalities to get, create, and delete saving goals. the api also allows the user to set aside a certain amount each month for a specific savings goal, and optionally specifies a minimal balance. the api is classified as [savings].
+"the main functionality of the api is to provide operations related to loans, specifically for extending personal loans. the api is classified into the category ""loan-mortgage"" since the operations involve both personal and mortgage loans."
+"based on the given api summary, it appears to have the following characteristics:
+
+1. main functionality: this api is designed for retirement planning, which involves analyzing an individual's financial needs and providing recommendations for investing in various retirement accounts.
+
+2. purpose: the purpose of this api is to help users understand their retirement financial goals and make informed investment decisions.
+
+3. classification: the api can be classified as 'client' because it deals with user data and information related to retirement planning.
+
+4. category name: user-password"
+"the main functionality and purpose of the api is providing a database of users with their data for financial operations. the api provides endpoints for retrieving, modifying, and creating users, as well as for logging in users and managing their applications.
+
+the api can be classified as ""user-password""."
+the main functionality and purpose of the api is to facilitate balance transfers between tilia wallets. this api does not involve any payment processing, such as taxes, currency conversion, receipts, refunds, or product delivery. the api supports transferring money between different wallets in a way that doesn't require any processing.
+"the functionality and purpose of the api is related to managing recipient details. this api likely provides endpoints for retrieving, adding, updating, and deleting recipient information. the endpoints are categorized under the ""client"" category."
+category: trading
+the main functionality and purpose of the api is to provide secure access to customer accounts and execute various financial transactions. it can also facilitate the generation of otp codes for verification purposes.
+category: user-password
+category: transfer
+the api is a currency exchange rate api. it can fetch single or multiple exchange rates, all available exchange rates, convert amounts of one currency into another, fetch a list of supported currencies, and fetch recent usage data.
+category: loan-mortgage
+"the main functionality and purpose of the findl api is to provide real-time stock market data and financial information for us public companies. the api is designed to be restful and easy to integrate with various systems. some of the endpoints available in the api include: ""get /v1.0/data/descriptions"", ""get /v1.0/data/fundamentals"", ""get /v1.0/data/stocks"", ""get /v1.0/data/funds"", ""get /v1.0/data/actions"", ""get /v1.0/data/sp500"", ""get /v1.0/data/metrics"", ""get /v1.0/data/insiders"", ""get /v1.0/data/tickers"", ""get /v1.0/data/daily"", ""get /v1.0/data/holdings"", ""get /v1.0/data/holdings_ticker"", and ""get /v1.0/data/holdings_investor"". this api falls under the banking category."
+the main functionality and purpose of the finfra api is to provide access to various services related to financial transactions, including creating and managing user accounts, generating access tokens, and performing bulk operations. the api uses the restful architecture with an emphasis on resource-oriented pathways, supports form-encoded requests and provides responses in json format, and adheres to conventional http protocols. the api supports both live and test environments with the ability to engage in a test environment without impacting actual data or bank infrastructure. the api keys used during requests determine whether the actions are affecting the live environment or are restricted to test mode.
+"the main functionality and purpose of the openbanking api is to facilitate open-banking transactions between financial institutions and their customers. this includes retrieving lists of aspsps for a requested country, initializing the onboarding process for clients, validating authorization codes, initiating payment processes, and authorizing payment transfers.
+
+the api appears to be categorized under ""banking""."
+category: loan-mortgage
+"based on the provided api summary, this api appears to be related to loans. the main functionality is managing loan core data, including availability, balances, statements, fees, and loans. the api has endpoints for updating these data topics based on the product key or number. the kafka topics are loans.availability, loans.balances, loan.statement, loan.loanfees, and loan.loan, with corresponding topic keys as productkey or productnumber. 
+
+assuming the api has been tested and is stable, the classifications are:
+- [client]"
+"the main functionality and purpose of the api is to fetch nft data on ethereum and polygon. the api is in beta and not yet available to the public. the api includes two endpoints:
+- get /getnfts
+  gets all nfts currently owned by a given address
+- get /getnftmetadata
+  gets the metadata associated with a given nft."
+based on the given api summary, the main functionality and purpose of the api is to provide access to client financial information. the api can be classified into the 'client' category as it deals with client data. the api also provides an ability to update client financial records. therefore, the classification of the api would be 'client'.
+this api is primarily used for managing trade finance undertakings between corporate and banks. it provides functionalities such as requesting for application, amendment of an already issued undertaking, and payment demand.
+category: banking
+"the api appears to be related to financial transactions and loan management. based on the endpoints provided, it could be categorized as ""loan-mortgage""."
+the main functionality and purpose of the api is to enable a buy now pay later (bnpl) payment scheme for a business. it provides the ability to create, retrieve, and update orders, as well as manage buyers and suppliers. the api can be classified as a payment-related category.
+the main functionality and purpose of the api is to access the loanex application. the token and authorization framework is based on the oauth 2.0 framework. the api supports creating applicant profiles, updating applicant profiles, obtaining the applicant's account summary and detailed information, and creating new loan applications. the categories the api can be classified into are banking and payment.
+"the main functionality and purpose of the api is to provide stock market data and trading features for users. it appears to be related to financial services and trading.
+based on the api summary, the api is classified as a trading or investment platform."
+"the main functionality and purpose of the api is to provide card and account management services for bankassist clients. the api offers various endpoints for different card and account operations such as card activation, card order, card details, pin reset, otp verification, security questions and budget alerts. the api can also be used to manage travel notifications. the category for this api is ""banking""."
+api category: loan-mortgage
+category: client
+category: loan-mortgage
+banking
+the api's primary function and purpose is to manage and retrieve documents related to banks and bank customers. it has endpoints for retrieving available document types and ordering new documents. the api belongs to the 'banking' category.
+"the main functionality and purpose of the api is to provide information about the user's own accounts and allow the user to view their account balance and transaction history. the api supports tokens generated via moneta internet bank only. the endpoints are classified as ""banking."""
+"the main functionality and purpose of the api is to facilitate the process of converting cash to prepaid card funds, known as reloading. the api supports both bank and client-side operations. it also enables the reversal of previously submitted repower transfers. the category this api belongs to is ""banking""."
+"the main functionality and purpose of the banka api is to provide core banking services for online account management and transactions. the api is classified into the ""banking"" category."
+"the api purpose is to provide account information securely and efficiently.
+
+the api is classified as ""banking""."
+"based on the api summary, the main functionality and purpose of the api is to manage client information. 
+
+classification of the api into one of the following categories: 
+- banking
+- client
+- user-password"
+openbank api
+the main functionality of the api is to provide access to the bank's payment and transfer services. it is a client-server api that allows third-party partners (tpps) to access bank resources and conduct transactions on behalf of users. the api also provides access to account information. the main purpose of the api is to enable secure and efficient payment and transfer operations between users and the bank.
+"based on the api summary, the main functionality and purpose of the api is to provide real-time account balances for a specified set of accounts. the api is also designed to retrieve information about mutual funds and to provide a notification when the end of the day (eod) has ended. 
+
+based on the provided endpoints, the api can be classified as a banking category, as it interacts with financial accounts and transactions."
+"the category for this api is ""banking""."
+"based on the provided api summary, the main functionality and purpose of the api is to manage loan application scoring and viewing details of individual applications. the api also includes endpoints to update application data, delete applications with negative scoring, and perform scoring. 
+the api can be classified as follows:
+category: loan-mortgage"
+the api summary is about an application that manages loan applications. the main functionality is loan management. the api allows users to sign up, sign in, and perform various operations related to loans. the api uses oauth v2 bearer token for authentication. the api has endpoints for creating and managing loan applications, as well as for accessing and updating loan repayment history. the api classifies as [financial services].
+"the main functionality and purpose of the api is to provide loan comparison services and lead generation for choose wisely. it appears to have three main endpoints: '/lead' for submitting loan application data, '/fetchresults' for retrieving raw result data, and '/fetchresults' for retrieving white-labeled results. based on this information, the api could be classified as ""banking"" or ""client"" since it's integrated with banks or clients."
+"the main functionality and purpose of the api is to facilitate credit transfers via promptpay. it provides two endpoints: /creditlookup for performing credit checks and /credittransfer for initiating credit transfers. the api seems to be classified under the ""user-password"" category, possibly related to authentication and authorization of user accounts using passwords."
+the main functionality of this api is to facilitate the management of crypto accounts for clients. it allows clients to create and manage crypto accounts for their customers at various crypto partners. additionally, it provides functionality to list customer identities, create customer identities for people and institutions, and manage account profiles within a single crypto account. the api is classified as 'blockchain' because it deals with blockchain-based digital assets.
+category: client
+category: finance
+api category: savings
+"the main functionality and purpose of this api is to provide endpoints for managing transaction savings agreements. the endpoints include creating, updating, retrieving details, and reporting on savings transactions for different accounts. this api can be classified as the ""savings"" category."
+"the api is for internet banking operations related to client revenue. main functionality: updating billing information for corporate clients used in the credit analysis processes by the compliance area. it offers various endpoints for query segmentation, retrieval of yearly billing last, evaluation of billings, effective billing, querying billings monthly, effective billing monthly, batch evaluation of billings monthly, and bring company service.
+
+classification: [corporate-internet-banking]
+
+response : corporate-internet-banking"
+the main functionality of the api is to provide user information and facilitate invoice management.
+"the main functionality and purpose of this api is to provide information about bank products and collection strategies. the api offers several endpoints to retrieve, create, update, and manage information related to these entities. the api categorization is ""banking""."
+the api summary provides a service that fetches a list of possible loan durations along with the minimum monthly rate for a loan. it also includes a get endpoint that takes in a loan amount and a purpose, returning a list of monthly installment rates. the service appears to be focused on providing financial information to users about loan options, specifically the minimum monthly payment required for various loan terms and purposes.
+"classification: banking
+
+response: banking"
+"the main functionality of the provided api seems to be related to mortgage application management, as it allows users to retrieve and manage information about mortgage applications. the api also supports uploading documents related to each mortgage application.
+
+based on this information, the api can be classified as a client category. the purpose of this api is to facilitate the management of mortgage applications and the associated documents, which can be useful for both loan providers and borrowers."
+"based on the given api summary, the main functionality and purpose of the api is providing banking operations such as transferring money, depositing and withdrawing money, updating account details, getting accounts of a user, creating a new user, and logging in users.
+
+the api can be classified as a banking api."
+classification: banking
+"the main functionality and purpose of this api is to provide credit reporting for consumers. it includes functionality to generate and retrieve credit reports in pdf format. the api can be classified into the ""user-password"" category, as it requires user credentials to access the functionality."
+based on the provided api summary, the main functionality and purpose of the api is to support borderless account payments and transactions. additionally, it includes a wide range of other functionalities such as payout history, conversion transactions, statement downloads, push notification subscriptions, and message management. the api seems to be designed for transferwise business accounts, which further classifies it as a client api. so, the api is most likely a category of [client].
+"the main functionality and purpose of the api is to provide access to cached ethereum blockchain data and accounts. the api can be classified under the ""blockchain"" category."
+the main functionality of the finnova banking api is to provide access to the finnova corebanking system's client data and financial accounts, as well as basic financial services such as asset search and exchange rates. the api supports iso 8601 dates, iso 4217 currencies, and iso 639-1 languages. the endpoints available in the api include get methods for retrieving client information, account details, customized data, portfolio information, and asset search and exchange rates.
+"based on the api summary, the main functionality is dealing with investment accounts. the purpose is exposing various endpoints for different requirements related to investment accounts. the api is running with the profiles active ""cold-box"" and ""work-stage"". the api is categorized as ""client"" in this case."
+classification: client
+the main functionality of this api is to provide access to ethereum/ethereum classic chain entities. it includes endpoints for finding and downloading block information, address information, and transactions. the api can be used to interact with ethereum/ethereum classic blockchains in a programmatic manner. the classification for this api is blockchain.
+based on the api summary provided, the main functionality of the axos invest api is to manage users and their data, specifically related to financial planning and investments. the api also provides access to user notifications, subscriptions, and other relevant information. it does not appear to be classified into any of the specified categories.
+"the main functionality of this loan api is to manage loan customers, their loans, and payments. the purpose of the api is to provide financial management capabilities for loan entities such as banks and financial institutions. the api is classified under the ""banking"" category."
+the main functionality and purpose of the api is to retrieve a list of available brokers. the api endpoint is get /brokers/. the api is classified as banking, as it is related to retrieving banking information.
+category: banking
+"based on the provided api summary, the main functionality and purpose of the api is to dynamically deploy, mint, and manage nft (non-fungible token) products and collections on the ethereum blockchain.
+
+the api falls under the ""blockchain"" category as it interacts with smart contracts on the blockchain to perform various operations."
+classification: currency
+the main functionality and purpose of this api is to allow users to retrieve their profile information within the operator. the api is classified as 'client' as it is designed to work with user-related data.
+the main functionality and purpose of the api is to provide information for 3d secure transactions and cost estimates based on a given bin. it can be classified as a client api.
+category: trading
+"the main functionality and purpose of the api is to provide information about currencies, including their exchange rates. the endpoints provided are for getting rates by period, getting all currencies, getting the current rate, and getting a rate by date. the api is classified as ""currency""."
+category: banking
+"main functionality: funds confirmation api
+
+purpose: this api provides functionality for creating, retrieving, deleting, and confirming funds transactions.
+
+classification: user-password
+
+category: savings"
+based on the provided api summary, the main functionality and purpose of the api is to provide real-time foreign exchange rates. the api is classified into the category of [currency].
+"the main functionality and purpose of the api is to provide banking services to customers. it supports customer registration, login, account management, and money transfer.
+
+classification: banking"
+based on the api summary, the main functionality and purpose of the qualpay payment gateway api is to facilitate card payments through the qualpay system. the endpoints provided are various functions such as authorizing transactions, capturing authorized transactions, issuing credits to cardholders, sending transaction receipt emails, tokenizing cards, and verifying cards. this api can be classified as a payment gateway or a banking api.
+the main functionality and purpose of the scim api is to manage user identity information in an organization. it provides endpoints for retrieving, creating, updating, and deleting user data, as well as accessing and updating user profiles. the api supports custom schema definitions to accommodate unique user attributes and schemas for different types of resources (e.g., users, groups). the api is commonly used in identity and access management (iam) and security-as-a-service (saas) solutions to automate user provisioning and authorization processes.
+based on the api summary, the main functionality and purpose of the api is to manage clients and their orders. the api is classified as a client api.
+"the main functionality and purpose of this api is to validate bill payments for rpps (real-time payments system), a payment system used in canada and the united states for remittances to financial institutions. the api is designed to help customers determine whether a given payment would be successful before actually sending the payment. this can help reduce rejected transactions and save money on payment processing fees.
+
+the api classification is ""banking."" it provides a service that helps validate bill payments for a specific payment system called rpps."
+category: banking
+classification: trading
+the main functionality and purpose of this api is to manage non-fungible tokens (nfts). it provides endpoints for creating digital assets, storing metadata, uploading images, interacting with the blockchain, and auditing nft transactions.
+"based on the provided api summary, the main functionality is authentication and registration of customers. the category of the api can be considered as ""client""."
+"the api summary provides information about a company called ""polygon,"" which appears to be related to financial markets. the api endpoints allow users to retrieve various types of data, such as historical aggregates, historical foreign exchange ticks, last trades for a symbol, etc."
+the main functionality and purpose of the api is to provide currency conversion details and conversion rates. it appears to have endpoints for fetching details, retrieving rate list, and getting list details for a specific currency. the api can be classified as 'currency' and 'payment'.
+the api's main functionality appears to be accessing and manipulating stock information. it provides endpoints for finding stock by id, updating the price of a stock by id, getting all stocks, and creating a new stock. this api could be classified as [trading] or [stock-market].
+the main functionality of the api is to manage and retrieve customer information. the api can create customer creation requests, retrieve customer data, find customers based on queries, and create archiving and modification requests. it can also retrieve customer interactions and associated users. therefore, the classification of this api would be user-password.
+classification: banking
+the api main functionality and purpose appears to be a banking application. it provides endpoints for customer management, account management, transactions, and authentication. the classification of this api would be [banking].
+the main functionality and purpose of the api is to facilitate transfers between accounts. this api belongs to the payment domain, and it supports various types of transfers including intrabank, intragroup, interbank (local) and international remittances.
+the main functionality and purpose of the api is to manage the funds in the accounts on a platform. it provides various endpoints for retrieving balances, transferring funds, debiting account holders, payout to account holders, refunding transactions, and setting up beneficiaries.
+based on the information provided, the main functionality and purpose of the api is to provide currency conversion rates and amount details for settlement purposes. the api is intended for client use and is classified as a banking api.
+the api is primarily for the 21-trading.com platform, which appears to be a stock trading website.
+category: [blockchain]
+"the category for this api is ""client""."
+the api is of category 'banking'.
+"the balance control api is of the ""client"" category."
+category: currency
+based on the api summary, the main functionality and purpose of the api is providing user operations. the api can be classified as a client category.
+category: user-password
+based on the api summary provided, the main functionality and purpose of the payone link api is to manage payment links. the api is designed to create, retrieve, update, and list payment links, which can be used to facilitate transactions between customers and businesses. this api can be classified as a banking category.
+the api is a banking application called revolut. it provides functionality for user management, transaction processing, payment processing, withdrawal processing, and currency exchange.
+the main functionality and purpose of this api is to manage user information and authentication for the rb cri (client relationship information) application and gemini authentication and authorization system (gas) application. the api supports creating, updating, and getting detailed information about users, enabling or disabling users, and changing or resetting user passwords. the api is classified as a client management api.
+"based on the api summary, the main functionality and purpose of the api is for user authentication and credential validation. additionally, the api supports various technologies and security measures. based on these requirements, the api can be classified into the ""user-password"" category."
+the main functionality and purpose of the api is to provide personalized offers to cardholders using their online and mobile banking applications. the api endpoints are related to activating statement credit offers, matching offers, retrieving offer details, redeemed offers, statement credit activation details, providing user feedback, savings, and user tokens. the api is classified under the banking category.
+"this api seems to be related to finance, specifically stocks. it appears to provide various functionalities such as retrieving information about stocks, managing favorite lists for authenticated users, and making authorized requests to modify these lists. based on this information, i would classify this api as ""finance""."
+"the main functionality and purpose of the api is to perform payout transactions such as storing payout details, submitting payouts, and confirming or declining payouts. the api is classified as a ""savings"" api as it facilitates the storage and management of payout transactions."
+the main functionality and purpose of the api is to retrieve transactions. the api can be classified as 'banking'.
+the main functionality and purpose of the api is to provide endpoints for service payments in the scotiamobilepayments api. the api identifies itself as [client]. classification of the api into a specific category is as follows: [client].
+based on the api summary, the main functionality and purpose of the adyen recurring api is to manage and remove saved payment details. the api is classified as a 'client' category.
+"the main functionality and purpose of the api is to manage investments. the category for this api is ""investment""."
+api category: banking
+"based on the api summary provided, the main functionality and purpose of the api is to perform currency exchange operations. it allows users to add new currencies, update existing currencies, delete currencies, find currencies by code, and retrieve currency exchange rates.
+
+classifying the api into categories:
+* currency
+* exchange
+* api"
+category: banking
+the main functionality and purpose of the api is to provide access to the sirius blockchain's nft (non-fungible token) functionality, including retrieving information about account balances, transaction history, nft metadata, and initiating nft-related services like minting and multisig account creation. the api is categorized as blockchain.
+based on the given api summary, it seems to be related to authentication and authorization. it also provides endpoints for logging in and logging out users. the api is classified as client, as it deals with user authentication.
+category: blockchain
+classification: banking
+"the api summary you provided is about a channel worklife savings and retirement summary widget. its functionality is to display and update a participant's retirement income. the api is classified under the ""savings"" category."
+"the main functionality and purpose of this api is to provide a foundation for building blockchain applications and to support various operations within a blockchain implementation. the api is categorized as ""client""."
+category : currency
+"main functionality and purpose of the api:
+
+verifying user information and checking authentication status
+
+api classification: 
+
+- user-password"
+based on the provided api summary, it appears that this api is primarily dedicated to the search and retrieval of branch information for banks. this api supports various search filters like by country, town, postcode, sort code, and latitude and longitude, allowing users to find specific branches in different locations based on various criteria.
+"the main functionality and purpose of this api is to provide real-time and historical exchange rates for different currencies.
+
+category: currency"
+"the main functionality and purpose of the api is to provide customer service resources for payment accounts enabled through the mdes platform. it includes various endpoints that allow the issuer partners to display customized messages, search for tokens, view system status, activate tokens, retrieve activation methods, view comments associated with tokens, delete tokens, resend activation codes, reset mobile pins, view token status history, suspend tokens, unsuspend tokens, update token information, retrieve transaction history, and update token assurance. the api is classified into the ""banking"" category."
+the api summary describes an altoroj bank's restful api, which provides various functionalities such as getting account details, getting transaction history, adding new users, changing user passwords, submitting feedback, checking if a user is logged in, logging in/logging out, and transferring money between accounts.

@@ -1,0 +1,645 @@
+financeconnect-13b
+category: payment
+category : client
+the api is categorized as [banking].
+category: savings
+"the api endpoints for client domain are as follows:
+
+* get /clients
+* post /clients
+* get /clients/{id}
+* put /clients/{id}
+* delete /clients/{id}"
+based on the provided documentation, the api can be classified as a [payment](https://en.wikipedia.org/wiki/payment_processing) api. it allows for making payments, managing transactions, and processing refunds. the api also includes features for creating and managing profiles, adding and removing cards, and searching for transactions.
+"api category : currency
+
+please select the appropriate category for the exchangerate-api."
+the api provides functionality for managing payment methods, including retrieving, creating, updating, and deleting payment methods. additionally, the api includes endpoints for registering and unregistering listeners for payment method-related events, as well as client listeners for entity paymentmethodcreateevent, paymentmethodattributevaluechangeevent, paymentmethodstatuschangeevent, and paymentmethoddeleteevent.
+based on the api documentation provided, the api can be classified into the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].
+based on the provided information, the api can be classified under the category of [payment](https://docs.codat.io/bank-feeds-api/overview).
+api category: payment
+the api is for gpay, a payment service that allows users to transfer funds between wallets and bank accounts. the api documentation includes information on error codes, bank account testing, and api endpoints for fund transfers between wallets and bank accounts.
+the locations api is classified into the following category: [banking].
+based on the information provided, the api can be classified under the category of [payment](https://docs.adyen.com/marketplaces-and-platforms/payment).
+the identity api is a web service that allows developers to retrieve the authenticated user's account profile information. it can be used to let users log into your app or site using ebay, which frees you from needing to store and protect user's pii (personal identifiable information) data. the api is categorized under [banking].
+the morningstar next best dollar api can be classified under the category of **savings**.
+based on the information provided, the api can be classified as [banking].
+"api category: trading
+
+note: the api endpoints are not linked to a specific category, but the api as a whole is related to trading."
+category: user-password
+"api category: client
+
+the firstclientregistry api provides information on various aspects of a client's storefront, including products, merchants, outlets, and customers. it is classified under the client category."
+"based on the information provided, the api can be classified as:
+
+* [client]
+
+please provide the api summary for the user to analyze the password and calculate its entropy."
+the api is related to [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].
+based on the information provided, the api should be classified as [payment].
+"the ibkr 3rd party web api is a comprehensive set of endpoints that enable developers to access and manipulate data related to brokerage accounts, orders, positions, and market data. the api is categorized into the following subcategories:
+
+1. accounts
+2. orders
+3. positions
+4. market data
+5. security definition
+
+each endpoint is described in detail, along with its method (get, post, put, delete), parameters, and response format. the api documentation also includes information on authentication and authorization, as well as links to additional resources."
+api category: client
+category: user-password
+the api is categorized as [currency].
+the license manager api is classified under the category of [client].
+based on the information provided, the api can be categorized as [payment].
+"api summary:
+
+* the transfers api will register all the transfers and will generate different events like new balance update, new transfer registered or notification events
+* endpoints:
+	+ get /transfers
+		- retrieves a list of transfers previously submited by the user. user_id is obtained from the access token claim.
+	+ post /transfers
+		- creates a new transfer. first it needs to check if there isn't any other transfer in the last 5 minutes with the same source, destination, and amount. if the same transaction is detected, the transaction will be discarded. we need to extract the userid from the jwt and save with the transaction.
+	+ get /transfers/{transfer_id}
+		- get the transfer based on the id and checks if the jwt token has permissions to view the data.
+	+ put /transfers/{transfer_id}
+		- update the transfer status
+	+ post /linked_accounts
+		- store the link for a nautilus account with an external bank. that link will be used to redirect transfers. the user could have multiple linked accounts."
+"api category: trading
+
+the stocks api provides endpoints for retrieving information on stocks, sectors, and commodities. it includes functions for retrieving top stocks, commodity prices, and sector information."
+based on the information provided, the api can be classified as a [loyalty] api.
+based on the information provided, the api should be classified as [client].
+based on the api description, the category is [payment].
+the blockchain.info exchange rates api is a market prices and exchange rates api that provides real-time information on the value of bitcoin and other cryptocurrencies. the api includes two endpoints: /ticker and /tobtc. the /ticker endpoint returns the current exchange rate of bitcoin to the us dollar, while the /tobtc endpoint converts a value in a provided currency to bitcoin.
+based on the provided information, the arlequin invest trading api can be classified under the categories of [trading, payment, loan-mortgage].
+category: client
+category: savings
+the api is categorized under [payment].
+category: trading
+"the api is categorized as:
+
+[banking]"
+"category: transfer
+
+please provide the api summary."
+the api is related to investments and finance, specifically focused on managing investment portfolios, tracking interest rates, and conducting financial transactions. the api provides a range of endpoints for fetching and manipulating investment-related data, including interest rates, third-party records, investment managers, and investment batches.
+the client details api can be classified under the category of [client].
+"api category: banking
+
+please provide the api summary."
+api category: currency
+"based on the provided api documentation, the api can be classified into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+based on the provided information, the api can be classified as a [client](https://www.authentiq.com/) api.
+currency exchange api falls under the category of payment.
+api category: [payment]
+category: payment
+the api is categorized under [user-password].
+"category : client
+
+this api provides client-related functionality, such as registering and authenticating users. the endpoints include forgotpassword, register, setforgotpassword, token, and validatemailtoken."
+category: user-password
+"the api is for a bitcoin wallet and can be classified under the ""payment"" category."
+the api is categorized under [payment](https://docs.adyen.com/online-payments/tokenization).
+category: blockchain
+the api is related to the category of currency.
+"based on the provided api documentation, the api can be classified as follows:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+"api category: banking
+
+savings goals api offers various endpoints to manage savings goals, including creating a new goal, retrieving all existing goals, updating an existing goal, deleting a goal, and patching an existing goal. the api uses restful architecture and is well-structured, making it easy to use and integrate with other systems."
+"category: currency
+
+this api is used to exchange currencies. it has two endpoints:
+
+1. get /exchange: this endpoint exchanges currencies.
+2. get /exchangelist: this endpoint exchanges currencies."
+the api is categorized under [banking, client].
+"the api endpoints are categorized as follows:
+
+* blockchain: /users, /transactions, /contracts, /blocks
+* banking: /accounts, /transfers, /payments, /withdrawals
+* investment: /stocks, /bonds, /mutualfunds, /etfs
+* currency: /exchange, /conversion, /trading, /speculation
+* payment: /credit, /debit, /creditcard, /debitcard
+* savings: /accounts, /investments, /plans, /goals
+* trading: /stocks, /bonds, /mutualfunds, /etfs
+* transfer: /transfers, /payments, /withdrawals
+* user: /profiles, /personalinfo, /security, /settings
+* loan: /applications, /approvals, /payments, /defaults
+* mortgage: /applications, /approvals, /payments, /defaults"
+"based on the information provided, the api should be classified as ""client""."
+"the api endpoints are organized into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+"based on the provided information, the api should be classified under the ""payment"" category."
+"the api endpoint is classified under the ""payment"" category."
+the klarna payments api is a payment service that allows merchants to offer klarna's payment methods as part of their checkout. the api provides several endpoints for managing payments, orders, and sessions.
+based on the provided api documentation, the payments api can be classified under the [payment] category.
+based on the information provided, the authentiq api can be classified under the category of [client].
+"api category: transfer
+
+please provide the api key for the eztransfersservice api."
+"based on the information provided, the api can be classified as follows:
+
+* banking: [banking]
+* blockchain: [blockchain]
+* client: [client]
+* currency: [currency]
+* payment: [payment]
+* savings: [savings]
+* trading: [trading]
+* transfer: [transfer]
+* user-password: [user-password]
+* loan-mortgage: [loan-mortgage]"
+"api category : loan-mortgage
+
+note: the api endpoint urls are not clickable, as they are not actual urls but rather placeholders for the actual urls used in the text."
+"the etorox http trading api provides a wide range of endpoints for trading, account management, and market data. it can be classified into the following categories:
+
+* banking: the api offers endpoints for account management, such as getting account balance and depositing/withdrawing funds.
+* blockchain: the api provides endpoints for getting the current price of cryptocurrencies and their historical price movements.
+* client: the api includes endpoints for getting the current time and the list of available instruments for trading.
+* currency: the api offers endpoints for converting between different currencies and getting the current exchange rates.
+* payment: the api provides endpoints for making payments and transferring funds between accounts.
+* savings: the api includes endpoints for getting the current interest rate and the list of available savings products.
+* trading: the api offers endpoints for placing orders, getting the list of recent trades, and getting portfolio data.
+* transfer: the api provides endpoints for transferring funds between accounts, both domestically and internationally.
+* user-password: the api includes endpoints for authenticating users and managing their passwords.
+* loan-mortgage: the api offers endpoints for applying for loans and managing existing loans."
+"based on the provided information, the api can be classified under the ""savings"" category."
+category: payment
+api category: loan-mortgage
+the api is categorized under [currency].
+the api is related to the category of banking, specifically payment services and transactions.
+the api is related to credit and falls under the category of [client].
+"category: payment
+
+please provide the api summary."
+"the available apis for cryptoterminal are:
+
+* get /alert
+* get /alert/coin/{coin}
+* get /alert/exchange/{exchange}
+* get /alert/coin/{coin}/{exchange}
+* get /headline
+* get /headline/coin/{coin}
+* get /headline/source/{source}
+* get /headline/search/{searchstring}
+* get /price/{coin}/{exchange}/{period}"
+"based on the api description, it can be classified into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+"category: financial-services
+
+* fintech clearing api v2 is a financial services api that allows users to add and update clearing information for investments.
+* the api is used to manage investments in the financial services industry."
+"the api is for a credit/charge card service domain. it has the following endpoints:
+
+* get /credit_card/{account_id}
+* get /credit_card/{account_id}/account_holder
+* get /credit_card/{account_id}/balance
+* put /credit_card/{account_id}/billing/execution
+* get /credit_card/{account_id}/interests
+* get /credit_card/{account_id}/interests/{name}
+* get /credit_card/{account_id}/interests/{name}/rate
+* put /credit_card/{account_id}/transactions/execution
+* get /credit_card/{account_id}/transactions/{txn_id}"
+the api is categorized as [blockchain].
+"the api endpoints are categorized as follows:
+
+* banking: [post /integration-new-wallet, get /wallet/profile]
+* blockchain: [post /integration-mint, get /integration-detail/{id}]
+* client: [post /integration-purchase/{id}, get /owned/{address}]
+* currency: [get /owned/{address}, get /token-owners/{address}/{token_id}]
+* payment: [post /integration-purchase/{id}, get /transaction/{id}]
+* savings: [get /nft/{address}/{token_id}]
+* trading: [get /transaction/{id}]
+* transfer: [get /owned/{address}, get /token-owners/{address}/{token_id}]
+* user-password: [post /integration-new-wallet, get /wallet/profile]
+* loan-mortgage: [post /integration-mint, get /integration-detail/{id}]"
+based on the provided information, the api can be classified as a [banking](https://codat.io/banking-api) api.
+"api support for manage interbank transfer order
+
+* service domain: payment order
+* endpoints:
+	+ get /interbank-transfer-orders: obtain details of a interbank transfer order.
+	+ post /interbank-transfer-orders: save header of a interbank transfer order.
+	+ patch /interbank-transfer-orders/{orderid}: update a interbank transfer order.
+	+ put /interbank-transfer-orders/test/{orderid}: update a interbank transfer order complete.
+	+ post /interbank-transfer-orders/interbank-transfer-order-items: record detail of a interbank transfer order."
+based on the provided information, the market data api can be classified under the [trading] category.
+"category: client
+
+please provide the api summary."
+"api endpoints:
+
+* get /customer
+* post /customer
+* delete /customer
+* get /customer/{id}
+* delete /customer/{id}
+* get /customer/{id}/packages
+* post /customer/{id}/packages
+* delete /customer/{id}/packages
+* get /customer/{cid}/packages/{pid}"
+the financial planning domain service provides several endpoints for managing clients' financial information, including insurance policies, estate plans, tax plans, and risk tolerances. additionally, the service includes features for creating and managing financial goals and priorities. the service is built using node.js and express, and uses moneyguidepro for risk tolerance calculations.
+"api category : loan-mortgage
+
+api provides basic credit services such as loan and mortgage processing. endpoints include initializing a credit request and calculating a point of sale (pos) request."
+based on the provided information, the api can be classified as a [payment] api. it allows for managing crypto wallets and subscribing to balances.
+"based on the information provided, the api can be classified as:
+
+* banking: [banking]
+* blockchain: [blockchain]
+* client: [client]
+* currency: [currency]
+* payment: [payment]
+* savings: [savings]
+* trading: [trading]
+* transfer: [transfer]
+* user-password: [user-password]
+* loan-mortgage: [loan-mortgage]"
+category: loan-mortgage
+category: trading
+based on the provided information, the api should be classified as [lender].
+api category: loan-mortgage
+the api is related to [banking].
+"api category: savings
+
+please provide the api summary."
+based on the provided information, the api can be classified as [savings].
+"api summary:
+
+* this loans service provides the operations related to loans.
+* endpoints:
+	+ get /loans/personal-loans/{key}/extend: inquiry personal loan extend details.
+	+ post /loans/personal-loans/{key}/extend: accepts the loan extend."
+the api is a retirement planning api that assists users in determining their retirement needs. it takes into account factors such as age, income, and location to provide a personalized estimate of the funds required for a comfortable retirement. the api also considers inflation and provides a detailed breakdown of the projected expenses and income during retirement.
+"based on the information provided, the api can be classified as follows:
+
+* banking: [ ]
+* blockchain: [ ]
+* client: [ ]
+* currency: [ ]
+* payment: [ ]
+* savings: [ ]
+* trading: [ ]
+* transfer: [ ]
+* user-password: [ ]
+* loan-mortgage: [ ]"
+based on the information provided, the api can be classified as a transfer api.
+the category for this api is [client].
+category: trading
+category: client
+"romulus api documentation - loan document processing
+
+* authentication flow
+* uploading a new loan document in romulus
+* viewing details of all loan documents present in romulus
+* modifying output of any document and saving it as a new version
+
+endpoints:
+
+* get /outh2/authorize
+* post /file_upload
+* post /document_search
+* get /stream/{document_id}
+* get /document_search/{document_id}
+* put /document_search/{document_id}
+* get /document_search/{document_id}/{version}"
+api category: transfer
+based on the information provided, the api can be classified as [payment].
+category : loan-mortgage
+"based on the information provided, the api can be classified under the ""finance"" category."
+based on the provided api reference, the correct category for this api is [banking].
+the openbanking api can be classified into the following category: [banking].
+based on the information provided, the finmo lender api can be classified under the category of [lending].
+the api endpoints are related to managing loans and include functions for checking loan availability, retrieving loan balances, and updating loan statements. additionally, the api includes endpoints for calculating loan fees and making changes to the loan terms.
+category: blockchain
+"api category : client
+
+the client financials api provides functionality to search and update client financial records. the api is categorized under the ""client"" category."
+the api supports various functionalities related to trade finance undertakings, including requesting applications, amending already issued undertakings, and making payment demands. the api endpoints include get, post, get, put, patch, and post, each with a specific purpose and usage.
+"the api endpoints can be classified into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+the fintech api falls under the category of [finance].
+based on the information provided, the api can be classified under the category of [payment](https://marketfinance.com/embeddedfinance/payment-solutions).
+"the api is categorized under the ""loan"" category."
+the api category is trading.
+based on the api specification provided, the api can be classified as [banking].
+the lender & spender loan api can be classified as a [finance, loan, mortgage] api.
+api category: loan-mortgage
+category: loan-mortgage
+category: currency
+"api category: banking
+
+based on the api description, it appears that monitise americas, inc. provides a document management service for banks, allowing them to request and order various banking documents, such as account statements, loan agreements, and tax forms. the api endpoints include retrieving all banking document types and ordering a specific document."
+api category: banking
+based on the information provided, the api should be classified as [payment].
+"the api can be classified under the ""banking"" category."
+based on the information provided, the api should be classified as [banking].
+the api is used to manage client information. it includes endpoints for creating, retrieving, updating, and deleting client information.
+api category: banking
+api summary: tpp-bank provides a set of endpoints for managing transactions and retrieving account information. it includes functions for granting access, obtaining an access token, initiating transactions, and approving transactions. additionally, the api includes a function for retrieving account information.
+based on the information provided, the api should be classified as [payment].
+category: payment
+the api is a loan application scoring demo that includes endpoints for updating loan applications, retrieving information about a specific application, deleting applications with negative scoring, and running scoring for a specific application. the api uses openapi 3.0.
+the andela quick credit api can be classified under the category of [loan-mortgage].
+the api is related to financial services, specifically loan comparison and submission. the main functionality is to submit a customer to choose wisely for loan comparison and retrieve raw result data. the api can be classified under the category of [finance].
+"category : payment
+
+the api is for making payments and transferring credits. it has two endpoints: /creditlookup and /credittransfer. the first endpoint is for checking the credit of a payee, while the second endpoint is for transferring credits to a payee. therefore, the category for this api is ""payment""."
+category: loan-mortgage
+the api is related to consumer management and provides endpoints for creating, updating, and retrieving consumer accounts. the api also includes endpoints for retrieving loyalty details and shipping information.
+"category: currency
+
+note: the api endpoints are not yet live, but the documentation is provided for reference."
+"api category: savings
+
+please provide the api summary."
+"the api endpoints and their descriptions are as follows:
+
+* post /enterprise/transactionsavings/agreement: create an agreement.
+* put /enterprise/transactionsavings/agreement/{agreementreference}: update an agreement.
+* get /enterprise/transactionsavings/agreement/{agreementreference}: get details of an agreement.
+* get /enterprise/transactionsavings/agreement/{customerreference}: get list of agreement references for a customer.
+* get /enterprise/transactionsavings/agreement/createevent: event response when an agreement is created.
+* get /enterprise/transactionsavings/agreement/amendevent: event response when an agreement is amended.
+* post /enterprise/transactionsavings/capture/transaction: capture a transaction.
+* get /enterprise/transactionsavings/capture/savingsevent: event response for posting savings in core system.
+* get /enterprise/transactionsavings/reporting/savings/{agreementreference}: get list of savings for transactions performed on this account.
+* get /enterprise/transactionsavings/reporting/savings/{agreementreference}/pending: get list of savings for transactions performed on this account that have not been booked."
+based on the api description, it appears to be a web service that enables corporate clients to manage their billing information and perform various tasks related to their accounts. the service is divided into several endpoints, each with its own specific functionality. some of the endpoints include querying for current billing information, evaluating consultative billings, updating effective billing, and retrieving monthly billing data. additionally, the service provides a segmentation feature that enables companies to bring their own service.
+"the italicfinance client api can be classified into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+based on the api description, the api can be classified as a [banking] api.
+api category: [loan-mortgage]
+"api category : banking
+
+this api is categorized under ""banking"" because it provides financial services related to investment and fund management."
+based on the information provided, the api can be classified as a [loan-mortgage] api.
+the api is categorized as [banking].
+the api is for managing customer and account information. it includes endpoints for retrieving and manipulating customer and account data, as well as endpoints for performing transactions. the api is categorized under [banking].
+based on the provided information, the api can be classified as a [banking] api.
+"based on the api summary, the transferwise business payouts api can be classified under the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+"based on the information provided, the trueblocks api can be classified into the following categories:
+
+* blockchain data and accounts
+* transactions and receipts
+* caching and node management
+* balances and token balances
+* price data and market information
+* data retrieval and analysis
+* turbogeth database management"
+"based on the provided api documentation, the api can be classified into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+"the api is related to pnc investment accounts and provides various endpoints for retrieving information about the accounts, statements, transactions, and images. the api is available for testing with two user profiles: sanath(2) and abdevilliers(6). to access the api, click on ""authorize"" and enter one of the above user-ids."
+"category : banking
+
+this api is used to deliver account balance reports for treasury management customers. it allows users to request a report of balances as of a given date for a selected set of accounts and balance types. this api is useful for financial institutions that offer treasury management services to their customers."
+"api category: blockchain
+
+please provide the api summary."
+the axos invest api is a comprehensive api that provides a wide range of functionalities for managing clients, accounts, and investments. the api includes several endpoints for updating user information, retrieving bank accounts, and accessing general milestone information. additionally, the api includes endpoints for retrieving notifications, subscriptions, and forumlas.
+loan api is an api that manages loan customers, loans, and payments. it includes several endpoints for creating new customers, retrieving customer information, deleting customers and loans, and managing loan payments. the api also includes endpoints for listing past loans, calculating the principal outstanding for each loan, and making new loan applications. additionally, the api includes endpoints for making manual payments and listing missed payments.
+"category: client
+
+please provide the api summary."
+"api category: payment
+
+please select the appropriate category for the api based on the description and endpoints provided."
+"based on the provided api documentation, the api can be classified into the following categories:
+
+* banking: [ ]
+* blockchain: [ ]
+* client: [ ]
+* currency: [ ]
+* payment: [ ]
+* savings: [ ]
+* trading: [ ]
+* transfer: [ ]
+* user-password: [ ]
+* loan-mortgage: [ ]"
+"category: trading
+
+please provide the api summary."
+based on the information provided, the api should be classified as [user-password].
+based on the information provided, the api should be classified as [payment](https://docs.adyen.com/development-resources/api-credentials).
+the api is categorized as [loan-mortgage].
+"the api is related to currencies and can be classified under the ""currency"" category."
+the api is categorized as [banking].
+the api specification is related to banking, specifically for confirmation of funds. the endpoints are for creating, deleting, getting, and posting funds confirmations.
+"the api end-points are categorized as follows:
+
+* get /com.fundsaccess.services.assessment.blueprint/service/exchange/currencies: this end-point returns all available foreign currencies.
+* get /com.fundsaccess.services.assessment.blueprint/service/exchange/rates: this end-point returns foreign exchange rates of all possible currencies for all available dates.
+* get /com.fundsaccess.services.assessment.blueprint/service/exchange/amounts/2020-05-26: this end-point returns foreign exchange rates for particular day, date in request should follow the format as yyyy-mm-dd i.e. 2020-03-19.
+* get /com.fundsaccess.services.assessment.blueprint/service/exchange/rates/2020-05-26: this end-point returns foreign exchange amount for particular day, date in request should follow the format as yyyy-mm-dd i.e. 2020-03-19."
+"category: banking
+
+please provide the actual api documentation for review."
+the api is related to payment processing and falls under the category of [payment].
+the api is related to managing users in an organization, specifically for automating the provisioning of product licenses and enabling single sign-on through an identity provider. the api endpoints cover various aspects of user management, including creating, deleting, getting, updating, and replacing users and groups.
+the api is a client api that provides endpoints for creating, retrieving, updating, and deleting clients. additionally, the api includes endpoints for orders, which can be created, retrieved, updated, and canceled.
+category: payment
+the subaccounts api belongs to the [banking category](https://github.com/freecodecamp/banking-category).
+"the api is related to [finance, trading]. it has the following endpoints:
+
+* get strategy by id
+* get all template strategies
+* add a trading account
+* update mt4 account password
+* create a new tradeworks user
+* check if email is available
+* update user's password
+* check if username is available"
+the nft engine api is a comprehensive set of endpoints that enable the creation, storage, and management of digital assets, as well as the minting and submission of nfts. the api includes endpoints for uploading images and metadata to s3 and ipfs, as well as endpoints for submitting nfts to the blockchain and retrieving their status. additionally, the api includes endpoints for storing nft transactions in the audit log.
+"api category: client
+
+this api provides client-related functionality, such as customer registration and token management. the api endpoints are:
+
+* post /authentication/customer/registration: this endpoint handles customer registration.
+* post /authentication/customer/token: this endpoint retrieves a token for the customer."
+based on the information provided, the api can be classified as a [fintech] api.
+currencyconversion api falls under the category of [currency].
+the api is categorized as [trading].
+"the api is related to customers and can be classified under the ""client"" category."
+"api endpoints:
+
+* post /payment/creditcard
+* put /payment/creditcard/{payment_id}/capture
+* get /payment/creditcard/{payment_id}
+* delete /payment/creditcard/{payment_id}"
+"the api is for a banking application and can be classified under the ""banking"" category."
+"category: payment
+
+this api is for payment domain and provides specifications for account transfers. it supports both intrabank and interbank transfers, as well as international remittances. the api includes endpoints for creating a transfer order and retrieving transfer order details."
+based on the information provided, the fund api can be classified as a [payment] api.
+"based on the provided information, the api should be classified under the ""currency"" category."
+the 21-trading.com api can be classified as a trading platform that allows users to buy and sell stocks, view quotes, and search for stocks. it also includes features such as user authentication, friend requests, and portfolio management.
+category: blockchain
+the api is categorized under [client].
+"api endpoints:
+
+* get /employees/customer-accounts
+* get /employees/customer-transactions/{customerid}
+* post /employees/transfer-funds
+* get /employees/customers-without-accounts
+* post /employees/approve-signup
+* post /employees/close-account
+* patch /employees/set-absolute-limit
+* patch /employees/set-daily-limit
+* get /employees/transactions
+
+api description:
+
+* api for managing banking operations, specifically for employee interactions with customer accounts and transactions.
+* endpoints for viewing customer accounts, transactions, and setting transfer limits.
+* endpoints for approving customer signups and closing customer accounts."
+"category: payment
+
+please provide the actual api summary, description, and endpoints for the category you have chosen."
+api category: currency
+"the recommended way of watching this api is through <https://app.swaggerhub.com/apis-
+      docs/comp_tech_web/usersapi/1.0.0>. this rest api provides all the functionalities connected to operations on users
+      for the application onlineshop. the operations included are signing in, creating a new user, deleting an user,
+      changing an user's data and obtaining users based on different parameters."
+the api is a [client] api.
+"category : payment
+
+please provide the api summary."
+based on the provided information, the api can be classified as [banking].
+the api is related to user management in an organization, specifically for managing users who do not have active directory integration. the api provides endpoints for creating, updating, and retrieving user information, as well as enabling or disabling user accounts and resetting passwords. the api is used by various applications, including cribis, gemini authentication and authorization system, and is stored in [git](https://git.rb.cz/bitbucket/projects/hoina/repos/rbepi/browse/idm). the api is contacted by integration analyst: daniel vavřina, integration architect: ladislav teplý, michal hašek.
+"category: user-password
+
+please provide the actual api documentation for the user-management-api. the information provided in the previous message is incomplete and contains typos."
+the api is related to [banking].
+the api can be classified as [finance].
+based on the provided information, the api should be classified as [payment](https://docs.adyen.com/online-payments/online-payouts).
+based on the information provided, the api can be classified as [banking].
+api category: payment
+"category : payment
+
+the adyen recurring api is used to manage and remove tokens or saved payment details. it also allows you to disable stored payment details and schedule running the account updater. the api is used for payment processing and management."
+the api is related to the category of [investments].
+the api is categorized as [banking].
+category: currency
+the api is categorized under customer service.
+"based on the information provided, the api can be classified under the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
+api category: user-password.
+the api is classified as [blockchain].
+category: currency.
+the api is classified as [savings].
+mastercard blockchain api falls into the category of [blockchain].
+the api is categorized as [currency].
+"api category: client
+
+please provide the api summary."
+"the branch locator api should be classified under the ""client"" category as it provides information and assistance to the user in finding the nearest bank branch or atm."
+the currencytick api provides information on currency exchange rates. it has several endpoints, including healthcheck, historical, live, and supported_currencies. the healthcheck endpoint returns a message indicating the api is working, while the historical endpoint returns a list of historical exchange rates for a given currency. the live endpoint returns the current exchange rate, and the supported_currencies endpoint returns a list of all supported currencies.
+based on the api description, it appears that it belongs to the [client] category.
+"the altoroj rest api can be classified into the following categories:
+
+* banking
+* blockchain
+* client
+* currency
+* payment
+* savings
+* trading
+* transfer
+* user-password
+* loan-mortgage"
