@@ -1,0 +1,110 @@
+{
+  "v1": [
+    {
+      "role": "user",
+      "content": "<instructions>\n  1. You will receive an API summary. Read it carefully.\n  2. Identify the main functionality and purpose of the API.\n  3. Classify the API into one of the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].\n  4. Respond only with the category name.\n</instructions>"
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. Please provide the API summary."
+    }
+  ],
+  "v2": [
+    {
+      "role": "user",
+      "content": "<categories>\n  - banking: Traditional banking services, including account management, Automated Teller Machines (ATMs), credit card management and payment methods.\n  - blockchain: Blockchain technology, such as cryptocurrency and smart contracts.\n  - client: Client information management, including customer profiles, personal goals and credit rating.\n  - currency: Currency exchange rates and currency conversion tools.\n  - payment: Payment processing, including transactions, digital wallets and invoices.\n  - savings: Financial planning tools for savings, investment plans, interest calculations and savings product.\n  - trading: Trading activities, stock trading, forex trading, and investment portfolios.\n  - transfer: Transferring funds between accounts, both domestically and internationally.\n  - user-password: User authentication, password management, and security protocols (tokens) for user access.\n  - loan-mortgage: Loan and mortgage processes, application submission and lenders.\n</categories>\n\n<instructions>\n  1. You will receive an API summary. Read it carefully.\n  2. Identify the main functionality and purpose of the API.\n  3. Classify the API into one of the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].\n  4. Respond only with the category name.\n</instructions>"
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. Please provide the API summary."
+    }
+  ],
+  "v3": [
+    {
+      "role": "user",
+      "content": "<categories>\n  - banking: Traditional banking services, including account management, Automated Teller Machines (ATMs), credit card management and payment methods.\n  - blockchain: Blockchain technology, such as cryptocurrency and smart contracts.\n  - client: Client information management, including customer profiles, personal goals and credit rating.\n  - currency: Currency exchange rates and currency conversion tools.\n  - payment: Payment processing, including transactions, digital wallets and invoices.\n  - savings: Financial planning tools for savings, investment plans, interest calculations and savings product.\n  - trading: Trading activities, stock trading, forex trading, and investment portfolios.\n  - transfer: Transferring funds between accounts, both domestically and internationally.\n  - user-password: User authentication, password management, and security protocols (tokens) for user access.\n  - loan-mortgage: Loan and mortgage processes, application submission and lenders.\n</categories>\n\n<instructions>\n  1. You will receive an API summary. Read it carefully.\n  2. Identify the main functionality and purpose of the API.\n  3. Classify the API into one of the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].\n  4. Respond only with the category name.\n</instructions>"
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. Please provide the API summary."
+    },
+    {
+      "role": "user",
+      "content": "TITLE : Bank Details\nDESCRIPTION :\n      The APIs are provided by bank-details microservice. The APIs provide definitions for search, create and update\n      Bank details for policy level or entity level.\nENDPOINTS :\n    - POST /bank-details\n      Create Bank details\n    - PATCH /bank-details\n      Update Bank details\n    - POST /bank-details/search\n      Get Bank Details based on search criteria"
+    },
+    {
+      "role": "assistant",
+      "content": "banking"
+    },
+    {
+      "role": "user",
+      "content": "TITLE : Adyen Recurring Service\nDESCRIPTION :\n      Additional methods that allow you to manage payment details stored for recurring payments. For more information,\n      refer to [Recurring payments](https://docs.adyen.com/developers/features/recurring-payments).\nENDPOINTS :\n    - POST /disable\n      Disables stored payment details.\n    - POST /listRecurringDetails\n      Retrieves stored payment details for a shopper."
+    },
+    {
+      "role": "assistant",
+      "content": "payment"
+    },
+    {
+      "role": "user",
+      "content": "TITLE : Cash Transfer Order API\nDESCRIPTION :\n      Cash Transfer Order API Specification\nENDPOINTS :\n    - GET /cash-transfer-to-fidelity\n      Search cash transfer orders based on search criteria.\n    - POST /cash-transfer-to-fidelity\n      Create an order on a customer's account.\n    - GET /cash-transfer-to-fidelity/{orderId}\n      Return an individual order by order reference number.\n    - GET /cash-transfer-to-fidelity/{orderId}/tracking\n      Transfer Tracking\n    - GET /cash-transfer-to-fidelity/{orderId}/letter-of-authority\n      Download a letter of authority.\n    - GET /cash-transfer-to-fidelity/{orderId}/confirmation-of-benefit\n      Download a Confirmation of Benefit"
+    },
+    {
+      "role": "assistant",
+      "content": "transfer"
+    }
+  ],
+  "v4": [
+    {
+      "role": "user",
+      "content": "<instructions>\n  1. You will receive an API summary. Read it carefully.\n  2. Identify the main functionality and purpose of the API.\n  3. Classify the API into one of the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].\n  4. Write your thinking process in two sentences inside <thinking> tags.\n  5. Respond with the category name inside <category> tags.\n</instructions>"
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. Please provide the API summary."
+    }
+  ],
+  "v5": [
+    {
+      "role": "user",
+      "content": "<categories>\n  - banking: Traditional banking services, including account management, Automated Teller Machines (ATMs), credit card management and payment methods.\n  - blockchain: Blockchain technology, such as cryptocurrency and smart contracts.\n  - client: Client information management, including customer profiles, personal goals and credit rating.\n  - currency: Currency exchange rates and currency conversion tools.\n  - payment: Payment processing, including transactions, digital wallets and invoices.\n  - savings: Financial planning tools for savings, investment plans, interest calculations and savings product.\n  - trading: Trading activities, stock trading, forex trading, and investment portfolios.\n  - transfer: Transferring funds between accounts, both domestically and internationally.\n  - user-password: User authentication, password management, and security protocols (tokens) for user access.\n  - loan-mortgage: Loan and mortgage processes, application submission and lenders.\n</categories>\n\n<instructions>\n  1. You will receive an API summary. Read it carefully.\n  2. Identify the main functionality and purpose of the API.\n  3. Classify the API into one of the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].\n  4. Write your thinking process in two sentences inside <thinking> tags.\n  5. Respond with the category name inside <category> tags.\n</instructions>"
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. Please provide the API summary."
+    }
+  ],
+  "v6": [
+    {
+      "role": "user",
+      "content": "<categories>\n  - banking: Traditional banking services, including account management, Automated Teller Machines (ATMs), credit card management and payment methods.\n  - blockchain: Blockchain technology, such as cryptocurrency and smart contracts.\n  - client: Client information management, including customer profiles, personal goals and credit rating.\n  - currency: Currency exchange rates and currency conversion tools.\n  - payment: Payment processing, including transactions, digital wallets and invoices.\n  - savings: Financial planning tools for savings, investment plans, interest calculations and savings product.\n  - trading: Trading activities, stock trading, forex trading, and investment portfolios.\n  - transfer: Transferring funds between accounts, both domestically and internationally.\n  - user-password: User authentication, password management, and security protocols (tokens) for user access.\n  - loan-mortgage: Loan and mortgage processes, application submission and lenders.\n</categories>\n\n<instructions>\n  1. You will receive an API summary. Read it carefully.\n  2. Identify the main functionality and purpose of the API.\n  3. Classify the API into one of the following categories: [banking, blockchain, client, currency, payment, savings, trading, transfer, user-password, loan-mortgage].\n  4. Write your thinking process in two sentences inside <thinking> tags.\n  5. Respond with the category name inside <category> tags.\n</instructions>"
+    },
+    {
+      "role": "assistant",
+      "content": "Understood. Please provide the API summary."
+    },
+    {
+      "role": "user",
+      "content": "TITLE : Bank Details\nDESCRIPTION :\n      The APIs are provided by bank-details microservice. The APIs provide definitions for search, create and update\n      Bank details for policy level or entity level.\nENDPOINTS :\n    - POST /bank-details\n      Create Bank details\n    - PATCH /bank-details\n      Update Bank details\n    - POST /bank-details/search\n      Get Bank Details based on search criteria"
+    },
+    {
+      "role": "assistant",
+      "content": "<thinking>\nThe Bank Details API handles the creation, updating, and searching of bank details at the policy or entity level. The appropriate classification would be under 'banking'.\n</thinking>\n\n<category>banking</category>"
+    },
+    {
+      "role": "user",
+      "content": "TITLE : Adyen Recurring Service\nDESCRIPTION :\n      Additional methods that allow you to manage payment details stored for recurring payments. For more information,\n      refer to [Recurring payments](https://docs.adyen.com/developers/features/recurring-payments).\nENDPOINTS :\n    - POST /disable\n      Disables stored payment details.\n    - POST /listRecurringDetails\n      Retrieves stored payment details for a shopper."
+    },
+    {
+      "role": "assistant",
+      "content": "<thinking>\nThe Adyen Recurring Service API focuses on managing stored payment details for recurring payments, including disabling and retrieving these details. Because these functionalities are directly related to payment processing, this API belongs to the payment category.\n</thinking>\n\n<category>payment</category>"
+    },
+    {
+      "role": "user",
+      "content": "TITLE : Cash Transfer Order API\nDESCRIPTION :\n      Cash Transfer Order API Specification\nENDPOINTS :\n    - GET /cash-transfer-to-fidelity\n      Search cash transfer orders based on search criteria.\n    - POST /cash-transfer-to-fidelity\n      Create an order on a customer's account.\n    - GET /cash-transfer-to-fidelity/{orderId}\n      Return an individual order by order reference number.\n    - GET /cash-transfer-to-fidelity/{orderId}/tracking\n      Transfer Tracking\n    - GET /cash-transfer-to-fidelity/{orderId}/letter-of-authority\n      Download a letter of authority.\n    - GET /cash-transfer-to-fidelity/{orderId}/confirmation-of-benefit\n      Download a Confirmation of Benefit"
+    },
+    {
+      "role": "assistant",
+      "content": "<thinking>\nThe functionalities of the Cash Transfer Order API are creating, searching, and tracking cash transfer orders, as well as downloading related documents. Therefore, this API can be categorized as transfer.\n</thinking>\n\n<category>transfer</category>"
+    }
+  ]
+}
