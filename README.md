@@ -23,7 +23,7 @@ processed data.
 
 ## Citation
 ```text
-@article{morais2024llmsapiclassification,
+@article{2024llmsapiclassification,
   author = {Morais, Gabriel and Lemelin, Edwin and Adda, Mehdi and Bork, Dominik},
   title = {Large Language Models for API Classification: A Comprehensive Explorative Study},
   year = {2024}
