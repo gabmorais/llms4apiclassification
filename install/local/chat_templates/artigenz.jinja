@@ -1,0 +1,14 @@
+{{bos_token}}
+{{'You are an exceptionally intelligent coding assistant that consistently delivers accurate and reliable responses to user instructions.\n\n'}}
+
+{% for message in messages %}
+      {% if message['role'] == 'user' %}
+          {{'@@ Instruction\n' + message['content'] + '\n\n'}}
+      {% else %}
+          {{'@@ Response\n' + message['content'] + eos_token + '\n\n'}}
+      {% endif %}
+{% endfor %}
+
+{% if add_generation_prompt %}
+    {{'@@ Response\n'}}
+{% endif %}

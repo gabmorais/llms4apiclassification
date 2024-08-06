@@ -1,0 +1,1748 @@
+artigenz-coder-ds-6_7b
+"the multi currency platform bff api is a backend for frontend (bff) that provides services for a multi-currency platform. it is responsible for handling requests from the user interface and interacting with other services to provide the necessary data.
+
+the main functionality of the api is to provide real-time exchange rates for different currencies, account information for customers, and other related services.
+
+the api is classified into the following categories:
+
+1. banking: this includes services related to account management, atm services, credit card management, and payment methods.
+2. blockchain: this includes services related to blockchain technology, including cryptocurrency and smart contracts.
+3. client: this includes services related to client information management, including customer profiles, personal goals, and credit rating.
+4. currency: this includes services related to currency exchange rates and currency conversion tools.
+5. payment: this includes services related to payment processing, including transactions, digital wallets, and invoices.
+6. savings: this includes services related to financial planning tools for savings, investment plans, interest calculations, and savings products.
+7. trading: this includes services related to trading activities, including stock trading, forex trading, and investment portfolios.
+8. transfer: this includes services related to transferring funds between accounts, both domestically and internationally.
+9. user-password: this includes services related to user authentication, password management, and security protocols for user access.
+10. loan-mortgage: this includes services related to loan and mortgage processes, application submission, and lenders.
+
+please note that the specific category of the api may vary depending on the specific services provided by the api."
+"the dynamic client registration api is a part of the banking services provided by la banque postale. it allows clients to register and manage their applications for use with the bank's oauth 2.0 and openid connect endpoints. the api is designed to follow the rfc7591 protocol for oauth 2.0 dynamic client registration and openid connect dynamic client registration 1.0.
+
+the api has three endpoints:
+
+1. post /register: this endpoint is used to add a new client application to the bank's account. the client sends a json payload containing the details of the application, and the bank responds with a json object containing the details of the newly registered application.
+
+2. get /register/{client_id}: this endpoint is used to retrieve the details of an existing client application from the bank's account. the client sends a request with the client_id of the application they want to retrieve, and the bank responds with a json object containing the details of the requested application.
+
+3. delete /register/{client_id}: this endpoint is used to remove a client application from the bank's account. the client sends a request with the client_id of the application they want to delete, and the bank responds with a success message upon successful deletion.
+
+the tokens issued by the client applications follow the rules for access tokens and id tokens as defined by the oauth 2.0 and openid connect specifications."
+"the banking app api is designed to provide a simple and efficient way for users to manage their bank accounts, including account creation, account information retrieval, money withdrawal, deposit, and transfer, as well as account statement retrieval.
+
+the api is classified under the banking category, which includes traditional banking services, such as account management, automated teller machines (atms), credit card management, and payment methods. it also includes features related to currency exchange rates and currency conversion tools, payment processing, financial planning tools for savings, investment plans, interest calculations, and savings products, trading activities, stock trading, forex trading, and investment portfolios, transferring funds between accounts, both domestically and internationally, user authentication, password management, and security protocols for user access, and loan and mortgage processes, application submission, and lenders."
+"the api belongs to the category ""savings""."
+"sure, here is a simple implementation in python using flask and flask-restful.
+
+```python
+from flask import flask
+from flask_restful import api, resource, reqparse, abort
+
+app = flask(__name__)
+api = api(app)
+
+# in-memory storage for clients
+clients = {}
+
+# parser for client data
+client_parser = reqparse.requestparser()
+client_parser.add_argument('name')
+client_parser.add_argument('email')
+
+# client resource
+class client(resource):
+    def get(self, client_id):
+        if client_id not in clients:
+            abort(404, message=""client {} doesn't exist"".format(client_id))
+        return clients[client_id]
+
+    def delete(self, client_id):
+        if client_id not in clients:
+            abort(404, message=""client {} doesn't exist"".format(client_id))
+        del clients[client_id]
+        return '', 204
+
+    def put(self, client_id):
+        args = client_parser.parse_args()
+        clients[client_id] = args
+        return clients[client_id], 201
+
+# clientlist resource
+class clientlist(resource):
+    def get(self):
+        return clients
+
+    def post(self):
+        args = client_parser.parse_args()
+        client_id = int(max(clients.keys()).lstrip('client')) + 1
+        client_id = 'client%i' % client_id
+        clients[client_id] = args
+        return clients[client_id], 201
+
+# add resources to the api
+api.add_resource(clientlist, '/clients')
+api.add_resource(client, '/clients/<client_id>')
+
+if __name__ == '__main__':
+    app.run(debug=true)
+```
+
+this is a very basic implementation and does not include any kind of authentication or authorization. in a real-world application, you would want to add these features."
+beanstream payments api is a comprehensive solution for processing payments, including card payments, e-commerce, and mobile payments. it offers a range of endpoints for creating, managing, and processing payments, as well as managing customer profiles and cards. the api supports various payment methods, including credit cards, debit cards, and prepaid cards. it also supports recurring payments, refunds, and voids. the api also provides endpoints for tokenization and reporting.
+"exchangerate-api is a free and unlimited api that provides real-time exchange rates for various currencies. it allows developers to fetch the latest exchange rates in a base currency of their choice.
+
+  the base currency is specified in the url path, for example, /latest/usd for usd as base currency.
+
+  the get /latest/{base_currency} endpoint returns a json object with the latest exchange rates for all supported currencies relative to the base currency.
+
+  here is an example of a response:
+
+  {
+    ""base"": ""usd"",
+    ""date"": ""2022-01-01"",
+    ""rates"": {
+      ""eur"": 0.85,
+      ""gbp"": 0.73,
+      ""jpy"": 110.12,
+      ""chf"": 0.93,
+      ""cad"": 1.29,
+      ""aud"": 1.39
+    }
+  }
+
+  in this example, 1 usd is equal to 0.85 eur, 0.73 gbp, 110.12 jpy, 0.93 chf, 1.29 cad, and 1.39 aud on january 1, 2022.
+
+  please note that the exchange rates are updated daily and may not reflect the exact exchange rates at the time of the request."
+"the payment method api is used to manage payment methods, including direct debit, credit card, and other forms of payment. it allows for the creation, retrieval, update, and deletion of payment methods, as well as the registration and unregistration of event listeners. the api is designed to be restful and follows the tmf635 standard for api design.
+
+the main functionalities of the payment method api include:
+
+1. retrieval of payment methods: this operation allows the client to retrieve a specific payment method or a collection of payment methods based on filter criteria.
+
+2. partial update of a payment method: this operation allows the client to update certain attributes of a payment method without affecting the other attributes.
+
+3. creation of a payment method: this operation allows the client to create a new payment method.
+
+4. deletion of a payment method: this operation allows the client to delete a payment method if it is no longer needed.
+
+5. registration and unregistration of event listeners: this operation allows the client to register and unregister listeners for specific events related to payment methods.
+
+6. notification of events: the api notifies the client of changes in the state of a payment method, the creation of a new payment method, or the deletion of an existing payment method.
+
+the api is designed to be scalable and secure, with strong authentication and authorization mechanisms in place to ensure that only authorized clients can access and manipulate payment methods."
+investments microservice
+bank feeds api is a category of api that deals with the integration of bank feeds from accounts in your application to supported accounting platforms. it provides endpoints for listing, creating, updating bank feed bank accounts, and for listing, creating, and pushing bank transactions for a specific bank account.
+"the api falls under the category of ""payment""."
+"the api is related to a payment system, specifically for transferring funds between wallets and bank accounts. it provides endpoints for initiating and tracking fund transfers between wallets and bank accounts. the categories include:
+
+1. banking: this includes services related to banking, such as account management, atm services, credit card management, and payment methods.
+
+2. payment: this includes services related to payment processing, including transaction processing, digital wallets, and invoices.
+
+3. transfer: this includes services related to transferring funds between accounts, both domestically and internationally.
+
+4. user-password: this includes services related to user authentication, password management, and security protocols for user access.
+
+5. loan-mortgage: this includes services related to loan and mortgage processes, including application submission and lenders.
+
+6. blockchain: this includes services related to blockchain technology, such as cryptocurrency and smart contracts.
+
+7. client: this includes services related to client information management, including customer profiles, personal goals, and credit rating.
+
+8. currency: this includes services related to currency exchange rates and currency conversion tools.
+
+9. savings: this includes services related to financial planning tools for savings, investment plans, interest calculations, and savings products.
+
+10. trading: this includes services related to trading activities, including stock trading, forex trading, and investment portfolios."
+the locations api is a part of the mastercard's atm and merchant location database. it provides access to detailed information about atm locations and merchant locations. the api includes endpoints for retrieving information about countries, country subdivisions, merchant categories, and specific merchant locations.
+"the api belongs to the category ""transfer""."
+"the api belongs to the category ""user-password""."
+"the api is primarily used for the calculation of the next best dollar (nbd) and the generation of household-based advice for retirement accounts, investments, etc. it also allows for a customized investment logic through configuration details. the api is designed to work on a step-wise logic resembling a waterfall distribution of target savings amount. the steps can be reordered, included/excluded, and customized using the provided configuration options.
+
+the main functionality of the api is to provide a heuristic-based algorithm for dividing a respondent's target savings for a year into different investment and savings options. the api also provides household-based advice for retirement accounts, investments, etc.
+
+the api can be classified into the 'banking' category, as it involves the management of banking services, including account management, atm services, credit card management, and payment methods. it also includes the use of blockchain technology, cryptocurrency, and smart contracts. the api also involves client information management, including customer profiles, personal goals, and credit rating. the api also involves currency exchange rates and currency conversion tools. the api also involves payment processing, including transactions, digital wallets, and invoices. the api also involves financial planning tools for savings, investment plans, interest calculations, and savings products. the api also involves trading activities, stock trading, forex trading, and investment portfolios. the api also involves transferring funds between accounts, both domestically and internationally. the api also involves user authentication, password management, and security protocols for user access. the api also involves loan and mortgage processes, application submission, and lenders."
+banking
+"the trading positions api is used to fetch start-of-day/end-of-day trading positions. it provides endpoints for starting a job, checking the status of a job, getting open orders, and getting account positions.
+
+the api is classified under the ""trading"" category, which is related to trading activities, stock trading, forex trading, and investment portfolios."
+authentication and authorization api
+the firstclientregistry api is a category of banking. it allows authorized partner developers to retrieve various information from the client's storefronts, such as products, merchants, outlets, and customers.
+"the api is about analyzing a password and calculating its entropy. it has two endpoints:
+
+1. get /about: this endpoint provides metadata about the api, including its version number, release date, and available languages. this type of request is not billed.
+
+2. get /ec: this endpoint is the entropy calculator. it accepts a password as input, analyzes it, and calculates its entropy. this type of request is billed."
+"the api falls under the category of ""trading""."
+"this api is related to the banking and payment services. it allows customers to create, cancel, and simulate payment orders, as well as retrieve details and status of these orders. the api is classified under the ""payment"" category."
+ibkr 3rd party web api is a restful api that allows third-party companies to interact with interactive brokers' brokerage accounts. it provides endpoints for retrieving account information, placing and managing orders, retrieving trade history, and more. the api is secured using oauth 1.0a for authentication and authorization.
+the api is primarily used for managing customer information. it includes endpoints for retrieving customer information by phone number, including their loyalty type. the api key is `576f5125-62af-4e75-aefe-f0eca615d46d`, and it is not for the production environment.
+simplivpnapi is a restful api that provides functionalities for user registration, login, enabling and disabling users, checking the availability of a username, and retrieving server summaries and details.
+"the api you're referring to is primarily used for currency conversion rates. it allows users to retrieve the exchange rate between two currencies at a specific date. the endpoint ""/conversion-rate"" is a post method that accepts a json payload containing the base currency, target currency, and date for which the rate is needed.
+
+the api can be classified under the ""currency"" category, as it deals with currency exchange rates and conversion tools."
+license manager api is a restful api that allows you to manage user accounts, roles, and appkeys in the vtex license manager. it provides endpoints for creating, retrieving, updating, and deleting user accounts, as well as managing roles and appkeys.
+"the api is used to retrieve seller payouts and monetary transaction details related to those payouts.
+
+the main functionality of the api is to provide access to financial information related to ebay sellers. this includes payout details, transaction details, and transfer details.
+
+the api is classified under the ""banking"" category."
+the transfers api is a part of the banking category. it is responsible for managing all the transactions between different accounts, including both domestic and international transfers. the api also handles the creation and management of linked accounts, which are used for transferring funds between different bank accounts.
+stocks api is a category of api that provides real-time data on stocks, commodities, and other financial instruments. it includes endpoints for retrieving information about sectors, individual stocks, prices, top stocks, and commodities.
+the api is primarily used for managing users and their associated points. it allows for the creation of new users and the assignment of points to these users. the api is designed to be easy to use and integrate with other systems, making it a valuable tool for businesses looking to leverage the power of loyalty programs.
+"title : adyen data protection api
+description :
+      adyen data protection api provides a way for you to process [subject erasure requests](https://gdpr-
+      info.eu/art-17-gdpr/) as mandated in gdpr.  use our api to submit a request to delete shopper's data, including
+      payment details and other related information (for example, delivery address or shopper email).## authentication
+      each request to the data protection api must be signed with an api key. get your api key from your customer area,
+      as described in [how to get the api key](https://docs.adyen.com/development-resources/api-credentials#generate-
+      api-key). then set this key to the `x-api-key` header value, for example:  ``` curl -h ""content-type: [...]
+endpoints :
+    - post /requestsubjecterasure
+      submit a subject erasure request.
+
+      @@ response
+adyen data protection api"
+"open banking - payments initiation service
+
+  endpoints:
+
+  1. post /payments/aspsps: get list of aspsps
+  2. post /payments/consents/raw: extracts the original raw consent given by the aspsp
+  3. post /payments/cross-border-credit-transfers: redeem the payment
+  4. post /payments/cross-border-credit-transfers/consents: request consent initiation via redirect
+  5. post /payments/cross-border-credit-transfers/payment-status: get payment status
+  6. post /payments/domestic-credit-transfers: redeem the payment
+  7. post /payments/domestic-credit-transfers/consents: request consent initiation via redirect
+  8. post /payments/domestic-credit-transfers/payment-status: get payment status
+  9. get /payments/health: returns the status of each connectivity provider
+  10. post /payments/sepa-credit-transfers: redeem the payment
+  11. post /payments/sepa-credit-transfers/consents: request consent initiation via redirect
+  12. post /payments/sepa-credit-transfers/payment-status: get payment status"
+"blockchain.info exchange rates api is a service that provides real-time market data and exchange rates for bitcoin (btc). it offers two endpoints:
+
+1. get /ticker: this endpoint returns the current exchange rates for bitcoin (btc) in various currencies. the response includes the current price, 24-hour volume, and the last 24-hour trade volume.
+
+2. get /tobtc: this endpoint allows you to convert a specific amount of a currency into bitcoin. you need to provide the amount and the currency code as parameters. the response will be the equivalent amount of bitcoin.
+
+the api is useful for developers who need to track bitcoin prices, make financial calculations, or integrate bitcoin into their applications."
+the api is related to trading and investment. it provides functionalities for getting authentication tokens, retrieving account details, retrieving trade history, retrieving open algo orders, retrieving a list of tradable instruments, sending trades, retrieving commissions, modifying algo orders, and cancelling algo orders.
+customer api
+savings
+the api is primarily used for retrieving payment options, such as available payment methods, available payment instruments, and payment processing capabilities. it is part of the payment processing apis - iso20022 category.
+"stocks service is a service that provides crud operations for a stock resource. it includes the following endpoints:
+
+1. get /stocks: this endpoint retrieves a list of all stocks.
+2. post /stocks: this endpoint creates a new stock.
+3. get /stocks/{stockid}: this endpoint retrieves the details of a specific stock identified by the stockid.
+4. patch /stocks/{stockid}: this endpoint updates the price of a specific stock identified by the stockid."
+"the gov.uk pay api is a set of endpoints that allow developers to interact with the gov.uk pay system. it provides functionality for creating and managing payments, refunds, and events.
+
+  the main functionality of the api is to facilitate the process of payment and refund management. it allows developers to create, cancel, and capture payments, as well as retrieve and manage refunds and events associated with those payments.
+
+  the api is classified under the 'payment' category, as it is designed to facilitate the process of payment and refund management."
+transfers api is a part of the payment category.
+"- banking: this api is related to banking services, including account management, atms, credit card management, and payment methods.
+  - blockchain: this api is related to blockchain technology, such as cryptocurrency and smart contracts.
+  - client: this api is related to client information management, including customer profiles, personal goals, and credit rating.
+  - currency: this api is related to currency exchange rates and currency conversion tools.
+  - payment: this api is related to payment processing, including transactions, digital wallets, and invoices.
+  - savings: this api is related to financial planning tools for savings, investment plans, interest calculations, and savings products.
+  - trading: this api is related to trading activities, including stock trading, forex trading, and investment portfolios.
+  - transfer: this api is related to transferring funds between accounts, both domestically and internationally.
+  - user-password: this api is related to user authentication, password management, and security protocols for user access.
+  - loan-mortgage: this api is related to loan and mortgage processes, application submission, and lenders."
+the client details api is a service that provides functionalities to get, update, add, and delete client details. it is classified under the 'client' category.
+"ibanapi openapi documentation
+
+endpoints:
+
+1. get /balance:
+   this endpoint retrieves the current balance of the account associated with the provided iban.
+
+2. get /validate:
+   this endpoint validates the iban number by checking if it is in a valid format and if the iban number is associated with an actual account.
+
+3. get /validate-basic:
+   this endpoint performs a basic validation of the iban number by checking if it is in a valid format. it does not check if the iban number is associated with an actual account."
+sonar trading is a financial api that provides real-time exchange rates for 1453 different currencies and cryptocurrencies. it offers endpoints for currency conversion, listing all currencies of countries, all digital currencies, and historical exchange rates.
+the recurring apis are used for managing and removing saved payment details. they are used for recurring payments, where the same payment details are used for multiple transactions. the api allows you to create new permits linked to a recurring contract, disable stored payment details, disable an existing permit, get stored payment details, ask the issuer to notify the shopper, and schedule running the account updater.
+authentiq connect api is a part of authentiq id, a user identity and access management platform. it provides oauth 2.0 and openid connect endpoints for user authentication, client management, and token issuance. the api allows developers to integrate authentiq id into their applications, enabling secure user authentication and access control.
+the api is primarily focused on currency exchange and conversion. it provides endpoints for retrieving a list of available currencies, real-time or historical exchange rates, converting an amount from one currency to another, listing external sources, and real-time or historical cross rates.
+merchant identifier api v2 is a banking api that provides information about merchants based on the criteria provided. it includes endpoints for retrieving merchant descriptor and locator information. the information returned includes the merchant's dba name, mcc (merchant category code), street address, city, state, postal code, country, and sales channels.
+"the fundtransfer api is a banking service that allows users to transfer funds between their accounts within the same financial institution or between an account within the financial institution and an account in another institution.
+
+the main functionality of this api is to facilitate the transfer of funds between different accounts, ensuring that the transfer is secure and efficient.
+
+the api is classified under the 'transfer' category, which includes functionalities such as transferring funds between accounts, both domestically and internationally."
+"title : passwordutility.web
+description :
+      this api provides functionalities to generate and validate passwords.
+
+endpoints :
+    - post /api/password/generate
+      - this endpoint generates a strong password based on the provided parameters.
+      - parameters:
+        - length: the length of the password to be generated.
+        - includeuppercase: a boolean value indicating whether the password should include uppercase letters.
+        - includelowercase: a boolean value indicating whether the password should include lowercase letters.
+        - includenumbers: a boolean value indicating whether the password should include numbers.
+        - includespecialcharacters: a boolean value indicating whether the password should include special characters.
+      - returns:
+        - password: the generated password.
+
+    - post /api/password/validate
+      - this endpoint validates a password based on the provided parameters.
+      - parameters:
+        - password: the password to be validated.
+        - rules: an array of rules to be applied for validation. each rule is an object with the following properties:
+          - name: the name of the rule.
+          - value: the value of the rule.
+          - description: a description of the rule.
+      - returns:
+        - isvalid: a boolean value indicating whether the password is valid according to the provided rules.
+        - violations: an array of violations, each violation is an object with the following properties:
+          - rulename: the name of the rule that was violated.
+          - description: a description of the violation.
+
+  @@ response
+title : passwordutility.web
+description :
+      this api provides functionalities to generate and validate passwords.
+
+endpoints :
+    - post /api/password/generate
+      - this endpoint generates a strong password based on the provided parameters.
+      - parameters:
+        - length: the length of the password to be generated.
+        - includeuppercase: a boolean value indicating whether the password should include uppercase letters.
+        - includelowercase: a boolean value indicating whether the password should include lowercase letters.
+        - includenumbers: a boolean value indicating whether the password should include numbers.
+        - includespecialcharacters: a boolean value indicating"
+"the api documentation is as follows:
+
+1. post /authentication/forgotpassword: this endpoint is used to initiate the process of resetting a user's password. it takes an email as input and sends a password reset link to the user's email.
+
+2. post /authentication/register: this endpoint is used to register a new user. it takes user details such as name, email, and password as input and creates a new user account.
+
+3. post /authentication/setforgotpassword: this endpoint is used to set a new password after the user has received the password reset link and clicked on the link. it takes the new password and the token sent in the password reset email as input.
+
+4. post /authentication/token: this endpoint is used to authenticate a user and generate a token for subsequent api requests. it takes the user's email and password as input and returns a token if the authentication is successful.
+
+5. post /authentication/validatemailtoken: this endpoint is used to validate the token sent in the password reset email. it takes the token as input and returns a success message if the token is valid.
+
+the api is designed to be stateless, meaning that it does not store any user session information on the server. instead, it uses tokens to authenticate users and authorize api requests."
+"the user api is a part of the vonage business cloud api suite. it is used to retrieve information about users within a specific account. the api is accessible only to users who have subscribed to the provisioning api suite.
+
+the get /api/accounts/{account_id}/users endpoint retrieves all users within a specific account. the get /api/accounts/{account_id}/users/{user_id} endpoint retrieves user data for a specific user within a specific account.
+
+the user api is classified under the ""client"" category, as it deals with client information management, including customer profiles, personal goals and credit rating."
+"the api is for a bitcoin wallet, and it is designed to interact with a blockchain network. the endpoints are as follows:
+
+1. get /bitcoinapi/bitcoinwallet/main: this endpoint retrieves a list of transactions on the bitcoin main network.
+
+2. post /bitcoinapi/bitcoinwallet/main: this endpoint sends a transaction on the bitcoin main network.
+
+3. get /bitcoinapi/bitcoinwallet/test: this endpoint retrieves a list of transactions on the bitcoin test network (known as btctest).
+
+4. post /bitcoinapi/bitcoinwallet/test: this endpoint sends a transaction on the bitcoin test network.
+
+the api is classified under the ""blockchain"" category, as it is designed to interact with blockchain technology, specifically bitcoin."
+the recurring apis are used for managing and removing tokens or saved payment details. they are used to handle recurring payments, such as subscriptions or installments. the api allows you to disable stored payment details, list stored payment details, notify the shopper, and schedule running the account updater.
+blockchain api
+"the api falls under the ""currency"" category."
+"bank
+
+  this service provides a restful api for managing bank master data. it allows you to create, read, update, and delete bank data, as well as manage related address data. the service is based on the odata protocol, which is a standardized protocol for creating and consuming data services.
+
+  the api supports the following operations:
+
+  - get /bank: retrieves a list of all bank entities.
+  - post /bank: adds a new bank entity.
+  - get /bank(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}'): retrieves a specific bank entity by its key.
+  - patch /bank(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}'): updates an existing bank entity.
+  - get /bank(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}')/_bankaddress: retrieves the addresses associated with a specific bank entity.
+  - post /bank(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}')/_bankaddress: adds a new address to a specific bank entity.
+  - get /bankaddress: retrieves a list of all address entities.
+  - get /bankaddress(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}',addressrepresentationcode='{addressrepresentationcode}'): retrieves a specific address entity by its key.
+  - delete /bankaddress(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}',addressrepresentationcode='{addressrepresentationcode}'): deletes a specific address entity.
+  - patch /bankaddress(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}',addressrepresentationcode='{addressrepresentationcode}'): updates an existing address entity.
+  - get /bankaddress(bankcountry='{bankcountry}',bankinternalid='{bankinternalid}',"
+the restapi is a banking and financial management api that provides various endpoints for managing savings goals, including creating new ones, getting existing ones, updating them, and deleting them.
+"the currency exchange api is designed to provide real-time exchange rates for various currencies. it allows users to convert one currency into another, and it also provides a list of all supported currencies.
+
+the main functionality of the api is to facilitate currency exchange transactions. it allows users to convert one currency into another, and it also provides a list of all supported currencies.
+
+the api is classified under the ""currency"" category, as it deals with currency exchange rates and conversion tools."
+banking
+"title : block chain implementation
+description :
+      my own implementation of the block chain logics
+endpoints :
+    - get /users/item/id
+      get user data for given id
+    - get /transactions/item/id
+      get transaction data for given id
+    - get /contracts/item/id
+      get contract data for given id
+    - get /blocks/item/id
+      get block data for given id
+    - post /users/item
+      create user
+    - post /transactions/item
+      create transaction
+    - post /contracts/item
+      create contract
+    - post /blocks/item
+      create block"
+the accounts microservice is primarily responsible for managing user accounts, including profile creation, password reset, and profile completion. it uses the post /register/complete endpoint for completing the registration process and the get /profile/iscomplete endpoint to check if a user has completed their profile.
+"the api endpoints are the specific urls that the client can use to interact with the server. in this case, the endpoints are the urls that the client can use to access the different functionalities of the api.
+
+  the endpoints are:
+
+  - get /v1/correlation: this endpoint is used to get the correlation between different assets.
+  - get /v1/indices: this endpoint is used to get the performance of different indices.
+  - get /v1/investor-grades: this endpoint is used to get the grades of investors.
+  - get /v1/market-indicator: this endpoint is used to get market indicators.
+  - get /v1/price: this endpoint is used to get the current price of an asset.
+  - get /v1/price-prediction: this endpoint is used to get the predicted price of an asset.
+  - get /v1/quantmetrics-tier-1: this endpoint is used to get quantmetrics tier 1 data.
+  - get /v1/quantmetrics-tier-2: this endpoint is used to get quantmetrics tier 2 data.
+  - get /v1/resistance-support: this endpoint is used to get resistance and support levels.
+  - get /v1/scenario-analysis: this endpoint is used to get scenario analysis data.
+  - get /v1/sentiments: this endpoint is used to get sentiment data.
+  - get /v1/tokens: this endpoint is used to get token data.
+  - get /v1/trader-grades: this endpoint is used to get trader grades.
+  - get /v1/trading-indicator: this endpoint is used to get trading indicator data."
+atm locator api is a banking api that provides information about atms in various locations. it allows users to find and locate atms based on their country, town, geographical location, or postcode. the api is compliant with the open banking standards and is regulated by the uk competition and markets authority (cma).
+"the api you're referring to is likely a payment processing api. it allows users to create payments, which could include things like making a purchase, sending money, or initiating a transfer.
+
+the endpoint you're referring to is a post request that is used to create a payment. the userid in the url is a placeholder for the unique identifier of the user making the payment.
+
+the api is likely designed to work with a variety of payment methods, including credit cards, debit cards, paypal, and other forms of digital or physical currency.
+
+the api is likely to be part of a larger system, which may include features for managing user accounts, managing transactions, and other related functionalities.
+
+the api is likely to be secured with authentication and authorization protocols to ensure that only authorized users can make payments and manage their accounts.
+
+the api is likely to be designed to handle various currencies and exchange rates, and to provide real-time updates on payment status and transaction history.
+
+the api is likely to be designed to be scalable and efficient, with features for handling high volumes of transactions and ensuring high availability.
+
+the api is likely to be designed to be user-friendly and easy to use, with clear documentation and intuitive interfaces for both developers and end-users.
+
+the api is likely to be designed to be compatible with various devices and platforms, allowing users to make payments from anywhere with an internet connection.
+
+the api is likely to be designed to be flexible and customizable, allowing users to tailor their payment experience to their specific needs.
+
+the api is likely to be designed to be robust and reliable, with features for handling errors and exceptions, and for providing real-time updates on payment status.
+
+the api is likely to be designed to be secure, with features for protecting user data and transactions, and for maintaining compliance with various regulations and standards.
+
+the api is likely to be designed to be cost-effective, with features for managing payment costs and providing discounts for certain types of transactions.
+
+the api is likely to be designed to be accessible, with features for providing support and assistance to users in case of any issues or difficulties.
+
+the api is likely to be designed to be transparent, with features for providing transparency into the payment process and the financial transactions.
+
+the api is likely to be designed to be compliant with privacy laws and regulations, with features for protecting user privacy and ensuring compliance"
+"the klarna payments api v1 is a part of the klarna payments system. it is used to create a session for klarna's payment methods, and to manage orders. the api is used in conjunction with the klarna order management api to handle the order once it has been completed. the api is designed to be used in conjunction with a checkout process.
+
+  the main functionality of the api is to create a session for klarna's payment methods, and to manage orders. it allows for the creation of new authorizations, the generation of consumer tokens, the creation of new orders, the updating of existing sessions, and the reading of existing sessions.
+
+  the api is classified under the category of ""payment""."
+the payments api is a part of the civic platform api suite. it is used for handling payments on civic platform records. the api provides endpoints for initializing, committing, and voiding payments, as well as retrieving transaction fees and invoices. it also includes endpoints for managing shopping carts and trust accounts.
+the authentiq api is used for managing and authenticating user identities. it provides endpoints for registering new ids, revoking existing ids, updating id details, and initiating and managing scope verification requests.
+eztransfersservice is a banking api that allows for the transfer of funds between avanz bank and bac florida bank. it includes endpoints for updating the status of a bp (business partner), creating a new incoming transfer, and validating accounts for incoming transfers.
+"nowpayments api is a non-custodial cryptocurrency payment processing platform. it allows users to accept payments in a wide range of cryptocurrencies and instantly convert them into a coin of their choice and send to their wallet. the api is designed to be simple and efficient, with no excess features.
+
+the api is divided into several endpoints, each of which performs a specific function. these include:
+
+1. get /v1/estimate: this endpoint is used to get an estimated price for a payment.
+2. get /v1/min-amount: this endpoint is used to get the minimum payment amount.
+3. get /v1/payment: this endpoint is used to get a list of payments.
+4. post /v1/payment/{id}/update-merchant-estimate: this endpoint is used to get or update a payment estimate.
+5. get /v1/payment/{payment_id}: this endpoint is used to get the status of a specific payment.
+6. post /v1/payout/{withdrawals-id}/verify: this endpoint is used to verify a payout.
+7. get /v1/sub-partner: this endpoint is used to get sub-partners.
+8. get /v1/sub-partner/balance/{id}: this endpoint is used to get the balance of a specific sub-partner.
+9. get /v1/sub-partner/transfer/{id}: this endpoint is used to get a specific transfer.
+10. get /v1/sub-partner/transfers: this endpoint is used to get all transfers.
+11. get /v1/subscriptions: this endpoint is used to get many recurring payments.
+12. get /v1/subscriptions/plans: this endpoint is used to get many plans.
+13. get /v1/subscriptions/plans/{plan-id}: this endpoint is used to get one plan.
+14. patch /v1/subscriptions/plans/{plan-id}: this endpoint is used to update a plan.
+15. delete /v1/subscriptions/{sub_id}: this endpoint is used to delete a recurring payment.
+16. get /v1/subscriptions/{sub_id}: this"
+"the afluenta api is a service that provides personal data validation, credit rating, and loan request functionalities.
+
+the main functionality of the api is to facilitate the process of obtaining a loan. it includes the following endpoints:
+
+1. post /borrower/loan/request/pre-approval: this endpoint is used to pre-approve a loan request.
+
+2. get /helpers/loan/purposes/: this endpoint is used to retrieve a list of loan purposes that are enabled by the country according to the afluenta model.
+
+3. get /helpers/identities/{idcountry}: this endpoint is used to retrieve a list of kinds of identities that are enabled by countries to identify the customer.
+
+the api is classified under the 'banking' category, as it provides services related to traditional banking, including account management, automated teller machines (atms), credit card management, and payment methods."
+etorox http trading api is a restful api that allows developers to interact with the etorox platform. it provides endpoints for retrieving time, currencies, instruments, order details, placing orders, cancelling orders, getting a single order by client order id, getting a list of recent trades, and getting portfolio data.
+the investment change api is a part of the banking services. it is used for processing investment changes in defined contribution plans. it includes endpoints for getting eligible business processes, getting a specific business process, validating a business process, committing a business process, and canceling a pending business process.
+"the payment account reference inquiry api is a banking service that allows users to retrieve the payment account reference (par) associated with a specific payment account. the api is used by merchants, acquirers, and digital activity customers (dacs) to query the par vault for the par when provided with a primary account number (pan) linked to a digital pan.
+
+the api is classified under the ""banking"" category."
+"the api belongs to the category ""loan-mortgage""."
+"## api endpoints
+
+  ### 1. `/countries`
+  this endpoint returns a list of all supported countries.
+
+  ### 2. `/timezones`
+  this endpoint returns a list of all supported timezones.
+
+  ### 3. `/currencies`
+  this endpoint returns a list of all supported currencies.
+
+  ## helpful links
+
+  | endpoint | helpful link |
+  |----------|--------------|
+  | countries | https://countrycode.org/ |
+  | timezones | https://www.timeanddate.com/time/zones/ |
+  | currency | https://justforex.com/education/currencies |
+
+  ## example response
+
+  ### `/countries`
+  ```json
+  [
+    {
+      ""name"": ""united states"",
+      ""code"": ""us""
+    },
+    {
+      ""name"": ""canada"",
+      ""code"": ""ca""
+    },
+    // ...
+  ]
+  ```
+
+  ### `/timezones`
+  ```json
+  [
+    {
+      ""name"": ""pacific time (us & canada)"",
+      ""code"": ""pst""
+    },
+    {
+      ""name"": ""mountain time (us & canada)"",
+      ""code"": ""mst""
+    },
+    // ...
+  ]
+  ```
+
+  ### `/currencies`
+  ```json
+  [
+    {
+      ""name"": ""united states dollar"",
+      ""code"": ""usd""
+    },
+    {
+      ""name"": ""canadian dollar"",
+      ""code"": ""cad""
+    },
+    // ...
+  ]
+  ```"
+the api is classified under the banking category.
+"the credit api is designed to facilitate international money transfers using arf credit. it includes several endpoints for managing payouts, quotations, accounts, and transactions.
+
+the get /api/transactions/payouts endpoint allows you to list all payouts.
+
+the post /api/transactions/payouts endpoint is used to create a new payout.
+
+the post /api/rate/quotation endpoint is used to create a new quotation.
+
+the get /api/accounts endpoint retrieves a list of all accounts.
+
+the post /api/accounts endpoint is used to create a sender or beneficiary account.
+
+the get /api/transactions/payouts/{payout_id} endpoint retrieves a specific payout by its id.
+
+the get /api/accounts/{account_id} endpoint retrieves a specific account by its id.
+
+the api is designed to be restful and follows the principles of http, including get, post, put, delete methods for data manipulation."
+"the api you're referring to is classified under the ""payment"" category."
+"cryptoterminal.io is a platform that provides real-time cryptocurrency data and alerts. it offers apis for developers to access this data and integrate it into their applications.
+
+  the available apis include:
+
+  1. get /alert: this endpoint retrieves alerts without any filter. it returns 15 alerts per request.
+
+  2. get /alert/coin/{coin}: this endpoint filters alerts by coin.
+
+  3. get /alert/exchange/{exchange}: this endpoint filters alerts by exchange.
+
+  4. get /alert/coin/{coin}/{exchange}: this endpoint filters alerts by coin and exchange.
+
+  5. get /headline: this endpoint retrieves headlines without any filter. it returns 15 headlines per request.
+
+  6. get /headline/coin/{coin}: this endpoint filters headlines by coin.
+
+  7. get /headline/source/{source}: this endpoint filters headlines by source.
+
+  8. get /headline/search/{searchstring}: this endpoint filters headlines by search string.
+
+  9. get /price/{coin}/{exchange}/{period}: this endpoint retrieves price data for a coin on a specific exchange for a specific period.
+
+  developers can use these apis to build applications that provide real-time cryptocurrency data and alerts, or to integrate cryptoterminal's data into their own applications."
+banking
+"the api is classified under the ""trading"" category."
+credit/charge card
+integration hub is an api that interacts with bitcoin, ethereum, and thorshammer blockchain. it provides various endpoints for getting blockchain information, transaction details, and balance information.
+the provided documentation is for an nft wallet integration. it includes several endpoints for creating a new wallet, getting wallet information, minting new nfts, getting nft details, purchasing nfts, getting nfts owned by an address, getting nft owners by token id, getting transaction details, and getting nft metadata by address and token id.
+banking
+"the api belongs to the category of ""transfer""."
+market data api
+accounting:clients
+"shopper shipping api is a service that allows customers to manage their packages for shipping. it provides endpoints for creating, reading, updating, and deleting customer and package data.
+
+the api is designed to be restful, which means it uses http methods (get, post, put, delete) to interact with the server.
+
+the endpoints are as follows:
+
+1. get /customer: retrieves a list of all customers.
+2. post /customer: creates a new customer.
+3. delete /customer: deletes all customers (only available for testing).
+4. get /customer/{id}: retrieves a single customer by their id.
+5. delete /customer/{id}: deletes a customer by their id.
+6. get /customer/{id}/packages: retrieves a list of packages for a given customer.
+7. post /customer/{id}/packages: creates a new package for a customer.
+8. delete /customer/{id}/packages: deletes all packages for a customer.
+9. get /customer/{cid}/packages/{pid}: retrieves a single package for a customer by its id.
+
+please note that the delete /customer endpoint is only available for testing purposes and should not be used in a production environment."
+financial planning domain service
+"the basiccreditservice api is designed to provide basic credit services, including initializing a credit request and calculating the points of service (pos) for a credit request.
+
+the post /basiccreditinitializerequest endpoint is used to initialize a credit request, which involves gathering information about the borrower, the purpose of the loan, and other relevant details.
+
+the post /basiccreditcalculateposrequest endpoint is used to calculate the points of service (pos) for a credit request. this involves analyzing the borrower's credit history, income, and other relevant factors to determine the borrower's creditworthiness.
+
+the api is classified under the ""banking"" category, as it provides traditional banking services such as account management, atm services, credit card management, and payment methods."
+"the api you're referring to is a crypto wallets api. it is designed to provide a secure and efficient way for users to manage their cryptocurrency wallets and interact with various cryptocurrency exchanges.
+
+the api is built on rest and websocket protocols, and it uses bearer tokens for authentication. the api is designed to work with a deltax platform, which is a financial technology platform that provides services for trading, investing, and managing financial assets.
+
+the api is designed to work with a specific set of endpoints, which include:
+
+1. get /api/v1/accounts/{accountnumber}: this endpoint is used to retrieve crypto accounts associated with a specific brokerage account number.
+
+2. get /api/v1/currencies/{accountnumber}: this endpoint is used to retrieve the currencies associated with a specific brokerage account number.
+
+3. get /ws/v1/balances: this endpoint is used to subscribe to real-time updates on the balances of the user's crypto wallets.
+
+the api uses a user relationship service to map the crypto id (from the bearer token) to the brokerage account number and retrieve associated deltax user id and permissions. based on these permissions, the api decides whether to call deltax apis/websockets or not.
+
+the api is designed to work with one account calling apis/websockets on behalf of another account, which is a common practice in financial services. this allows the user to manage their crypto wallets and interact with various cryptocurrency exchanges without having to manage multiple accounts."
+"phantauth is a random user generator and openid connect provider. it was designed to simplify testing for applications using openid connect authentication by making use of random generated users.
+
+the api documentation is available on the following sites:
+
+- [apiary](https://phantauth.docs.apiary.io) (primary source)
+- [speca](https://speca.io/phantauth/phantauth)
+- [phantauth developer portal](https://www.phantauth.net/api)
+
+the main endpoints of the phantauth api are:
+
+- post /client: create a client selfie
+- get /client/{client_id}: get a client
+- get /client/{client_id}/token/{kind}: get a client token
+- get /domain/{domainname}: get a domain
+- get /fleet/{fleetname}: get a fleet
+- get /team/{teamname}: get a team
+- get /tenant/{tenantname}: get a tenant
+- post /user: create a user selfie
+- get /user/{username}: get a user
+- get /user/{username}/token/{kind}: get a user token"
+the api is primarily used for preapproval of loans. it allows merchants to check if they are eligible for a loan without actually submitting an application. the '/do' endpoint allows merchants to check if they are prequalified for a loan without submitting an application. the '/submitapplication' endpoint is used to submit an application for processing and get prequalified offers. it also takes supporting documents. the '/uploaddocuments' endpoint is used to add documents to a submitted application with a loan or preapproval response id. the '/get' endpoint is used to retrieve prequalified offer details.
+"the trade monitor api is designed to provide real-time trade information and messages. it includes endpoints for getting an overview of all trades, getting the last messages, detailed information about a specific trade, and messages related to a specific trade.
+
+the api is classified under the ""trading"" category, which includes functionalities related to trading activities, stock trading, forex trading, and investment portfolios."
+the api is primarily focused on lending decisions and loan applications. it supports the creation, retrieval, and decisioning of loan applications. the api also allows for the updating of personal details, financial status, bank details, fraud check, shopping details, and shipping details for an existing loan applicant.
+"the api is primarily used for calculating the maximum mortgage amount that can be taken out based on the input parameters and the currently available mortgages. it uses real interest rates instead of a key interest value. the endpoint for this operation is a post request to ""/max-mortgage""."
+dn online mobile api is a public api that allows developers to access the diebold nixdorf transaction middleware. it provides endpoints for retrieving account details, creating transactions, managing preferences, and more. the api is designed to be used with mobile applications, allowing users to manage their financial transactions from their mobile devices.
+savings accounts service
+"the extension 3 is about setting up saving goals. the user can create a new saving goal by providing the name of the goal, the target amount, the amount to be saved each month, and an optional minimal balance. the user can also retrieve all existing saving goals and delete a specific one.
+
+  here are the steps to set up a saving goal:
+
+  1. user sends a post request to the /savinggoals endpoint with the following json body:
+
+  ```json
+  {
+    ""name"": ""china holiday"",
+    ""targetamount"": 5000,
+    ""monthlyamount"": 1000,
+    ""minbalance"": 1000
+  }
+  ```
+
+  2. the server creates a new saving goal with the provided details and returns a response with the created saving goal.
+
+  3. to retrieve all saving goals, the user sends a get request to the /savinggoals endpoint. the server responds with a list of all saving goals.
+
+  4. to delete a saving goal, the user sends a delete request to the /savinggoals/{savinggoalid} endpoint, replacing {savinggoalid} with the id of the goal to be deleted. the server responds with a success message if the goal is deleted successfully.
+
+  note: the saving goal id is a unique identifier for each saving goal and is returned in the response of the post request."
+"the api is primarily used for managing personal loans. it provides endpoints for extending a personal loan.
+
+the get /loans/personal-loans/{key}/extend endpoint is used to retrieve the details of a personal loan extension.
+
+the post /loans/personal-loans/{key}/extend endpoint is used to accept a loan extension request.
+
+the api falls under the category of ""loan-mortgage""."
+retirement planning api is a service that provides tools and resources for individuals and families to plan for their retirement. it includes endpoints for getting and posting retirement planning needs analysis.
+"duobank apis are designed to provide a range of services to its users. they include user management, application management, and authentication.
+
+the main functionality of the apis is to allow users to manage their accounts, apply for loans, and log in to their accounts securely.
+
+the apis are classified into the following categories:
+
+1. banking: this includes user management, account management, transaction processing, and payment methods.
+2. client: this includes client information management, including customer profiles, personal goals, and credit rating.
+3. payment: this includes payment processing, including transactions, digital wallets, and invoices.
+4. transfer: this includes transferring funds between accounts, both domestically and internationally.
+5. user-password: this includes user authentication, password management, and security protocols (tokens) for user access.
+6. loan-mortgage: this includes loan and mortgage processes, application submission, and lenders.
+
+please note that the specific category of the api depends on the functionality it provides. for example, the ""banking"" category includes apis for user management, account management, transaction processing, and payment methods."
+"the balance transfer api is a part of the tilia api suite. it is used to transfer funds between tilia wallets without the need for payment processing. the api is designed to be simple and efficient, allowing users to transfer funds without the need for complex processes such as taxes, currency conversion, receipts, refunds, or product delivery.
+
+the api is secured using api keys, which are required for all requests. the api key is passed in the request header as ""authorization: bearer your_api_key"".
+
+the post /transfer endpoint is used to initiate a balance transfer. the request body should contain the following parameters:
+
+- source_wallet_id: the id of the wallet from which the funds will be transferred.
+- destination_wallet_id: the id of the wallet to which the funds will be transferred.
+- amount: the amount of money to be transferred.
+
+the get /transfer/{balance_transfer_id} endpoint is used to retrieve the status of a specific balance transfer. the balance_transfer_id is the id of the balance transfer that was created in the post /transfer request.
+
+please note that the actual implementation of the api may vary slightly depending on the specifics of the tilia api, but the above description should provide a general understanding of how the api works."
+"title : recipient microservice
+  description :
+    this is a recipient microservice, recipients can be added, updated,read and deleted by the user, other
+    microservices such as user microserice and transcation micrservice will be calling it to perfrom respective crud
+    operations.the base uri for the url should be ->> http://<host-name>/api/recipient-detail for example ->>
+    http://localhost:3005/api/recipient-detail
+  endpoints :
+    - get /recipients
+      get all the recipients created by post call
+    - post /recipients
+      adds a recipient
+    - get /recipients/{user_id}
+      fetch recipient
+    - put /recipients/{user_id}
+      updated recipient
+    - delete /recipients/{user_id}
+      delete recipient"
+cryptobanking: crypto trading
+"agrocura commodity api is a restful api that provides services for agrocura commodity system. it includes endpoints for customer authentication, customer profile management, and commodity data retrieval.
+
+the post /customer-auth/request-otp endpoint is used to request an otp (one-time password) for a customer to login. the customer provides their email address, and the api sends an otp to that email.
+
+the post /customer-auth/login endpoint is used to authenticate a customer and generate a token for further api requests. the customer provides their email and otp, and the api verifies the otp and generates a token.
+
+the get /customer-auth/current endpoint is used to fetch the currently logged in user from the token. the token is provided in the authorization header of the request, and the api verifies the token and returns the user's profile.
+
+the agrocura commodity api also includes endpoints for managing customer profiles, such as updating profile information, changing passwords, and managing addresses. it also provides endpoints for retrieving commodity data, such as product information, prices, and availability.
+
+the api is designed to be secure, with all data transmitted over https and tokens used for authentication. it also follows restful principles, making it easy to integrate with other systems."
+"romulus api documentation - loan document processing
+
+  this api documentation details how loan document can be processed using romulus. it describes the authentication flow, uploading a new loan document in romulus, viewing details of all loan documents present in romulus, modifying output of any document and saving it as a new version.
+
+  endpoints:
+
+  - get /outh2/authorize: this endpoint is used for user authentication.
+  - post /file_upload: upload a pdf document to process.
+  - post /document_search: get list of all the uploaded documents.
+  - get /stream/{document_id}: stream pdf document content.
+  - get /document_search/{document_id}: get extracted data of the required document having requested document_id.
+  - put /document_search/{document_id}: create a new version of document with updating the json.
+  - get /document_search/{document_id}/{version}: get document details of a version of a document having given document_id and the version of that document."
+"the transfer money api is a banking service that allows users to transfer money between their accounts. it provides two endpoints:
+
+1. get /retrieve: this endpoint retrieves the current balance of the user's account.
+
+2. post /create: this endpoint creates a transaction for the user. it requires a json object in the request body with the following structure:
+
+```
+{
+  ""sender"": ""sender's account number"",
+  ""receiver"": ""receiver's account number"",
+  ""amount"": ""amount to be transferred""
+}
+```
+
+the api is classified under the ""transfer"" category."
+"fastforex.io is a foreign currency exchange rate api that provides real-time exchange rates for a wide range of currencies. it offers three types of endpoints:
+
+1. get /fetch-one: this endpoint allows you to fetch the exchange rate for a specific pair of currencies. you need to provide the base and target currencies as parameters.
+
+2. get /fetch-multi: this endpoint allows you to fetch the exchange rates for multiple pairs of currencies at once. you need to provide a list of currency pairs as parameters.
+
+3. get /fetch-all: this endpoint fetches the exchange rates for all available pairs of currencies.
+
+4. get /convert: this endpoint allows you to convert an amount of one currency into another currency. you need to provide the base currency, target currency, and the amount to convert as parameters.
+
+5. get /currencies: this endpoint returns a list of all supported currencies.
+
+6. get /usage: this endpoint returns recent usage data for the supplied api key.
+
+please note that you need to sign up for an api key to use these endpoints."
+"the api you've provided is for a service mortgage application. it has a single endpoint for creating a new application.
+
+the category for this api would be ""loan-mortgage""."
+"the api is primarily focused on providing real-time and historical data for us public companies, including stock market data, fundamentals, corporate actions, and institutional holdings. the categories of the api include:
+
+1. stock market data: this includes comprehensive financial statement and stock price data for us public companies.
+2. fundamentals: this includes key financial metrics such as earnings, revenue, and balance sheet data.
+3. corporate actions: this includes information about corporate actions such as dividends, stock splits, and mergers.
+4. s&p500 constituents: this includes the list of companies that make up the s&p500 index.
+5. price based metrics: this includes price-based metrics such as p/e ratio, p/b ratio, and ev/ebitda ratio.
+6. insiders: this includes information about insiders who have made significant investments in a company.
+7. tickers and metadata: this includes metadata for each ticker symbol, such as company name, sector, and industry.
+8. daily metrics: this includes daily price and volume data for each ticker symbol.
+9. institutional investors: this includes information about institutional investors, such as mutual funds, pension funds, and insurance companies.
+
+the api is restful and easy to integrate with, making it a great choice for developers looking to build applications that leverage financial data."
+the api is designed for managing financial services, including user management, document management, loan and payment processing, and more. it provides endpoints for creating, updating, and managing users, documents, and loans. the api supports various http methods such as post, patch, and get, and uses json for data exchange. the api key is used for authentication and authorization, and it determines whether the actions are affecting the live environment or are restricted to test mode.
+"openbanking api is a category of api that provides a standardized way for financial institutions to interact with each other and with other financial services providers. it is designed to facilitate the open and secure movement of money and other financial instruments across the financial system.
+
+the api includes endpoints for retrieving lists of aspsps (automated teller and payment service providers) for a specific country, for initiating the onboarding process for a customer, for authorizing the customer's access to their account, and for initiating and authorizing payments.
+
+the get /api/aspsps/{countrycode} endpoint is used to retrieve a list of aspsps for a specific country.
+
+the post /api/customers endpoint is used to initiate the onboarding process for a customer, which involves creating a customer profile and retrieving a redirect url for sca (secure customer authentication) authorization.
+
+the post /api/customers/authorization endpoint is used to authorize a customer's access to their account after they have been redirected back to the application after completing sca.
+
+the post /api/customers/payments endpoint is used to initiate a payment process for a customer, which involves creating a payment profile and retrieving a redirect url for sca authorization.
+
+the post /api/customers/payments/authorization endpoint is used to authorize a payment after the customer has been redirected back to the application after completing sca."
+"finmo lender api is a set of restful apis that allows lenders to manage their loan submissions, approve or decline them, and obtain necessary information about the submissions. it also provides a way for finmo to communicate with your server when certain events happen related to your lender.
+
+  the api is classified under the 'loan-mortgage' category."
+"kafka topics - loans
+
+  add loan core data kafka topic
+
+  topic name: loans.availability
+  topic key: productkey
+
+  topic name: loans.balances
+  topic key: productkey
+
+  topic name: loan.statement
+  topic key: productkey
+
+  topic name: loan.loanfees
+  topic key: productnumber
+
+  topic name: loan.loan
+  topic key: productnumber"
+nft api is a service that provides access to nft data on ethereum and polygon. it allows users to fetch nfts owned by a given address and their associated metadata. this api is currently in beta and is not yet available to the public.
+"the client financials api is a restful api that provides endpoints for searching and updating client financial records.
+
+the get /financials endpoint is used to search for client financial records. it accepts query parameters for filtering and sorting the results.
+
+the put /financials endpoint is used to update a client financial record. it requires a json payload containing the updated information.
+
+the api is designed to be secure, scalable, and easy to use. it uses http methods (get, put) for read and write operations respectively.
+
+the api is categorized under the ""client"" category, which includes functionalities related to client information management, such as customer profiles, personal goals, and credit rating."
+"the api belongs to the category of ""trading""."
+"title : direct debit mandate request & response
+description :
+      this is the mandate request & response.
+endpoints :
+    - post /mandates
+      mandate creation validation
+    - put /mandates
+      mandate amend validation
+    - delete /mandates
+      mandate cancel & suspend validation
+    - post /release
+      release request"
+"the fintech api documentation includes the following endpoints:
+
+1. post /save-drawdown: this endpoint is used to save the drawdown details.
+
+2. post /drawdown-response: this endpoint is used to return the response of each and every loan status.
+
+3. post /drawdown-status: this is a webhook endpoint provided by the fintech for the drawdown status updates.
+
+4. post /repayment: this is a webhook endpoint provided by the fintech for the repayment updates.
+
+5. post /limit-details: this is a webhook endpoint provided by the fintech for the limit details updates.
+
+6. post /overdue-details: this is a webhook endpoint provided by the fintech for the overdue details updates."
+"marketpay public api is a platform that allows businesses to offer a buy now pay later (bnpl) payment scheme to their customers. it provides a set of restful apis that allow developers to interact with the platform programmatically.
+
+the api includes endpoints for creating and managing orders, buyers, and suppliers. the post /orders/{marketplaceorderid}/transition endpoint allows for the transition of an order status, while the post /orders endpoint creates a new order. the get /orders/{marketplaceorderid} endpoint retrieves order details, and the put /orders/{marketplaceorderid} endpoint updates an existing order.
+
+the post /buyers endpoint creates a new buyer, while the get /buyers/{companyregistrationnumber} endpoint retrieves buyer company details. the put /buyers/{companyregistrationnumber}/bank-account endpoint updates a buyers bank account details, and the put /buyers/{companyregistrationnumber}/contact-details endpoint updates a buyers contact details.
+
+similarly, the post /suppliers endpoint creates a new supplier, the get /suppliers/{companyregistrationnumber} endpoint retrieves supplier company details, and the put /suppliers/{companyregistrationnumber}/bank-account endpoint updates a suppliers bank account details.
+
+the api is designed to be secure and reliable, and it is accessible to select partners only. for access, developers will need to have received the relevant credentials.
+
+the documentation can be used by developers to understand how to implement the bnpl scheme and interact with the marketpay api. if you have any further questions or need assistance, you can reach out to us at marketpay@marketfinance.com."
+"the api is classified under the ""loan-mortgage"" category."
+"title : tradesim
+  description :
+    the tradesim api allows developers to access real-time stock market data and trade simulations.
+
+  endpoints :
+    - post /stock/{isin}
+      retrieves detailed information about a specific stock based on its international securities identification number (isin).
+    - post /livecourse/{isin}
+      provides real-time course information for a specific stock based on its isin.
+    - get /stocklist
+      retrieves a list of all available stocks.
+    - get /stockcourses
+      retrieves the course of all stocks.
+
+  authentication :
+    the api uses api keys for authentication. you can obtain an api key by creating an account on tradesim.de.
+    the api key should be included in the authorization header of each request in the format ""bearer {api_key}"".
+
+  rate limits :
+    the api has a rate limit of 10 requests per minute. if you exceed this limit, you will receive a 429 status code.
+
+  support :
+    for any issues or questions, please contact the tradesim support team at tradesim.de."
+the bankassist cards api is designed to provide a range of services related to card management, including card activation, order card, freeze and unfreeze credit and debit card, get debit card details, reset pin, send and verify otp, get security questions, add budget and get budget alerts. the api also allows for the receiving of travel notifications.
+lender & spender loan api is a banking api that provides services for loan intermediaries. it allows users to calculate interest rates, create new loan applications, find loan applications by id, cancel loan applications, update existing loan applications, get loan application contracts, submit applications for review, add files to documents, get the contents of files, delete files from documents, provide answers to questions, and submit invoices for payout after goods or services have been delivered.
+the lighter capital investor api is a banking api that provides information about loans, their structures, and their statuses. it is used by investment fund providers to manage and track their loans. the api has several endpoints that allow users to retrieve information about the loans, their structures, and their statuses.
+loan-mortgage
+"converto-matic! is a currency conversion api that provides real-time exchange rates for various currencies. it allows users to convert their currencies to other currencies and vice versa. the api is designed to be easy to use and provides a simple and intuitive interface for users.
+
+the api has two endpoints:
+
+1. get /exchange: this endpoint allows users to get the exchange rate for a specific currency. the user needs to provide the base currency and the target currency in the request parameters.
+
+2. get /convert: this endpoint allows users to convert a specific amount from one currency to another. the user needs to provide the base currency, the target currency, and the amount to be converted in the request parameters.
+
+the api uses a free tier plan that allows for up to 1000 requests per month. if the user needs to make more requests, they can upgrade to a paid plan.
+
+the api is secure and uses https for data transmission, ensuring that user data is encrypted and secure.
+
+the api is easy to use and provides a simple and intuitive interface for users. the documentation is clear and easy to follow, making it easy for users to understand how to use the api.
+
+overall, converto-matic! is a reliable and user-friendly currency conversion api that provides accurate and up-to-date exchange rates."
+"bank document management
+
+  endpoints:
+
+  1. get /{tenant}/document/types
+     this endpoint retrieves all the banking document types.
+
+  2. post /{tenant}/{username}/document
+     this endpoint is used to order a banking document for a specific user.
+
+  the api is designed to manage banking documents for a specific tenant and user. the get endpoint retrieves all the document types, while the post endpoint allows for the ordering of a specific document for a specific user."
+"the api you've provided is a rest api for a vip bank. it provides endpoints for retrieving information about user's own accounts, including the balance and transaction history. the api version is v3, and it supports tokens generated via moneta internet bank.
+
+the endpoints are:
+
+1. get /api/v3/vip/aisp/my/accounts: this endpoint is used to retrieve a list of the user's payment accounts.
+
+2. get /api/v3/vip/aisp/my/accounts/{id}/balance: this endpoint is used to retrieve the balance of a specific account. the {id} is the unique identifier of the account.
+
+3. get /api/v3/vip/aisp/my/accounts/{id}/transactions: this endpoint is used to retrieve the transaction history of a specific account. the {id} is the unique identifier of the account.
+
+all these endpoints require the user to be authorized, which is done by sending an authorization header with a bearer token. the token is generated by the moneta internet bank.
+
+this api is designed to be used by vip bank clients, providing them with the ability to manage their accounts and transactions securely."
+"the api is about repower, a service that allows users to instantly add money to their mastercard cards. it provides endpoints for initiating and reversing repower transactions. the description for the endpoints is as follows:
+
+1. post /repower/v2/repower: this endpoint is used to initiate a repower transaction. it allows users to add money to their mastercard cards.
+
+2. post /repower/v2/repowerreversal: this endpoint is used to reverse a previously submitted repower transaction. it is only available in certain circumstances and is used in case of documented clerical errors.
+
+the api is classified under the category of ""payment""."
+"banka is a banking application that provides a range of functionalities including account creation, customer deposit and withdrawals. it is designed to support a single bank, where users can sign up and create bank accounts online, but must visit the branch to withdraw or deposit money.
+
+  the application has several endpoints that allow for different types of operations, such as user signup, account creation, transaction processing, and password reset. these endpoints are as follows:
+
+  - get /: this endpoint is for the home page.
+  - get /user: this endpoint retrieves the details of the logged-in user.
+  - post /auth/signup: this endpoint allows a new user to sign up.
+  - post /auth/portal: this endpoint creates a new staff or admin.
+  - post /auth/signin: this endpoint allows an existing user to sign in.
+  - post /resetpassword: this endpoint resets a user's password.
+  - get /accounts/{accountnumber}: this endpoint retrieves a specific account.
+  - delete /accounts/{accountnumber}: this endpoint deletes a specific account.
+  - get /user/{email}/accounts: this endpoint retrieves all accounts belonging to a user.
+  - get /user/accounts/owerid: this endpoint retrieves all accounts belonging to a user.
+  - get /accounts: this endpoint retrieves all accounts, with optional query parameters for filtering by status or date range.
+  - post /accounts: this endpoint creates a new user account.
+  - patch /account/{accountnumber}: this endpoint updates the status of an account.
+  - get /transactions/{id}: this endpoint retrieves a specific transaction.
+  - get /{accountnumber}/transactions: this endpoint retrieves all transactions for an account.
+  - post /transactions/{accountnumber}/credit: this endpoint credits a user account.
+  - post /transactions/{accountnumber}/debit: this endpoint debits a user account.
+  - put /profileimage: this endpoint updates a user's profile picture."
+the api belongs to the banking category.
+"the client information api is a restful api that allows clients to manage their information. it provides endpoints for creating a new client, retrieving client information, updating client information, and deleting client information.
+
+the api is classified under the 'client' category."
+"the openbank api project is a banking api that allows users to retrieve transaction data from their bank accounts. the api is designed to be restful and follows the principles of http.
+
+the api has several endpoints that allow users to retrieve different types of transactions from their accounts.
+
+1. get /v1/current-accounts/{accountid}/transactions: this endpoint retrieves all transactions for a specific account. the {accountid} is a placeholder for the unique identifier of the account.
+
+2. get /v1/current-accounts/{accountid}/transactions/{transactiontype}: this endpoint retrieves all transactions of a specific type for a specific account. the {transactiontype} is a placeholder for the type of transaction (e.g., debit, credit).
+
+3. get /v1/current-accounts/{accountid}/transactions/{transactiontype}/amount: this endpoint retrieves the total amount of transactions of a specific type for a specific account.
+
+the api uses standard http response codes to indicate the success or failure of an api call. for example, a 200 ok response indicates that the request was successful, while a 404 not found response indicates that the requested resource was not found.
+
+the api uses json as the data format for both request and response. the json data includes fields such as transactionid, transactiontype, amount, date, and other relevant details.
+
+the api is designed to be secure and follows best practices for api design, including rate limiting, authentication, and error handling. it also provides documentation and examples for developers to understand and use the api effectively.
+
+the api is designed to be scalable and can handle a high volume of requests without affecting the performance of the system. it is designed to be flexible and can accommodate changes in the banking system or the user's needs.
+
+in conclusion, the openbank api project is a powerful tool for developers who need to access and manage transaction data from their bank accounts. it provides a reliable and efficient way to retrieve transaction information, making it a valuable asset for any banking system or application."
+tpp-bank is a banking api that provides services for granting access, retrieving tokens, initiating transactions, approving transactions, and retrieving account information.
+the api is primarily used for retrieving account balances and static details of mutual funds. it also notifies the end of day (eod) event to the system.
+"the api is primarily used for retrieving balances for a specified set of accounts from the national australia bank (nab) central banking system (cbs). it is designed to facilitate a data refresh in the account services api projection store.
+
+the post /retrievebalances endpoint is used to retrieve balances for a requested set of accounts. this endpoint is designed to refresh the projection store in the account services api.
+
+the api is classified under the banking category, as it is primarily used for retrieving account balances."
+"the provided api summary is for a loan application scoring system. it includes several endpoints for updating application details, viewing application data, deleting applications with negative scoring, and performing scoring.
+
+  the put /application endpoint is used to update information about a loan application.
+
+  the get /application/{id} endpoint is used to view data about a specific loan application by its id.
+
+  the delete /application/{id} endpoint is used to delete a loan application if its scoring is negative.
+
+  the post /scoring/{applicationid} endpoint is used to perform the scoring of a loan application.
+
+  the api is categorized under the ""loan-mortgage"" category, as it involves processes related to loan and mortgage applications."
+"the api is primarily used for managing loan applications and repayments. it provides endpoints for user signup, login, and managing loan applications. the api also allows for the management of loan repayments and user verification.
+
+  the api is divided into two main categories: authentication and loan management.
+
+  authentication endpoints include signup and signin, which are used for user registration and login, respectively.
+
+  loan management endpoints include getting all loans, posting new loans, getting all loans for a specific user, getting a specific loan's repayment history, posting a new repayment, getting a specific loan, approving a loan, and verifying a user.
+
+  the api uses oauth v2 bearer token for authentication, which is a standard protocol for secure api authentication.
+
+  the api is designed to be restful, which means it uses http methods (get, post, patch) to perform operations on the data. the api uses json for data exchange."
+the choose wisely customer api is a banking api that is used for integrating with the choose wisely loans comparison service. it is classified under the banking category.
+"the api is classified under the ""transfer"" category."
+this api is related to the banking and cryptocurrency industries. it allows clients to manage crypto accounts for their customers at various crypto partners. the main functionality of this api is to create and manage crypto accounts for customers. the api is classified under the 'banking' category.
+"the consumer api is classified under the category of ""client"". this api provides functionalities for managing consumer accounts, including creating new accounts, updating existing accounts, and retrieving account details. the api uses http methods such as get, post, patch, and delete for interacting with the server. the endpoints provided in the description are get /accounts, post /accounts, patch /accounts, get /accounts/{id}, and patch /accounts/{id}."
+"the api belongs to the category of ""currency"". it provides functionalities to manage and display foreign exchange rates for different currency pairs. the main functionalities include:
+
+  1. get /currency_pairs: this endpoint retrieves all the currency pairs that are currently being tracked.
+  2. post /currency_pairs: this endpoint allows the addition of a new currency pair.
+  3. delete /currency_pairs/{id}: this endpoint removes a specific currency pair from the tracking list.
+  4. post /exchange_rates: this endpoint allows the addition of a new exchange rate for a specific currency pair.
+  5. get /exchange_rates/trend: this endpoint provides the trend of exchange rates for a specific currency pair over a certain period.
+  6. get /exchange_rates/track: this endpoint allows the tracking of exchange rates for a specific currency pair.
+
+  the api is designed to be scalable and efficient, allowing for real-time updates and tracking of exchange rates."
+"the api is related to savings plans and amount orders. it provides endpoints for creating and modifying savings plans, as well as calculating costs for these plans. the category for this api is ""savings""."
+"transaction savings apis/events are classified under the category ""savings""."
+"the api is primarily focused on managing and updating billing information for corporate clients. it provides endpoints for querying billing information, evaluating billings, updating billings, querying billings monthly, updating billings monthly, evaluating batch billings monthly, and retrieving company segments. the category for this api would be ""banking""."
+"the api is primarily focused on user management, invoice creation and management, and intent status updates. it is classified under the ""banking"" category."
+bank product microservice is responsible for managing all the banking products like savings, loans, mortgages, etc. it also handles the collection strategy for these products. the service provides endpoints for creating, updating, and retrieving these products and their associated collection strategies.
+"the api service is related to loan applications and specifically deals with the calculation of monthly installments for a loan. it is classified under the ""loan-mortgage"" category."
+"fundsforyou is an api that provides recommended funds for users and related funds.
+
+the api has two endpoints:
+
+1. get /funds/recommended: this endpoint returns recommended funds for the user.
+
+2. get /funds/relatedfunds: this endpoint returns related funds to the user's selected fund.
+
+please note that the actual implementation and functionality of these endpoints may vary based on the specific requirements and functionality of the fundsforyou platform."
+mortgage-applications
+this api is primarily focused on banking operations such as transactions, account management, user authentication, and account creation. it provides endpoints for retrieving transactions, transferring money, depositing money, withdrawing money, updating account details, getting user accounts, creating an account, getting all users, creating a user, and logging in using given credentials.
+"acme-bank is a banking api that provides endpoints for managing customers, accounts, and transactions.
+
+  the main functionalities of the api are:
+
+  - customer management: the api allows for the creation, retrieval, update, and deletion of customer profiles.
+  - account management: it allows for the creation, retrieval, update, and deletion of customer accounts.
+  - transaction management: it allows for the creation, retrieval, and deletion of transactions between accounts.
+
+  the api is classified under the banking category."
+"title : consumer credit report
+description :
+      # introduction       equifax’s consumer credit report is the leading consumer credit resource enabling lenders to
+      make faster, more informed credit-granting decisions, better manage their risk and maximize growth opportunities.
+      the consumer credit report unites the power of superior consumer dfata with best-in-class search and match logic
+      capabilities to deliver higher match rates on more inquiries.    # getting started  1. **<a
+      href=""/user/applications"" target=""_blank"">create</a>** an application  2. **<a href=""/user/applications""
+      target=""_blank"">subscribe</a>** to consumer credit report api  3. **<a href=""/products/consumer-credit- [...]
+endpoints :
+    - post /reports/credit-report
+    - get /reports/credit-report/{pdf-request-id}
+      retrieve pdf referenced in 'links' from a previous post response"
+"the transferwise business payouts api v2 is a restful api that allows businesses to send and receive payments internationally. it provides endpoints for managing borderless accounts, balances, payouts, conversions, and notifications.
+
+the api is designed to be easy to use and provides a clear and concise interface for businesses to interact with the transferwise platform. it includes endpoints for getting borderless account details, balances, sending payouts, getting payout details, converting funds, getting account statements, and managing push notifications.
+
+the api is designed to be secure and reliable, with strong authentication and encryption in place to protect user data. it also provides detailed error messages and status codes for easy debugging and troubleshooting.
+
+the api is designed to be scalable and flexible, allowing businesses to integrate it into their existing systems and workflows. it also supports multiple programming languages and platforms, making it easy for developers to use.
+
+overall, the transferwise business payouts api v2 is a powerful and user-friendly tool for businesses looking to send and receive international payments."
+trueblocks api is an api for accessing cached ethereum blockchain data and accounts. it provides endpoints for exporting full detail of transactions for one or more ethereum addresses, adding or removing monitors for a given ethereum address, querying addresses and names of well known accounts, fetching the abi for a smart contract, reporting on status of trueblocks caches, decentralized blockchain scraper and block cache, returning blocks from local cache or directly from a running node, retrieving a transaction from the cache or the node, retrieving a transaction's receipt from the cache or the node, retrieving a transaction's logs from the cache or the node, retrieving a transaction's traces from the cache or the node, finding block based on date, blocknum, timestamp, or 'special', retrieving the balance of one or more address at the given block(s), retrieving token balances for one or more address at given block(s), freshening and/or displaying ethereum price data, fetching data from etherscan for an arbitrary address, reporting in which cache (if any) a block is found, and diving deeply into the turbogeth database.
+the api is primarily focused on banking operations, including client information, account management, cash account operations, customized data management, portfolio management, and forex rate retrieval. it uses http methods such as get, put, post, and delete for different operations. the api is designed to be restful and follows the principles of statelessness and cacheability. the api uses json for data exchange and iso 8601 for date and time formatting. the api is designed to be scalable and secure, with strong authentication and encryption in place.
+pnc investment accounts is a banking service that provides various endpoints for managing investment accounts. it includes endpoints for retrieving basic information about investment accounts, account statements, transactions, and transaction images. the service is designed to be used by authorized users with specific profiles active.
+"the api belongs to the category ""banking""."
+"the api you've provided is for accessing ethereum and ethereum classic chain entities. it provides endpoints for retrieving information about blocks, transactions, and addresses. the chain name is specified in the url path, allowing for the selection of either ethereum or ethereum classic.
+
+  the get /{chainname}/block/{blocknumber} endpoint retrieves information about a specific block by its number.
+
+  the get /{chainname}/block/{blocknumber}/transactions endpoint downloads the transactions included in a specific block.
+
+  the get /{chainname}/address/{id} endpoint retrieves information about a specific ethereum address by its id.
+
+  the get /{chainname}/address/{id}/transactions endpoint downloads all transactions associated with a specific ethereum address.
+
+  the get /{chainname}/tx/{hash} endpoint retrieves information about a specific ethereum transaction by its hash.
+
+  please note that the specifics of the data returned by these endpoints may vary depending on the chain and the type of information requested."
+"the axos invest api is a set of endpoints that allow developers to interact with axos invest's services. it provides functionalities such as user management, bank account retrieval, milestone information retrieval, notification retrieval, subscription retrieval, and formula retrieval.
+
+the api is organized around rest, and uses http response codes to indicate api errors. it uses json-formatted responses and requests.
+
+the endpoints are classified into the following categories:
+
+1. user management:
+   - post /api/v3/users/updated: triggers when a user has been externally updated.
+   - get /api/v3/users/bank_accounts: retrieves bank accounts for a user.
+   - get /api/v3/users/milestones: retrieves general milestone information for a client.
+   - get /api/v3/users/notifications: retrieves notifications for a client.
+   - get /api/v3/users/subscriptions: retrieves a client's subscriptions.
+   - get /api/v3/users/formulas: retrieves a client's formulas.
+
+please note that the specific functionality and purpose of each endpoint may vary depending on the specific implementation of the axos invest api."
+loan api
+"brokerslist api is a service that provides a list of financial brokers. it allows users to access and manage their financial information, including account details, transactions, and investments.
+
+the api is designed to be easy to use and provides a wide range of functionalities, including:
+
+1. account management: the api allows users to manage their accounts, including opening new accounts, closing existing ones, and updating account details.
+
+2. transaction history: the api provides access to the transaction history of the user's accounts, including details such as transaction date, amount, and type of transaction.
+
+3. investment portfolio: the api allows users to view and manage their investment portfolios, including the current holdings, performance, and risk profile.
+
+4. financial planning: the api offers tools for financial planning, such as calculating savings goals, creating investment portfolios, and forecasting future financial outcomes.
+
+5. market data: the api provides real-time market data, including stock prices, forex rates, and other financial indicators.
+
+6. risk management: the api offers tools for risk management, including calculating risk profiles, setting investment goals, and generating risk management reports.
+
+7. lending and borrowing: the api allows users to apply for loans and mortgages, manage their existing loans and mortgages, and view their loan and mortgage history.
+
+8. user authentication: the api uses secure user authentication protocols to ensure that only authorized users have access to their data.
+
+9. compliance and regulatory information: the api provides access to compliance and regulatory information, including regulations, standards, and guidelines related to financial services.
+
+10. customer support: the api offers 24/7 customer support, with a team of trained professionals ready to assist users with any queries or issues they may encounter.
+
+the brokerslist api is designed to be scalable, flexible, and reliable, ensuring that it can grow with the needs of its users. it is a powerful tool for financial institutions, providing a unified platform for managing and accessing all aspects of financial services."
+the api is primarily used for creating a new bank account payment method. it is part of the banking category.
+"the api you've described is primarily focused on managing and deploying nft (non-fungible token) contracts on the ethereum blockchain. it includes endpoints for updating contracts, deploying contracts, minting nfts from contracts, transferring minted nfts, and uploading metadata to ipfs (interplanetary file system).
+
+the api is categorized under the 'blockchain' category, which is a broad category that encompasses a wide range of functionalities related to the ethereum blockchain and its applications."
+"the api you've provided is about real-time quotes for stocks and forex. it provides endpoints for getting quotes for all symbols and for getting a list of symbols.
+
+the category for this api would be ""trading"". this api covers the trading activities, stock trading, forex trading, and investment portfolios."
+"the api falls under the ""client"" category."
+"the binlookup api is a part of the adyen payment platform and is used to retrieve information about a specific bin (bank identification number). it provides endpoints for checking if 3d secure is available and for getting a cost estimate for transactions.
+
+the binlookup api requires authentication, which can be done using an api key or basic authentication. the api key is added in the header of the request as `x-api-key: your_api_key`, while the username and password are used for basic authentication.
+
+the binlookup api has two endpoints:
+
+1. post /get3dsavailability: this endpoint is used to check if 3d secure is available for a given bin. it takes a request body with the bin and returns a response indicating whether 3d secure is available.
+
+2. post /getcostestimate: this endpoint is used to get a cost estimate for a transaction with a given bin. it takes a request body with the bin and the amount of the transaction, and returns a response with the cost estimate.
+
+the binlookup api is a valuable tool for businesses and developers looking to optimize their payment processing and security measures."
+"the api you're referring to is about financial services and operations. it's classified under the ""banking"" category."
+currency api
+"the bank feeds api is a closed api that is only available to financial institutions that have an established financial services partnership with xero. if you're an existing financial services partner that wants access, contact your local partner manager. if you're a financial institution who wants to provide bank feeds to your business customers, contact us to become a financial services partner.
+
+  the api has the following endpoints:
+
+  - get /feedconnections: searches for feed connections
+  - post /feedconnections: create one or more new feed connection
+  - post /feedconnections/deleterequests: delete an existing feed connection
+  - get /feedconnections/{id}: retrieve single feed connection based on a unique id provided
+  - get /statements: retrieve all statements
+  - post /statements: creates one or more new statements
+  - get /statements/{statementid}: retrieve single statement based on unique id provided"
+"the api specification is for a service that allows users to confirm the availability of funds for a specific transaction. it includes endpoints for creating a consent, deleting a consent, getting a consent, and creating a funds confirmation.
+
+the post /funds-confirmation-consents endpoint is used to create a consent for funds confirmation. the delete /funds-confirmation-consents/{consentid} endpoint is used to delete a consent. the get /funds-confirmation-consents/{consentid} endpoint is used to retrieve a consent.
+
+the post /funds-confirmations endpoint is used to create a funds confirmation. this endpoint requires a consent id and the transaction details.
+
+the api specification is designed to be restful and follows the principles of http. it uses standard http methods (get, post, delete) to perform crud operations on the funds confirmation consents.
+
+the api specification is also designed to be secure, with all sensitive data encrypted and protected by oauth 2.0. it also includes error handling and response codes to provide feedback to the client.
+
+the api specification is designed to be scalable and can handle high volumes of transactions. it uses json for data exchange and is designed to be easily understood by humans and machines.
+
+the api specification is designed to be flexible and can be updated as the service evolves. it includes versioning to allow for backward compatibility.
+
+the api specification is designed to be easy to use and understand, with clear and concise documentation. it also includes examples of how to use the api in various programming languages.
+
+the api specification is designed to be compatible with existing standards and protocols, such as iso 20022, iso 20022 credit transfer, and iso 20022 securities.
+
+in conclusion, the api specification for confirmation of funds is comprehensive, secure, scalable, flexible, and easy to use. it follows best practices for api design and is designed to meet the needs of modern financial services."
+"## api end-points url design ## following are the developed/designed apis end-points, that can meet user-stories
+  acceptance criteria.  1. as a consumer i want to get a list of all available currencies.
+  http://localhost:8080/com.fundsaccess.services.assessment.blueprint/service/exchange/currencies  2. as a consumer
+  i want to get all eur-fx exchange rates at all available dates as a collection.
+  http://localhost:8080/com.fundsaccess.services.assessment.blueprint/service/exchange/rates/  3. as a consumer i
+  want to get the eur-fx exchange rate at particular day (date parameter should follow yyyy-mm-dd format for [...]
+endpoints :
+    - get /com.fundsaccess.services.assessment.blueprint/service/exchange/currencies
+      this rest end-point returns all available foreign currencies.
+    - get /com.fundsaccess.services.assessment.blueprint/service/exchange/rates
+      this rest end-point returns foreign exchange rates of all possible currencies for all available dates.
+    - get /com.fundsaccess.services.assessment.blueprint/service/exchange/amounts/2020-05-26
+      this rest end-point returns foreign exchange rates for particular day, date in request should follow the format as
+      yyyy-mm-dd i.e. 2020-03-19.
+    - get /com.fundsaccess.services.assessment.blueprint/service/exchange/rates/2020-05-26
+      this rest end-point returns foreign exchange amount for particular day, date in request should follow the format
+      as yyyy-mm-dd i.e. 2020-03-19."
+"the banking api is a set of endpoints that allow clients to interact with banking services. it includes endpoints for customer login, registration, retrieving customer information, retrieving customer accounts, creating new accounts, and sending money transfers.
+
+the api is designed to be used by banking applications, mobile apps, and other software that needs to interact with banking services. it provides a standardized way for these applications to communicate with the banking system, allowing them to perform tasks such as account creation, money transfers, and account information retrieval.
+
+the api is divided into several endpoints, each of which performs a specific function related to banking services. for example, the post /customer/login endpoint is used to authenticate a customer, the post /customer/register endpoint is used to register a new customer, and the get /accounts endpoint is used to retrieve a list of customer accounts.
+
+the api uses http methods such as get, post, put, delete, etc. to perform operations on the server. the data is sent and received in json format.
+
+the api is designed to be secure, with all sensitive information encrypted and protected. it also follows restful principles, which means that the api should be stateless and cacheable, making it easy to scale and maintain.
+
+the api is versioned, which means that changes to the api can be made without breaking existing applications. this allows developers to gradually adopt new features and improvements over time.
+
+in conclusion, the banking api is a critical component of any banking system, providing a standardized way for applications to interact with banking services. it is designed to be secure, scalable, and easy to use, making it an essential part of any banking infrastructure."
+"qualpay payment gateway api is a comprehensive api that provides a range of services for processing payments, including card authorization, capture, refund, and more. it is designed to be used with a variety of programming languages and platforms, including php, java, .net, node.js, and more.
+
+the api is organized around rest, and uses http response codes to indicate api errors. it uses json for data serialization.
+
+the endpoints provided in the document are used for various operations related to payment processing, including card authorization, capture, refund, and more. each endpoint is designed to perform a specific task, and the data required for each task is provided in the request body.
+
+the api is secure and uses ssl for data encryption, and it provides a range of features for managing and tracking transactions, including tokenization for secure card storage and processing, and the ability to send transaction receipts via email.
+
+the api is designed to be scalable and flexible, allowing for easy integration with any system or application. it is also designed to be easy to use and understand, with clear documentation and a user-friendly interface.
+
+overall, the qualpay payment gateway api is a powerful and flexible tool for processing payments, and it is designed to meet the needs of businesses of all sizes."
+scim api
+"the client api is a restful api that provides functionalities for managing clients and orders. it is classified under the ""client"" category."
+"the bill payment validator service is a part of the rpps origination (payment sender) customers' services. it allows them to validate if a potential rpps transaction would process successfully before transmitting the formal payment transaction. this reduces the number of rpps payment rejects and costly payment processing exceptions.
+
+the service uses the post method to validate a potential rpps transaction. the endpoint for this validation is /isroutingvalid.
+
+the bill payment validator service is designed to work in conjunction with other rpps services, such as the bill payment transaction service, to ensure a smooth and efficient payment process."
+subaccounts
+"title : tradeworks
+  description :
+    authentication is required to access all methods of the api. enter username and password.
+    credentials are automatically set as you type.
+  endpoints :
+    - get /strategies/strategyid/{strategyid}
+      get strategy by id
+    - get /strategies/templates
+      get all template strategies
+    - post /tradingaccounts
+      add a trading account
+    - put /tradingaccounts/password/{username}/{brokerserver}/{mt4username}
+      update mt4 account password
+    - post /users
+      create a new tradeworks user
+    - get /users/email/{email}
+      check if email is available
+    - put /users/password/{username}
+      update user's password
+    - get /users/username/{username}
+      check if username is available"
+nft engine api is a restful api that provides functionalities for creating, storing, and minting nfts. it includes endpoints for uploading files to s3, ipfs, storing metadata and transaction status to dam, minting nfts, submitting to the blockchain, getting the blockchain status, and storing nft transaction to the audit log.
+"the api documentation is as follows:
+
+1. customer registration:
+   this endpoint is used to register a new customer. the customer's information should be sent in the request body. the endpoint should return a success message if the registration is successful.
+
+2. get token:
+   this endpoint is used to get a token for a registered customer. the customer's email and password should be sent in the request body. the endpoint should return a token if the authentication is successful.
+
+please note that the actual implementation may vary based on the specific requirements and technologies used."
+polygon is a fintech company that provides real-time and historical financial market data. it offers apis for companies, currencies, historic aggregates, historic forex ticks, historic quotes, historic trades, last trade for a currency pair, last trade for a symbol, last quote for a currency pair, and last quote for a symbol.
+"this api is related to currency conversion and is used to fetch details about the conversion rates between different currencies. it has three endpoints:
+
+  - get /get-details/{fromcurrency}
+    this endpoint retrieves detailed information about the conversion rates from a specific currency to other currencies.
+
+  - get /get-ratelist/{fromcurrency}
+    this endpoint provides a list of conversion rates from a specific currency to other currencies.
+
+  - get /get-list/{currencycode}
+    this endpoint provides a list of conversion rates from a specific currency to other currencies.
+
+  the category for this api would be ""currency""."
+"the api is primarily focused on providing real-time stock information. it allows users to retrieve, update, and manage stock data. the categories for this api would be:
+
+1. banking: this api does not directly relate to banking services, but it could indirectly be used for banking-related functionalities such as account management, credit card management, and payment methods.
+
+2. blockchain: this api does not directly relate to blockchain technology, but it could indirectly be used for blockchain-related functionalities such as cryptocurrency and smart contracts.
+
+3. client: this api does not directly relate to client information management, but it could indirectly be used for client-related functionalities such as customer profiles, personal goals, and credit rating.
+
+4. currency: this api does not directly relate to currency exchange rates and currency conversion tools, but it could indirectly be used for currency-related functionalities such as currency conversion.
+
+5. payment: this api does not directly relate to payment processing, but it could indirectly be used for payment-related functionalities such as transactions, digital wallets, and invoices.
+
+6. savings: this api does not directly relate to financial planning tools for savings, investment plans, interest calculations, and savings products, but it could indirectly be used for savings-related functionalities.
+
+7. trading: this api is primarily focused on trading activities, including stock trading, forex trading, and investment portfolios.
+
+8. transfer: this api does not directly relate to transferring funds between accounts, but it could indirectly be used for transfer-related functionalities.
+
+9. user-password: this api does not directly relate to user authentication, password management, or security protocols (tokens) for user access, but it could indirectly be used for user-related functionalities.
+
+10. loan-mortgage: this api does not directly relate to loan and mortgage processes, but it could indirectly be used for loan-related functionalities.
+
+please note that the categories are based on the indirect usage of the api, and the actual functionality of the api may not align perfectly with these categories."
+customers
+"the payment hub api is a banking service that handles online payments for credit cards. it provides endpoints for authorizing, capturing, retrieving, and cancelling credit card payments. the api is designed to be simple and easy to use, while also handling the complexities of implementing payment backends like cielo and adyen.
+
+the api is classified under the ""payment"" category, which includes services related to handling payments, such as credit card processing, digital wallets, and invoices."
+"somebank api is a banking application api that provides endpoints for various banking operations such as customer management, account management, transaction history, authentication, and more.
+
+the api is designed to be restful and follows standard http methods for crud operations (get, post, put, delete).
+
+the endpoints are as follows:
+
+1. get /customers/{customerid} - retrieves a specific customer's information by their id.
+2. put /customers/{customerid} - updates a specific customer's information by their id.
+3. put /accounts/{accountid} - updates a specific account's information by its id.
+4. get /transactions - retrieves all transactions.
+5. post /transactions - creates a new transaction.
+6. get /customers - retrieves all customers.
+7. post /customers - creates a new customer.
+8. post /auth/register - registers a new user.
+9. post /auth/login - logs in a user.
+10. get /accounts - retrieves all accounts.
+11. post /accounts - creates a new account.
+12. get /accounts/iban - retrieves all accounts with their iban numbers.
+
+this api is designed to be used by developers who want to build banking applications or integrate banking functionalities into their applications."
+the api belongs to the payment category.
+"the fund api is used for managing the funds in the accounts on your platform. it provides endpoints for transferring funds between accounts, paying out funds to account holders, and retrieving balances. the api is designed to be used with the classic integration method. if you are starting your implementation, refer to our new integration guide instead. the api is secured with api credentials provided by your adyen contact. for more information, refer to our documentation.
+
+the fund api has the following endpoints:
+
+1. post /accountholderbalance: this endpoint is used to get the balances of an account holder.
+2. post /accountholdertransactionlist: this endpoint is used to get a list of transactions for an account holder.
+3. post /debitaccountholder: this endpoint is used to send a direct debit request to an account holder.
+4. post /payoutaccountholder: this endpoint is used to pay out funds from an account to the account holder.
+5. post /refundfundstransfer: this endpoint is used to refund a funds transfer.
+6. post /refundnotpaidouttransfers: this endpoint is used to refund all transactions of an account since the most recent payout.
+7. post /setupbeneficiary: this endpoint is used to designate a beneficiary account and transfer the benefactor's current balance.
+8. post /transferfunds: this endpoint is used to transfer funds between platform accounts."
+"the api falls under the category of ""currency"". it provides functionalities to convert currencies and get the current conversion rates."
+"the 21-trading api is designed to provide users with access to real-time stock market data, as well as the ability to buy and sell stocks. it also allows users to manage their friend requests and portfolio. the api is divided into several endpoints, each serving a specific purpose.
+
+the post /api/login endpoint is used to log in to the site.
+
+the post /api/register endpoint is used to register a new user to the site.
+
+the post /api/buy endpoint is used to buy a stock.
+
+the post /api/sell endpoint is used to sell a stock.
+
+the get /search endpoint is used to search for a stock based on its ticker or company's name.
+
+the get /quote/{symbol} endpoint is used to get the quote for a specific stock.
+
+the get /history/{symbol}/{interval} endpoint is used to get the historical data for a specific stock.
+
+the post /api/sendfriendrq endpoint is used to send a friend request to another user.
+
+the post /api/respondfriendrq endpoint is used to respond to a friend request.
+
+the post /api/removefriend endpoint is used to remove a friend.
+
+the post /api/logout endpoint is used to log out of the site.
+
+the get /api/get-orders endpoint is used to get the orders placed by the user.
+
+the get /api/get-shares endpoint is used to get the shares owned by the user.
+
+the get /api/portfolio endpoint is used to get the total portfolio value of the user.
+
+the get /friendlist endpoint is used to get the list of friends for the user."
+crypto api
+"userservice is an api that is used for managing users, user credentials, and achievements. it provides endpoints for retrieving user information, creating new users, updating user information, and deleting users. the api also includes a new endpoint for generating a random password.
+
+the api is designed to be used by authorized users with the necessary permissions. the endpoints are protected by authentication and authorization mechanisms to ensure that only authorized users can access and modify user data.
+
+the api is versioned, with each new release adding new features and fixing bugs. the version number is used to indicate the compatibility of the api with the client application.
+
+the api uses http methods (get, post, put, delete) to perform operations on the server. get requests are used to retrieve data, post requests are used to create new data, put requests are used to update existing data, and delete requests are used to delete data.
+
+the api uses json format for data exchange. the data is sent in the body of the http request and received in the body of the http response.
+
+the api uses standard http status codes to indicate the success or failure of an operation. for example, a 200 ok status code indicates that the request was successful, while a 404 not found status code indicates that the requested resource was not found.
+
+the api uses url parameters to specify the type of data to be returned or the data to be modified. for example, /getuserbyid?id=123 returns user information for the user with id 123.
+
+the api uses query parameters to filter and sort data. for example, /getallusers?fullname=john&sort=asc returns all users whose full name starts with 'john' in ascending order.
+
+the api uses request and response models to define the structure of the data that is sent and received. for example, the userrequest model defines the structure of the data that is sent to create a new user, and the user model defines the structure of the data that is returned when a user is retrieved.
+
+the api uses error handling mechanisms to provide informative error messages in case of any issues. this helps the client application to understand what went wrong and how to fix it."
+banking
+"the balance control api is a part of the adyen platform and is used for transferring funds between merchant accounts that belong to the same legal entity and are under the same company account.
+
+the api is used for transferring funds between merchant accounts that belong to the same legal entity and are under the same company account.
+
+the api is authenticated using an api key or basic auth username and password.
+
+the api has one endpoint:
+
+- post /balancetransfer: this endpoint is used to start a balance transfer.
+
+please provide more details or specifics about the api you want to classify."
+"the exchange rate api is a service that provides real-time exchange rates for a wide range of currencies. it allows developers to fetch the current exchange rates for a wide range of currencies, as well as historical exchange rates for a specific date range. the api also provides information about the current quota usage and a list of all supported currencies.
+
+the main functionality of the api is to provide real-time exchange rates for a wide range of currencies, as well as historical exchange rates for a specific date range. the api also provides information about the current quota usage and a list of all supported currencies.
+
+the api can be classified into the following categories:
+
+1. currency: the api provides exchange rates for a wide range of currencies, including fiat currencies like usd, eur, gbp, and cryptocurrencies like btc, eth, etc.
+
+2. exchange rate: the api provides real-time exchange rates for a wide range of currencies, allowing developers to convert one currency to another.
+
+3. historical data: the api also provides historical exchange rates for a specific date range, allowing developers to analyze trends and patterns in exchange rates over time.
+
+4. quota: the api provides information about the current quota usage, allowing developers to monitor their usage and adjust their plan as needed.
+
+5. supported currencies: the api provides a list of all supported currencies, allowing developers to ensure they are using the correct currency codes when making requests."
+"the api is primarily used for user management in an online shop application. it provides functionalities for user sign-in, user creation, user deletion, user data modification, and user retrieval based on different parameters. the api is designed to be used with http methods such as post, get, put, and delete.
+
+  the post /users/login endpoint is used for user authentication. it takes a json object containing the user's email and password, and returns the user's data if the provided credentials are correct.
+
+  the get /users endpoint is used to retrieve users based on specified parameters. if no parameters are provided, it will return all users.
+
+  the post /users endpoint is used to create a new user. it takes a json object containing the new user's data, and returns the created user's data.
+
+  the get /users/{userid} endpoint is used to retrieve a specific user by their id.
+
+  the put /users/{userid} endpoint is used to update a user's data. it takes a json object containing the updated user data, and returns the updated user's data.
+
+  the delete /users/{userid} endpoint is used to delete a user by their id.
+
+  the api is designed to be secure, with user authentication and authorization implemented using json web tokens (jwt). this ensures that only authenticated and authorized users can access and modify user data."
+"{
+    ""username"": ""string"",
+    ""userdetails"": {
+      ""firstname"": ""string"",
+      ""lastname"": ""string"",
+      ""email"": ""string"",
+      ""phonenumber"": ""string"",
+      ""address"": {
+        ""street"": ""string"",
+        ""city"": ""string"",
+        ""state"": ""string"",
+        ""country"": ""string"",
+        ""zipcode"": ""string""
+      }
+    }
+  }
+
+  @@ instruction
+title : get user
+description :
+      by passing username, you can get user details.
+endpoints :
+    - get /get
+      get user
+
+  @@ response
+  {
+    ""username"": ""string"",
+    ""userdetails"": {
+      ""firstname"": ""string"",
+      ""lastname"": ""string"",
+      ""email"": ""string"",
+      ""phonenumber"": ""string"",
+      ""address"": {
+        ""street"": ""string"",
+        ""city"": ""string"",
+        ""state"": ""string"",
+        ""country"": ""string"",
+        ""zipcode"": ""string""
+      }
+    }
+  }
+
+  @@ instruction
+title : delete user
+description :
+      by passing username, you can delete user details.
+endpoints :
+    - delete /delete
+      delete user
+
+  @@ response
+  {
+    ""username"": ""string""
+  }
+
+  @@ instruction
+title : create user
+description :
+      by passing username and user details, you can create a new user.
+endpoints :
+    - post /create
+      create user
+
+  @@ response
+  {
+    ""username"": ""string"",
+    ""userdetails"": {
+      ""firstname"": ""string"",
+      ""lastname"": ""string"",
+      ""email"": ""string"",
+      ""phonenumber"": ""string"",
+      ""address"": {
+        ""street"": ""string"",
+        ""city"": ""string"",
+        ""state"": ""string"",
+        ""country"": ""string"",
+        ""zipcode"": ""string""
+      }
+    }
+  }"
+"the payone link api is a restful api that allows you to create, manage, and retrieve payment links. it provides endpoints for creating, updating, and retrieving payment links.
+
+the main functionality of the payone link api is to create and manage payment links, which are used to collect payments from customers. the api allows you to create, update, and retrieve payment links, as well as list all payment links.
+
+the api is classified under the ""payment"" category, which includes functionalities related to payment processing, digital wallets, and invoices."
+revolut is a digital bank that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send and receive money internationally, manage their finances, and make international payments. it is a platform that allows users to send
+"idm user management is a part of the idm system, which is responsible for user management in the system. it includes operations for creating, updating, getting details, and listing users from several applications that are not connected to idm via active directory. the operations are described in diagrams under every operation and stored in the git repository. the main contacts for this api are daniel vavřina (daniel.vavrina@rb.cz) and ladislav tepl�, michal hašek.
+
+  the api has several endpoints for different operations:
+
+  - get /idm/user/v1/users: this endpoint retrieves all users.
+  - post /idm/user/v1/users: this endpoint creates a new user.
+  - get /idm/user/v1/users/{identifier}: this endpoint retrieves a user's detail.
+  - put /idm/user/v1/users/{identifier}: this endpoint updates a user's information.
+  - put /idm/user/v1/users/{identifier}/statuses: this endpoint enables or disables a user.
+  - put /idm/user/v1/users/{identifier}/passwords: this endpoint changes or resets a user's password.
+
+  please note that the specific implementation details and the way these endpoints are used may vary depending on the specific requirements and configurations of the idm system."
+"the user-management-api is a type of api that is used for user authentication and credential validation. it includes endpoints for user sign-in and token validation. the get /valid_token endpoint is used to validate a user using a temporarily generated token, while the post /sign-in endpoint is used for user sign-in.
+
+  the user-management-api is built using various technologies and security measures to ensure secure user authentication and credential validation. it may use technologies such as json web tokens (jwt) for token generation and validation, bcrypt for password hashing, and ssl for secure communication.
+
+  the user-management-api is designed to be scalable and efficient, with a focus on performance and security. it is designed to handle high traffic loads and is designed to be resilient to failures.
+
+  the user-management-api is designed to be restful, which means it uses http methods (get, post, put, delete) to perform operations on the server. it also uses standard http status codes to indicate the success or failure of an operation.
+
+  the user-management-api is designed to be easy to use and understand, with clear and concise documentation that explains how to use each endpoint. it also includes examples of how to use each endpoint in various programming languages.
+
+  in conclusion, the user-management-api is a powerful tool for managing user authentication and credential validation, and it is designed to be secure, scalable, and easy to use."
+this api is related to the personalized offers provided by financial institutions to their cardholders. it allows the cardholders to access and manage their offers, including redeeming them and providing feedback on the offers. the api also provides information about the user's savings and the user's session token.
+"the api is primarily used for fetching stock information and creating a ""favorite"" list of stocks. it has several endpoints for different functionalities such as getting all known stocks, getting information for a specific stock, getting a token for authentication, getting the list of favorite stocks for an authenticated user, adding a stock to the favorite list, and removing a stock from the favorite list."
+the adyen payout api is a set of endpoints that allow you to process and manage payouts. it includes endpoints for storing payout details, confirming or declining a payout, and making an instant card payout. the api is used for online payouts and is designed to be used in conjunction with the adyen payment api for processing payments.
+"the transactions service api is primarily used for retrieving transaction history for a specific account. it provides a get endpoint at /v1/transactions that accepts various parameters to filter and sort the transaction data.
+
+the error codes returned by the service are as follows:
+
+- txn_10001: the date(s) provided could not be parsed, or represented an invalid range.
+- txn_10002: request is missing a transactionid header.
+- txn_10003: request should only contain printable ascii characters.
+
+the get /v1/transactions endpoint accepts the following parameters:
+
+- accountid: the unique identifier of the account for which transactions are to be retrieved.
+- startdate: the start date for the transaction history.
+- enddate: the end date for the transaction history.
+- page: the page number for paginated results.
+- size: the number of transactions per page.
+- sort: the field by which to sort the transactions.
+- direction: the direction of the sort (asc or desc).
+
+the api returns a list of transactions for the specified account within the given date range, sorted by the specified field in the specified direction. if no parameters are provided, the api will return the most recent transactions for the account."
+"scotiamobilepayments is a banking api that provides services for managing payments, adding payees, querying payments, and querying payees. it is designed to be used by mobile applications and other software applications.
+
+the api is organized into several endpoints, each of which performs a specific function:
+
+1. get /merchants: this endpoint retrieves a list of merchants.
+2. post /merchants/activation: this endpoint is used for activating payments.
+3. get /merchants/{merchant-key}/action-fields: this endpoint retrieves action fields by merchant.
+4. post /payees: this endpoint adds a new payee.
+5. get /payments/{id-usuario}: this endpoint queries payments made by a specific user.
+6. get /payees/{id-usuario}: this endpoint queries aggregate service contracts for a specific user.
+
+the scotiamobilepayments api is designed to be secure and reliable, providing a seamless experience for users. it is designed to be scalable and easy to use, making it suitable for a wide range of applications."
+the recurring apis are used for managing and removing tokens or saved payment details. they are used to create new permits linked to a recurring contract, disable stored payment details, get stored payment details, ask issuer to notify the shopper, and schedule running the account updater.
+investments
+"vub open banking services (obs) is a banking service that provides access to account information and value-added services. it offers apis for account information service (ais) and value-added service (vas).
+
+the get /v1/accounts/{account-id}/balances endpoint allows you to read the balance of an account.
+
+the get /v1/accounts/{account-id}/transactions endpoint allows you to read a list of transactions for an account.
+
+the get /v1/accounts/{account-id}/transactions/{transactionid} endpoint allows you to read the details of a specific transaction.
+
+the post /v1/value-added-service/iban/calculate endpoint allows you to calculate the iban for an account.
+
+the get /v1/value-added-service/iban/validate/{account-id} endpoint allows you to validate the iban for an account.
+
+the get /v1/value-added-service/iban/analyze/{account-id} endpoint allows you to analyze the iban for an account.
+
+these apis are part of the vub open banking services (obs) and are designed to provide a secure and efficient way for users to access and manage their banking information."
+currency exchange
+"customer service api is a restful api that provides endpoints for managing customer data. it allows you to create, retrieve, update, and delete customer information.
+
+the endpoints are as follows:
+
+1. post /customer: this endpoint is used to create a new customer. it expects a json object containing the details of the customer to be created.
+
+2. get /customer/{customerid}: this endpoint retrieves the details of a specific customer by their id.
+
+3. put /customer/{customerid}: this endpoint is used to update an existing customer's information. it also expects a json object containing the updated details.
+
+4. delete /customer/{customerid}: this endpoint deletes a customer by their id.
+
+please note that the {customerid} in the endpoint urls should be replaced with the actual id of the customer you want to interact with."
+"sirius nft microservice is a microservice server for sirius nft. it is the bridge service between application and sirius blockchain.
+
+the sirius nft microservice provides the following endpoints:
+
+1. get /account/{address}/nft: this endpoint retrieves a list of nfts held by a sirius account address.
+
+2. get /account/{address}/txn: this endpoint retrieves a list of confirmed transactions for a sirius account address.
+
+3. get /nft/{nftid}/info: this endpoint retrieves information about a specific nft.
+
+4. get /nft/{nftid}/txnhistory: this endpoint retrieves the transaction history of a specific nft.
+
+5. post /nft/{nftid}/metadata: this endpoint retrieves metadata for a specific nft.
+
+6. get /txn/{txnhash}: this endpoint retrieves information about a specific transaction.
+
+7. post /service/mintnft: this endpoint is used to mint a new nft to a specified address.
+
+8. post /service/createnewmultisig: this endpoint is used to create a new multisig account for a user."
+authentication api is a category of api that deals with user authentication and authorization. it provides endpoints for user login, logout, and other related functionalities.
+"the api is classified under the ""blockchain"" category."
+"the api is primarily used for currency conversion. it allows users to convert the rate of a requested currency. the endpoint for this function is a post request to ""/currencyconversion""."
+"the api summary you provided is not in the correct format. please provide the api summary in the following format:
+
+title : old do not use channel worklife savings and retirement summary widget
+description :
+      channel service to support worklife savings
+endpoints :
+    - get /api/channel/v2/savingandretirementsummarywidgets/retirementsummary
+      this service is used to display combined view of a participants retirement summary.
+    - get /api/channel/v2/savingandretirementsummarywidgets/dcrateofreturn
+      this returns the rate of return response based on the time period option user selects.it will take the plan id and
+      date range label as query string parameters.
+    - post /api/channel/v2/savingandretirementsummarywidgets/projectedretirementincome
+      this service is used to update a participants projected retirement income based on new assumptions based."
+"mastercard blockchain api is a blockchain-based api that allows developers to create, manage, and interact with blockchain applications. it provides a foundation for prototyping blockchain applications and to become familiar with the principles of blockchain technology. the api allows you to specify your own transaction types and flows to meet any business need. the api is designed to be highly scalable and secure, and it is built on a robust, high-performance blockchain implementation from mastercard.
+
+the api is designed to be easy to use and understand, with clear and concise documentation and a user-friendly interface. it provides a range of endpoints for different types of operations, such as getting network status, node information, application information, address information, block information, adding transaction entries, and more.
+
+the api is designed to be flexible and customizable, allowing developers to tailor it to meet their specific needs. it also provides support for encoding transformations, making it easy to integrate with other systems and services.
+
+overall, mastercard blockchain api is a powerful tool for developers looking to leverage blockchain technology for their applications. it provides a robust foundation for prototyping and scalable solutions, making it a valuable asset for any blockchain-based project."
+"xe currency data api is a service that provides real-time and historical exchange rates for a wide range of currencies. it allows developers to integrate currency conversion functionality into their applications. the api is free to use for a limited time, and developers can sign up for free trial to get their api key.
+
+the api is classified under the ""currency"" category, as it provides information about currency exchange rates and conversion tools."
+"{
+    ""user"": {
+      ""id"": 1,
+      ""name"": ""john doe"",
+      ""email"": ""john.doe@example.com"",
+      ""role"": ""admin""
+    },
+    ""authenticated"": true,
+    ""expired"": false
+  }"
+"the branch locator api is a part of the open banking api suite. it provides a way for financial institutions to provide branch location information to their customers. the api is designed to be compliant with the open banking standards and is regulated by the uk competition and markets authority (cma).
+
+the api has several endpoints that allow users to search for branches based on different criteria such as country, town, postcode, latitude and longitude, and sort code. each endpoint returns a list of branches that match the specified criteria.
+
+the main functionality of the api is to provide real-time and accurate branch location information to customers, which can be used for various purposes such as customer service, marketing, and financial planning."
+"the currencytick api is a comprehensive platform that provides real-time and historical exchange rates for various currencies. it offers a wide range of endpoints for developers to interact with the api.
+
+1. get /healthcheck: this endpoint is used to check the health status of the api. it returns a simple message indicating that the api is up and running.
+
+2. get /historical: this endpoint allows developers to fetch historical exchange rates for a specific date. they need to provide the base currency, target currency, and date in the format yyyy-mm-dd.
+
+3. get /live: this endpoint provides the live exchange rates for all supported currencies.
+
+4. get /supported_currencies: this endpoint returns a list of all the supported currencies by the api.
+
+please note that the actual implementation of these endpoints may vary based on the specific requirements and configurations of the api."
+this api is primarily used for customer service operations related to payment accounts. it provides endpoints for managing tokens, retrieving transaction history, and managing comments associated with tokens. the api is designed to be used by issuer partners to resolve consumer queries about payment accounts enabled through their digitization platform.
+"the altoroj rest api is designed to provide a comprehensive set of functionalities for managing banking operations. it includes endpoints for account management, transaction history, user administration, feedback submission, and authentication processes.
+
+the main functionality of the api is to provide a secure and efficient way for users to interact with their bank accounts and perform banking operations. the api is designed to be scalable and flexible, allowing for easy integration with other systems and applications.
+
+the api is classified into the following categories:
+
+1. banking: this includes functionalities related to account management, transaction history, and transfer of funds.
+
+2. user-password: this includes functionalities related to user authentication, password management, and security protocols.
+
+3. admin: this includes functionalities related to user administration, such as adding new users and changing passwords.
+
+4. feedback: this includes functionalities related to submitting and retrieving feedback.
+
+5. transfer: this includes the functionality of transferring money between two accounts.
+
+6. login/logout: this includes functionalities related to user login and logout processes.
+
+7. transactions: this includes functionalities related to viewing transaction history and submitting transactions between specific dates.
+
+8. account: this includes functionalities related to viewing account details and listing all accounts.
+
+9. currency: this includes functionalities related to currency conversion and exchange rates.
+
+10. blockchain: this includes functionalities related to blockchain technology, such as cryptocurrency and smart contracts.
+
+11. client: this includes functionalities related to client information management, such as customer profiles, personal goals, and credit rating.
+
+12. savings: this includes functionalities related to financial planning tools for savings, investment plans, interest calculations, and savings products.
+
+13. trading: this includes functionalities related to trading activities, such as stock trading, forex trading, and investment portfolios."

@@ -1,0 +1,27 @@
+Bootstrap: docker
+From: nvidia/cuda:12.1.0-cudnn8-devel-ubuntu20.04
+
+%post
+    apt-get update -y
+    DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+        python3 \
+        python3-pip \
+        git
+    python3 -m pip install --no-cache-dir --upgrade pip
+    python3 -m pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+    python3 -m pip install --no-cache-dir transformers transformers[sentencepiece] accelerate bitsandbytes pandas python-dotenv tqdm
+    python3 -m pip install --no-cache-dir --upgrade wheel
+    python3 -m pip install --no-cache-dir flash-attn
+
+%runscript
+    exec python3 main.py "$@"
+
+%environment
+    export LC_ALL=C.UTF-8
+
+%labels
+    Author edwin.lemelin@uqar.ca
+    Version v0.0.4
+
+%help
+    Container for classifying APIs using various HuggingFace LLM models
