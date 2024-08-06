@@ -6,7 +6,7 @@ This directory shows the raw data obtained following our experiments.
 
 - `{model}/`: Each base folder contains the model's results.
 - `{model}/run{i}/`: Each `model` folder stores the results of 5 classification runs.
-- `{model}/run{i}/v{j}.csv`: Each `run` folder contains 6 `.csv` files of the LLM response for every prompt and every
+- `{model}/run{i}/v{j}.csv`: Each `run` folder contains 6 **semicolon separated** `.csv` files of the LLM response for every prompt and every
   document of the dataset. Here is the filename-prompt correspondence we used:
     - `v1`: *Ins* prompt.
     - `v2`: *CD+Ins* prompt.
