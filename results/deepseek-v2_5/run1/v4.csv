@@ -1,0 +1,986 @@
+deepseek-chat
+"<thinking>
+the api provides endpoints to retrieve dollar prices and customer account information, indicating it is related to currency and account management.
+</thinking>
+<category>
+currency
+</category>"
+"<thinking>
+the api is focused on managing client applications for oauth 2.0 and openid connect, which aligns with client management functionalities. the operations involve registering, retrieving, and deleting client applications.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api provides functionalities related to managing bank accounts, including creating, updating, and retrieving account information, as well as performing transactions like deposits, withdrawals, and transfers. this aligns with the operations typically associated with banking systems.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes a service that allows for the refunding of savings account balances for customers. the main functionality is related to managing and processing refunds for savings accounts.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api summary describes crud operations for a ""client"" domain, which suggests it is focused on managing client data. this aligns with the functionality of a client management system.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api summary describes endpoints for making payments, managing payment transactions, handling profiles, and tokenizing credit cards. the primary functionality is related to payment processing and management.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api's main functionality is to provide the latest currency exchange rates based on a specified base currency. this aligns with the purpose of currency conversion and exchange rate information.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api is focused on managing and interacting with payment methods, including their creation, retrieval, update, and deletion. it also handles notifications for various events related to payment methods.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api focuses on managing personal investment plans and related functionalities, including setting up investment plans, retrieving investment themes, and handling securities accounts. this aligns with the trading category as it deals with investment and securities management.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the bank feeds api facilitates the connection and synchronization of bank accounts between a source application and supported accounting platforms. this functionality is primarily related to financial transactions and account management.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes a set of endpoints that facilitate the initiation, settlement, and modification of payments, including card payments. the primary functionality is related to payment processing.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes functionalities related to transferring funds between wallets and bank accounts, which is a core feature of payment systems. the presence of error codes and specific endpoints for fund transfers further supports this classification.
+</thinking>
+<category>
+payment
+</category>"
+"<thinking>
+the locations api provides detailed information about atm and merchant locations, which is directly related to banking services. it helps in finding and displaying atm and merchant locations, which is crucial for banking and payment services.
+</thinking>
+<category>
+banking
+</category>"
+"<thinking>
+the api summary describes functionality related to transferring funds between accounts, which is a core feature of payment systems. the endpoints provided support various transfer scenarios.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api is designed to retrieve authenticated user's account profile information, primarily focusing on identity management. it allows users to log in using ebay, which implies handling user authentication and profile data.
+</thinking>
+
+<category>user-password</category>"
+"<thinking>
+the api focuses on providing personalized savings and investment advice based on a heuristic algorithm, which suggests optimal allocation of savings into various investment and savings options. this aligns with the purpose of managing savings and investments.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api focuses on managing connections and interactions with external banks, indicating a core functionality related to banking operations. the endpoints cover creating, updating, deleting, and managing connections with external banks.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is designed to manage and retrieve trading positions, including starting jobs, checking job status, and fetching open orders and account positions. this functionality is directly related to trading activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on user authentication and token validation, which are critical functions for securing user access and ensuring authorized interactions with other apis.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the firstclientregistry api primarily provides access to various data points related to client storefronts, such as products, merchants, outlets, and customers. this functionality is typical for client-facing applications.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api's main functionality is to analyze passwords and calculate their entropy, which is a measure of password strength. this aligns with user-password management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is designed to retrieve information about members' investments, including summaries and transaction histories. this functionality is closely related to tracking and managing investment activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on managing payment orders, including creating, canceling, and retrieving details and statuses of these orders. this functionality is directly related to payment processing.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api provides functionalities related to brokerage accounts, order management, market data, and oauth token handling. it is primarily focused on trading activities and account management for brokerage services.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on managing customer information, specifically retrieving customer details by phone number and loyalty type. this aligns with user management and customer relationship management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api provides functionalities related to user management (disable, enable, login, register) and server information retrieval (summaries, servers). the primary purpose is to handle user authentication and account management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api's main functionality is to provide conversion rates between two currencies based on brand and date. this aligns with the purpose of currency conversion services.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the license manager api primarily deals with user management, including creating users, modifying their details, and managing roles. this functionality is not specific to financial services but rather focuses on user and role management within a system.
+</thinking>
+
+<category>user-password</category>"
+"<thinking>
+the ebay finances api is focused on retrieving seller payouts and monetary transaction details, which directly relates to financial transactions and transfers.
+this aligns with the ""transfer"" category as it deals with the movement of funds.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api is focused on managing and registering transfers, including checking for duplicate transactions and updating transfer statuses. it also handles linking external bank accounts for redirection of transfers.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api provides functionalities related to stocks and commodities, including retrieving lists of sectors, top stocks, and prices. this aligns with the trading category as it deals with financial instruments and market data.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the koomalooma partner api is focused on managing loyalty programs for mobile and web companies, allowing merchants to issue points for customer actions and track rewards. this functionality is related to customer engagement and loyalty management.
+</thinking>
+<category>
+client
+</category>"
+"<thinking>
+the adyen data protection api is designed to handle subject erasure requests as per gdpr, which involves deleting shopper's data. this functionality is primarily related to data protection and user privacy.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api summary describes a service focused on initiating and managing payments, including cross-border and domestic transfers, as well as retrieving payment statuses. this aligns with the functionality of a payment processing system.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api provides endpoints to retrieve bitcoin exchange rates and convert values from other currencies to bitcoin. this functionality is primarily related to currency exchange and bitcoin.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api provides functionalities related to trading, including authentication, account management, trade history retrieval, and trade execution. the primary purpose is to facilitate trading activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on managing customer data through restful operations, which typically involves user management. given the endpoints for reading, adding, updating, and deleting customer data, it aligns with user management functionalities.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is focused on providing savings-related information, specifically returning a list of savings products. this aligns with the purpose of managing and accessing savings accounts or products.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api summary describes endpoints related to payment processing, specifically retrieving payment options. this aligns with the functionality of handling payment transactions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes a service for performing crud operations on stock resources, which indicates it is related to managing and trading stocks.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the gov.uk pay api primarily deals with payment operations, including creating, searching, canceling, capturing, and refunding payments. this functionality is characteristic of payment processing systems.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api focuses on managing and executing transfer processes, which aligns with financial transactions. the endpoints involve creating, approving, and executing transfers.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api focuses on managing and retrieving information related to interest rates, investment managers, and third parties, which are all central to investment management. the endpoints cover listing, fetching, editing, and deleting records, indicating a comprehensive management system for investment-related data.
+</thinking>
+<category>
+trading
+</category>"
+"<thinking>
+the api is focused on managing client details, providing endpoints for retrieving, updating, adding, and deleting client information. this functionality is primarily related to client management.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api provides functionalities related to validating ibans and retrieving account balances, which are typical operations in banking and financial services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api provides functionalities related to currency exchange rates, including conversion, listing of country and digital currencies, and retrieving historical rates. this aligns with the purpose of currency-related services.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary describes functionalities related to managing and removing tokens or saved payment details, which are typically used in recurring payment scenarios. the endpoints provided are focused on enabling, disabling, and managing recurring payments.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the main functionality of the authentiq connect api is to provide oauth 2.0 and openid connect authentication services, allowing users to authenticate and manage client registrations. this aligns with user authentication and management, which is closely related to user-password security.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api provides functionalities related to currency exchange, including listing available currencies, retrieving exchange rates, converting amounts between currencies, and listing external sources. the primary purpose is to facilitate currency-related operations.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api provides information about merchants, including their names, addresses, and category codes. this functionality is closely related to payment processing and merchant identification.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes a service that facilitates the transfer of funds between accounts, either within the same financial institution or between different institutions. this functionality is closely related to financial transactions.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api summary indicates that the main functionality is related to password validation and generation. this directly aligns with user and password management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api primarily focuses on user authentication and password management, including functionalities like registering users, handling password recovery, and validating tokens.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is focused on retrieving user information, which is a common functionality for managing user data in various applications. given the context, it is likely related to user management rather than financial or trading operations.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api summary describes endpoints for managing a bitcoin wallet, including listing and sending transactions on both the main bitcoin network and the test network. this functionality is closely related to blockchain operations.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api is focused on managing and removing tokens or saved payment details, which is a core functionality of payment processing systems. the endpoints provided are related to disabling, listing, notifying, and scheduling account updates, all of which are payment-related actions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api allows for monitoring and managing multiple blockchains through their rpc endpoints, indicating it is focused on blockchain-related operations.
+this functionality aligns with the blockchain category.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api provides functionality related to currency exchange rates, allowing users to retrieve, add, update, and delete exchange rates. this is directly related to currency operations.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary describes operations for managing bank master data, including creating, reading, updating, and deleting bank entities and related addresses. the functionality is closely tied to banking operations.
+</thinking>
+
+<category>banking</category>"
+"<thinking>
+the api summary describes functionalities related to managing savings goals, which are a part of banking and financial management. the endpoints provided are specific to savings goals, indicating a focus on savings-related operations.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api provides functionality for exchanging currencies, which is a core feature of currency-related services. the endpoints suggest that it deals with currency exchange operations.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api allows customers to manage and execute transfers from their citizens account to external accounts, including recurring transfers and line of credit transfers. this functionality is primarily related to financial transactions.
+</thinking>
+
+<category>
+transfer
+</category>"
+"<thinking>
+the api provides endpoints for managing various aspects of a blockchain system, including users, transactions, contracts, and blocks. this indicates that the main functionality is related to blockchain operations.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api summary describes functionalities related to account profile creation, management, and password resetting. these operations are typically associated with user account management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api provides various endpoints related to financial market analysis, including price data, market indicators, and trading metrics. this suggests a focus on trading and market analysis.
+</thinking>
+
+<category>trading</category>"
+"<thinking>
+the api provides detailed information about atm locations, adhering to open banking standards. its primary purpose is to assist users in finding atms, which is a core functionality of banking services.
+</thinking>
+
+<category>banking</category>"
+"<thinking>
+the api summary describes an endpoint for creating payments, which is a core functionality of a payment processing system. the endpoint is specifically for creating payments for a user.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the klarna payments api v1 is designed to facilitate the integration of klarna's payment methods into a checkout process. it includes functionalities for creating and managing payment sessions and orders.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes functionality related to processing and managing payment transactions, including initializing payments, committing payments, voiding payments, and retrieving transaction fees. this aligns with the purpose of facilitating payment operations.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the authentiq api focuses on strong authentication without the use of passwords, providing endpoints for registering, updating, and revoking identities, as well as managing authentication scopes and login requests. this aligns with user authentication and identity management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api summary describes functionality related to transferring funds between two banks and managing transfer statuses. this aligns with the transfer category.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the nowpayments api is designed for processing cryptocurrency payments, allowing users to accept payments in various cryptocurrencies and convert them into a chosen coin. this functionality is closely related to payment processing.
+</thinking>
+
+<category>payment</category>"
+"<thinking>
+the api focuses on personal data validation, credit rating, and loan request services, which are core functionalities of loan and mortgage services. the endpoints provided support these operations, such as pre-approval for loan requests and retrieving information about loan purposes and customer identification methods.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides endpoints for retrieving various trading-related data such as server time, available currencies, instruments, order details, and portfolio data. it also allows for placing, canceling, and retrieving specific orders.
+</thinking>
+<category>
+trading
+</category>"
+"<thinking>
+the api is designed to handle various investment changes within defined contribution plans, including fund transfers and reallocations. this functionality aligns with trading and investment management.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is designed to allow customers to inquire about the payment account reference (par) by providing an encrypted pan. this functionality is directly related to payment card acceptance and account inquiries.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api is designed to handle operations related to mortgage extensions, including retrieving finance data, confirming offers, and calculating interest rates. this functionality is directly related to mortgage management.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides access to information about countries, timezones, and currencies, which aligns with the currency category as it primarily deals with currency-related data.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary describes a framework that provides secure access to bank accounts and financial data, enabling payment initiation and account management. this aligns with the functionality of a banking api.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes functionalities related to initiating international money transfers, managing accounts, and creating payouts. this aligns with the purpose of facilitating financial transactions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes a service that facilitates instant payments between financial institutions. this functionality is closely related to the transfer of funds.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api provides endpoints for retrieving alerts and headlines related to cryptocurrencies, as well as price data for specific coins on different exchanges. this functionality is closely related to blockchain and cryptocurrency trading.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api primarily deals with customer information, loans, and fund transfers, which are core functionalities of a banking system. the presence of endpoints related to loans and transfers specifically categorizes it as a banking api.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is focused on managing and updating investment clearing information, which is a critical function in financial transactions. given the context, it falls under the category of trading or investment management.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary describes endpoints related to credit/charge card services, including account retrieval, balance, billing execution, and transaction management. this functionality is closely related to financial services, particularly in the context of payments and transactions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes endpoints that interact with blockchain networks like bitcoin, ethereum, and thorshammer. the functionality includes retrieving blockchain information, managing transactions, and interacting with network nodes.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api summary describes functionalities related to managing and interacting with nfts, including creating wallets, minting nfts, purchasing nfts, and retrieving nft metadata. this aligns with blockchain technology and digital asset management.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api is designed to access and standardize data from various bank accounts through third-party providers, focusing on retrieving account and transaction information. this aligns with the functionality typically associated with banking services.
+</thinking>
+
+<category>
+banking
+</category>"
+"<thinking>
+the api is focused on managing interbank transfer orders, which is a core functionality of banking systems. the endpoints provided are related to creating, updating, and retrieving transfer order details.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api provides comprehensive market data, including assets, markets, exchanges, tickers, and derivatives. it also supports conversion between different assets.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is designed to retrieve information about accounting clients, which suggests it is related to client management in an accounting context. this aligns with the client category as it deals with client-specific data.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api is focused on managing customer records and their associated packages, which are related to shipping. this functionality is not directly tied to any financial or blockchain operations.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api focuses on managing various financial planning aspects for clients, including insurance policies, estate plans, tax plans, risk tolerances, and financial priorities. this aligns with the broader category of financial services, specifically related to planning and management.
+</thinking>
+
+<category>
+savings
+</category>"
+"<thinking>
+the api summary describes endpoints related to credit services, specifically initializing credit requests and calculating points of sale. this suggests a focus on financial transactions and credit management.
+</thinking>
+
+<category>
+loan-mortgage
+</category>"
+"<thinking>
+the api is focused on managing crypto wallets and accounts, interacting with deltix for user permissions and roles. it primarily deals with cryptocurrency accounts and balances.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+phantauth is designed to simplify testing for applications using openid connect authentication by generating random user accounts. its primary purpose is to provide user accounts and authentication tokens for testing purposes.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api summary describes a service that provides instant decisions on loan prequalification based on business and owner details. it includes endpoints for checking eligibility, submitting applications, and uploading supporting documents.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides endpoints to retrieve trade-related information, including an overview, detailed trade information, and messages associated with trades. this suggests it is focused on monitoring and managing trading activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary describes functionalities related to loan application submission, decisioning, and updates to various details of loan applicants. this clearly pertains to loan and mortgage processes.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api's main functionality is to calculate the maximum mortgage amount available based on input parameters and real interest rates. this aligns with the purpose of determining loan or mortgage eligibility.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides functionalities related to account management, transactions, and preferences, which are typical for banking services. the presence of endpoints for account details, transactions, and transfers further supports this classification.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes functionalities related to managing and retrieving information about savings accounts for a specific customer. the primary purpose is to handle savings account data.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api is designed to help users set up and manage savings goals for specific financial objectives. it provides functionalities to create, retrieve, and delete savings goals, making it a tool for savings management.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api summary describes operations related to personal loans, specifically focusing on extending loan terms. this functionality is directly related to loan management.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api is focused on retirement planning, which typically involves financial analysis and advice related to savings and investments. this aligns with the purpose of a savings api.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api provides functionalities related to user management, including crud operations for users and their applications. the presence of a login endpoint suggests authentication and user-specific operations.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api allows for the transfer of money between tilia wallets without involving payment processing, which suggests it is focused on internal wallet management rather than broader financial transactions. the primary function is to facilitate transfers between wallets.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api is focused on managing recipients, which are likely entities involved in transactions. it provides crud operations that are essential for handling recipients in a financial or payment context.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes functionalities related to crypto currency trading, including enrollment, account management, and order creation/confirmation. this aligns with the trading category as it involves buying and selling crypto currencies.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api focuses on customer authentication and profile management, which is typical for a client-facing system. the endpoints are related to user login and session management.
+</thinking>
+<category>
+client
+</category>"
+"<thinking>
+the api focuses on processing and managing loan documents, including uploading, viewing, and modifying documents. this functionality is closely related to loan and mortgage processes.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api allows users to retrieve their current balance and create transactions, which suggests it is related to financial transactions. the primary functionality is focused on transferring money.
+</thinking>
+<category>transfer</category>"
+"<thinking>
+the api provides functionalities related to foreign currency exchange rates, including fetching rates, converting amounts, and listing supported currencies. this aligns with the purpose of currency-related services.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary indicates that the main functionality is related to creating new mortgage applications. this aligns with the loan-mortgage category as it deals with financial services related to mortgages.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides comprehensive financial data related to stock markets, including stock prices, fundamentals, and corporate actions. this data is essential for trading and investment analysis.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary describes an api that handles user management, document handling, and loan creation, particularly focusing on borrower approval and loan types. the api's primary purpose is to facilitate financial operations related to users and loans.
+</thinking>
+
+<category>loan-mortgage</category>"
+"<thinking>
+the api summary describes functionalities related to banking services, including customer onboarding, payment processing, and authorization. it aligns with the principles of open banking and psd2 regulations.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the finmo lender api primarily deals with managing and processing submissions related to lending, including approval, decline, and file handling. this functionality is closely related to loan processing and management.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api summary focuses on managing and updating various aspects of loan data, such as availability, balances, statements, and fees. this aligns with the functionality typically associated with loan management systems.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api is designed to fetch data related to non-fungible tokens (nfts) on ethereum and polygon blockchains. it primarily deals with blockchain-related operations.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api summary indicates that the main functionality is related to managing and retrieving client financial records. this suggests a focus on client-related financial data.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api is focused on managing the lifecycle of trade finance undertakings between corporations and banks, which involves creating, amending, and requesting payments related to these undertakings. this functionality is closely related to financial transactions and banking operations.
+</thinking>
+<category>
+banking
+</category>"
+"<thinking>
+the api is focused on managing direct debit mandates, which are commonly used in banking and payment systems. it provides functionalities for creating, amending, canceling, and suspending mandates, as well as releasing them.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api focuses on managing financial operations related to loans, including saving drawdown details, checking loan status, and handling repayments. this aligns with the functionality of loan and mortgage management.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api allows partners to offer a buy now pay later (bnpl) payment scheme to their business customers. this involves managing orders, buyers, and suppliers, which are typical functionalities in a payment processing system.
+</thinking>
+
+<category>
+payment
+</category>"
+"<thinking>
+the api is focused on managing loan applications and applicant profiles, which aligns with financial services related to loans and mortgages. the oauth 2.0 framework for authentication and authorization further supports this classification.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api, tradesim, provides endpoints for retrieving stock information, live courses, and lists of stocks. its primary purpose is to facilitate trading-related data retrieval.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary describes endpoints related to card management, including activation, freezing, unfreezing, ordering, and budgeting. these functionalities are typical for banking services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is designed for managing loan applications, including calculating costs, submitting applications, updating and canceling them, and handling related documents. this functionality is closely related to loan and mortgage processes.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api is designed for investment fund providers to access detailed information about loan structures and statuses, which is indicative of a loan management system.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api summary indicates that the main functionality is related to managing and servicing loans, including querying loan states and recording transactions. this aligns with the domain of loans and mortgages.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides functionality related to currency exchange rates and conversion, which is directly related to currency management.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary describes functionalities related to managing banking documents, such as retrieving document types and ordering documents. this aligns with operations typically found in banking systems.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is focused on providing account-related information for authorized users, including account lists, balances, and transaction history. this functionality is typical for banking services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes functionalities related to adding money to mastercard cards and reversing transactions. this aligns with the purpose of facilitating financial transactions and managing funds.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes a core banking application that handles account creation, user authentication, and banking operations like deposits and withdrawals. the primary purpose is to manage banking activities for a single bank.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes a service that provides access to account information, including details, balances, and transactions. this aligns with the functionality of a banking api.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api provides endpoints for managing client information, including creating, retrieving, updating, and deleting client records. the primary purpose is to handle client data.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api is designed to retrieve transaction data from a banking system, specifically focusing on current accounts and their transactions. this aligns with the functionality typically associated with banking apis.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the tpp-bank api primarily deals with granting access, managing tokens, and handling transactions, which are typical functionalities in banking systems. the presence of endpoints for transaction approval and account information retrieval further supports this classification.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is designed to retrieve account balances and other financial details, which is a core functionality of banking services. the presence of endpoints related to account balances and funds further supports this classification.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api's main functionality is to retrieve account balances, which is a core feature of banking services. it is designed to facilitate data refresh in the account services api projection store.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes operations related to loan applications and scoring. the endpoints involve updating, viewing, deleting, and scoring loan applications.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api is designed to manage a loan grant system, allowing users to create accounts, apply for loans, and manage their loan applications. admins can manage loan transactions and user accounts.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api is designed for integrating with a loans comparison service, specifically for submitting customer data to compare loan options. the primary functionality is related to loan applications and results retrieval.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api summary describes endpoints for credit lookup and credit transfer, which are functionalities related to transferring money. the term ""promptpay"" suggests a payment system.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api is focused on managing crypto accounts and profiles for customers, which involves interactions with crypto partners. this functionality is closely related to the management of digital assets, which is a key feature of blockchain technology.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api focuses on managing consumer accounts, including creating, updating, and retrieving account details. it is primarily related to user management and interaction with ecommerce platforms.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is focused on managing and providing information about foreign exchange rates and currency pairs. its main functionality is related to currency data.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api is focused on managing and calculating costs for securities savings plans, which indicates a financial service related to savings. the endpoints involve creating and modifying savings plans, as well as calculating costs, which aligns with the savings category.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api summary focuses on managing and reporting transaction savings agreements and events. the endpoints cover creating, updating, and retrieving agreement details, capturing transactions, and reporting savings.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api is focused on managing and updating billing information for corporate clients, which is used in credit analysis processes. this functionality is closely related to banking operations.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api primarily deals with user management, user balance, and invoice handling, which suggests it is related to financial transactions and client interactions. the presence of endpoints for user management and invoice handling indicates a client-focused financial service.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api summary describes endpoints related to managing bank products and collection strategies, which are typically used in banking systems. the endpoints cover operations such as creating, updating, and retrieving bank products and collection strategies, as well as managing related actions and data.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes a service that calculates and provides monthly installment rates for loans based on the loan amount and purpose. this functionality is directly related to loan management.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides endpoints to retrieve recommended funds and related funds, indicating it is focused on financial products and services related to funds.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api is designed to handle operations related to mortgage applications, including storing and retrieving information about mortgage applications and associated documents. this functionality is directly related to loan and mortgage management.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api provides functionalities related to banking transactions, account management, and user operations. it includes endpoints for transferring, depositing, and withdrawing money, as well as managing user accounts and authentication.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api provides endpoints for managing customers, accounts, and transactions, which are core functionalities of a banking system. the endpoints cover crud operations for customers and accounts, as well as transaction management.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes a service that provides consumer credit reports, which are essential for lenders to make credit-granting decisions. this functionality is closely related to loans and mortgages.
+</thinking>
+<category>loan-mortgage</category>"
+"<thinking>
+the api is designed for managing borderless accounts, performing payouts, and handling currency conversions, which are core functionalities of a payment service. the presence of endpoints for managing notifications and subscriptions further supports its role in facilitating financial transactions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the trueblocks api is designed for accessing and managing ethereum blockchain data, including transactions, blocks, and account details. it primarily focuses on providing tools for querying and caching blockchain information.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api summary describes endpoints related to banking operations such as managing clients, accounts, cash accounts, and portfolios. the focus is on core banking functionalities.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes endpoints related to investment accounts, including retrieving basic information, statements, and transactions. this functionality is closely related to financial services and investment management.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api's main functionality is to provide account balance reports, which is a core feature of banking and financial management systems.
+it is specifically designed for treasury management customers, indicating a strong connection to banking operations.
+</thinking>
+
+<category>banking</category>"
+"<thinking>
+the api provides access to ethereum and ethereum classic blockchain entities, allowing users to retrieve information about blocks, transactions, and addresses. this functionality is characteristic of blockchain-related apis.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the axos invest api primarily deals with user management, bank account information, milestones, notifications, subscriptions, and formulas. the main functionality revolves around managing and retrieving user-related financial data.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on managing loan customers, loans, and payments, which indicates a strong connection to loan and mortgage management. the endpoints cover operations related to customers, loans, and payments, reinforcing this classification.
+</thinking>
+
+<category>
+loan-mortgage
+</category>"
+"<thinking>
+the api provides a list of brokers, which is typically associated with trading activities. the main functionality is to retrieve information about brokers, which is relevant in trading contexts.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary describes functionality related to creating bank account payment methods, which is a core feature of banking services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is focused on managing and interacting with nfts (non-fungible tokens) on the ethereum blockchain, including deploying contracts, minting nfts, and transferring them. this functionality is closely related to blockchain operations.
+</thinking>
+
+<category>blockchain</category>"
+"<thinking>
+the api provides real-time quotes and data for stocks and forex, which is primarily related to trading and financial markets. it does not fit into categories like banking, payment, or user-password as it focuses on market data rather than transactions or user management.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on retrieving user profile information, which includes unique identifiers, names, and other legal or contact details. this functionality is primarily related to user management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the adyen binlookup api is primarily focused on providing information related to payment processing, such as cost estimates and 3d secure availability based on a given bin. this functionality is closely related to payment processing and transaction handling.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the fireblocks exchange api primarily deals with managing accounts, transactions, and transfers within a cryptocurrency exchange. it supports functionalities like fetching account balances, creating deposit addresses, initiating withdrawals, and transferring assets between accounts.
+</thinking>
+<category>
+trading
+</category>"
+"<thinking>
+the api provides endpoints to retrieve information about currencies, including rates over periods and specific dates. this functionality is primarily focused on currency-related data.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api is designed for financial institutions to manage bank feeds, which implies it is related to banking operations. the endpoints focus on managing feed connections and statements, which are typical in banking systems.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is focused on confirming funds and managing funds confirmation consents, which is a core functionality in financial transactions. this aligns with the banking and payment categories.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api provides endpoints for retrieving information about foreign exchange rates and available currencies. its main functionality is related to currency exchange data.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary indicates that it provides endpoints for customer login, registration, account management, and money transfers. these functionalities are typical for banking services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes endpoints related to various payment processing functionalities such as authorization, capturing transactions, issuing credits, and managing transaction receipts. these functionalities are characteristic of a payment gateway.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the scim api is focused on managing users and groups within an organization, facilitating user provisioning and integration with single sign-on solutions. this aligns with user management and identity provider functionalities.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api allows for crud operations on client and order entities, indicating it is focused on managing client information and orders. this functionality is typical for a client management system.
+</thinking>
+<category>client</category>"
+"<thinking>
+the api's main functionality is to validate potential bill payment transactions before they are processed, which is closely related to payment processing. the purpose is to reduce payment rejects and processing exceptions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the subaccounts api allows for the creation and management of subaccounts under a primary account, facilitating different configurations and transactions. this functionality is closely related to managing financial accounts and transactions.
+</thinking>
+
+<category>
+banking
+</category>"
+"<thinking>
+the api focuses on managing trading strategies, trading accounts, and user authentication. it includes endpoints for creating and updating trading accounts and user credentials, as well as retrieving trading strategy information.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary indicates that the nft engine api is primarily focused on creating and managing digital assets, specifically nfts (non-fungible tokens). it involves operations like minting nfts, uploading files to ipfs, and storing transaction statuses.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api provides endpoints for customer registration and token retrieval, which are typically related to user authentication and access management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api provides endpoints for retrieving information related to companies, currencies, and historic trading data, including quotes and trades. this suggests it is focused on financial market data and trading activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is designed to provide currency conversion details, including rates and lists of conversions. its primary purpose is to facilitate currency conversion operations.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api provides endpoints to access, update, and create stock information, which is primarily related to trading activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is focused on managing customer data, including creation, retrieval, archiving, and modification of customer records. it also involves interactions and associations with other users.
+</thinking>
+<category>
+client
+</category>"
+"<thinking>
+the api is designed to handle online credit card payments, including authorization, capture, retrieval, and cancellation. this functionality is directly related to processing payments.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes endpoints related to customer management, account management, transaction handling, and authentication, which are typical functionalities of a banking application.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes functionality related to various types of transfers, including intrabank, intragroup, interbank, and international remittances. this aligns with the payment domain.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api is designed for managing funds within accounts on a platform, including operations like transferring funds, payouts, and retrieving balances. this functionality is closely related to financial transactions and account management.
+</thinking>
+
+<category>
+transfer
+</category>"
+"<thinking>
+the api is designed to provide currency conversion rates based on mastercard's values, which indicates it is primarily focused on currency-related operations.
+the functionality aligns with the ""currency"" category as it deals with conversion rates and settlement currencies.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api provides functionalities related to trading stocks, managing user accounts, and interacting with friends within the trading platform. the primary purpose is to facilitate trading activities.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api is designed for analyzing cryptocurrency transactions, specifically by searching transactions associated with a particular address. this functionality is closely related to blockchain technology.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the userservice api is primarily focused on managing user information, credentials, and achievements. it includes functionalities for creating, editing, and disabling users, as well as generating passwords.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is designed for managing banking operations, specifically for employee interactions with customer accounts and transactions. it includes functionalities for account management, transaction viewing, and setting limits.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api allows for the transfer of funds between merchant accounts within the same legal entity and company account, which is a core functionality of payment processing and account management.
+the authentication method involves api keys or basic auth, which is typical for secure financial transactions.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api provides functionality related to exchange rates and currencies, allowing users to retrieve recent exchange rates, historical data, and supported currencies. this aligns with the purpose of currency-related apis.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api focuses on user management operations such as login, creation, deletion, and data modification. these functionalities are typically associated with user authentication and management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api allows for updating user details by passing a username and user details. this functionality is primarily related to managing user information.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api provides endpoints to manage payment links, including creating, listing, retrieving, and updating them. this functionality is directly related to payment processing.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes functionalities related to user management, transactions, payments, withdrawals, and currency exchange. these features are commonly associated with financial services, particularly those involving money transfers and currency handling.
+</thinking>
+
+<category>
+payment
+</category>"
+"<thinking>
+the api is focused on managing user accounts, including creating, updating, retrieving, and managing user statuses and passwords. this functionality is central to user management systems.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api focuses on user authentication and credential validation, which is a core functionality of user management systems. it includes endpoints for validating tokens and user sign-in.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is designed to provide personalized financial offers and related functionalities for cardholders in online and mobile banking applications. it includes features related to offers, savings, and user feedback, which are typical in banking services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api is focused on providing stock information and managing a user's list of favorite stocks. this functionality is closely related to trading and portfolio management.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api summary describes a set of endpoints for managing payouts, including storing details, confirming, and declining payouts. this functionality is directly related to payment processing.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api is designed to retrieve transaction history, which is a common functionality in financial services. the presence of error codes related to transactions and account handling further supports this classification.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes endpoints related to managing payees, merchants, and payments, which are typical functionalities in a payment processing system. the presence of endpoints for adding payees, finding merchants, and querying payments further supports this classification.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api summary describes functionalities related to managing and removing tokens or saved payment details, which are crucial for recurring payments. the endpoints provided are specifically focused on handling recurring payment details.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api focuses on managing and executing investments, which aligns with the trading category as it involves buying and selling financial instruments.
+</thinking>
+<category>trading</category>"
+"<thinking>
+the api provides services related to account information, transaction details, and value-added services like iban calculation and validation. this aligns with the functionality of banking services.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api summary describes operations related to managing and exchanging currencies, including adding, updating, deleting, and finding currencies, as well as performing currency exchanges.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api is focused on managing customer data, including creating, retrieving, updating, and deleting customer records. this functionality is typically associated with user management.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api summary describes a microservice that interacts with the sirius blockchain, specifically handling operations related to nfts (non-fungible tokens). the endpoints cover functionalities such as retrieving nft information, transaction history, and minting new nfts.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api's main functionality is to authenticate and authorize users, which is a core aspect of user management and security. this aligns with the category of user-password apis.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api is designed for managing a private ethereum blockchain, including operations like wallet creation, token management, and blockchain data retrieval. this functionality is closely related to blockchain technology.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api summary describes a service that converts currency rates. this functionality is directly related to currency exchange and conversion.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api summary describes services related to savings and retirement, specifically providing endpoints for viewing retirement summaries and updating projected retirement income.
+</thinking>
+<category>savings</category>"
+"<thinking>
+the api summary describes a blockchain implementation provided by mastercard, allowing users to create and manage blockchain applications. the endpoints focus on managing nodes, blocks, transactions, and applications within the blockchain network.
+</thinking>
+<category>blockchain</category>"
+"<thinking>
+the api provides functionalities related to currency conversion, access to currency lists, and historical rate data. its primary purpose is to facilitate currency-related operations within applications.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api's main functionality is to verify user authentication and return user information if authenticated. this is closely related to user management and security.
+</thinking>
+<category>user-password</category>"
+"<thinking>
+the api's main functionality is to provide detailed information about bank branches, adhering to open banking standards. this aligns with the banking sector, specifically for locating branches.
+</thinking>
+<category>banking</category>"
+"<thinking>
+the api provides endpoints for retrieving historical and live currency exchange rates, as well as a list of supported currencies. the primary functionality is related to currency exchange rates.
+</thinking>
+<category>currency</category>"
+"<thinking>
+the api is focused on managing and resolving consumer queries related to payment accounts enabled through a digitization platform. it provides functionalities for token management, activation, suspension, and transaction retrieval, which are all related to payment processing.
+</thinking>
+<category>payment</category>"
+"<thinking>
+the api provides functionalities related to account management, transactions, user administration, and feedback submission, which are typical features of a banking system. the presence of endpoints for account details, transactions, and money transfer further supports this classification.
+</thinking>
+<category>banking</category>"
