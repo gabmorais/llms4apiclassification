@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ### Setting up the Environment Variables
 
-To run the code successfully, you first need to add a `.env` file in this directory. This file should contain
+To run the code successfully, you first need to fill the `.env` file in this directory. This file should contain
 the `OPENAI_API_KEY`, `GOOGLE_API_KEY` and `DEEPSEEK_API_KEY` environment variables, representing your OpenAI, Google
 Gemini and DeepSeek API keys. Make sure you have access to these models before running the code.
 
